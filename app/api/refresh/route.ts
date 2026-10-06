@@ -3,47 +3,88 @@ import { NextResponse } from 'next/server';
 import { getChatGPTUser } from '../../chatgpt-auth';
 import { getDb } from '../../../lib/db/client';
 import { getLiveCountries, saveLiveRefresh } from '../../../lib/db/live';
-import { COUNTRY_CODES, fetchOwid, type CountryCode } from '../../../lib/sources/owid';
+import {
+  COUNTRY_CODES,
+  fetchOwid,
+  type CountryCode,
+} from '../../../lib/sources/owid';
 
 export async function POST(request: Request) {
   const origin = request.headers.get('origin');
-  if (origin && origin !== new URL(request.url).origin) return NextResponse.json({ error: 'Invalid origin' }, { status: 403 });
+  if (origin && origin !== new URL(request.url).origin)
+    return NextResponse.json({ error: 'Invalid origin' }, { status: 403 });
 
   // Only the isolated public demo Site has this temporary switch. Other Sites
   // require the existing server-side editor role, ready for the final auth phase.
   if (env.DEMO_PUBLIC_REFRESH !== '1') {
     const user = await getChatGPTUser();
-    if (!user) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
-    const row = await getDb().$client.prepare('SELECT role FROM users WHERE authenticated_user_id = ?')
-      .bind(user.userId).first<{ role: string }>();
+    if (!user)
+      return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
+    const row = await getDb()
+      .$client.prepare('SELECT role FROM users WHERE authenticated_user_id = ?')
+      .bind(user.userId)
+      .first<{ role: string }>();
     if (!row || !['editor', 'instructor', 'admin'].includes(row.role)) {
-      return NextResponse.json({ error: 'Editor access required' }, { status: 403 });
+      return NextResponse.json(
+        { error: 'Editor access required' },
+        { status: 403 },
+      );
     }
   }
 
   let body: unknown;
-  try { body = await request.json(); } catch { return NextResponse.json({ error: 'Invalid request' }, { status: 400 }); }
-  if (!body || typeof body !== 'object' || Array.isArray(body)) return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  }
+  if (!body || typeof body !== 'object' || Array.isArray(body))
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   const input = body as Record<string, unknown>;
   const requestedCountries = input.countries;
-  if (Object.keys(input).sort().join(',') !== 'countries,source' || input.source !== 'owid' ||
-    !Array.isArray(requestedCountries) || requestedCountries.length !== 3 ||
+  const outageTest =
+    env.DEMO_PUBLIC_REFRESH === '1' && input.source === 'always-fails';
+  if (
+    Object.keys(input).sort().join(',') !== 'countries,source' ||
+    (input.source !== 'owid' && !outageTest) ||
+    !Array.isArray(requestedCountries) ||
+    requestedCountries.length !== 3 ||
     !COUNTRY_CODES.every((code) => requestedCountries.includes(code)) ||
-    requestedCountries.some((code) => !COUNTRY_CODES.includes(code as CountryCode))) {
-    return NextResponse.json({ error: 'Only the fixed three-country OWID refresh is supported' }, { status: 400 });
+    requestedCountries.some(
+      (code) => !COUNTRY_CODES.includes(code as CountryCode),
+    )
+  ) {
+    return NextResponse.json(
+      { error: 'Only the fixed three-country OWID refresh is supported' },
+      { status: 400 },
+    );
   }
 
   const startedAt = new Date().toISOString();
   let run;
   try {
+    if (outageTest) throw new Error('Simulated external source outage');
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 20000);
     try {
-      const data = await fetchOwid(COUNTRY_CODES.slice() as CountryCode[], controller.signal);
-      run = await saveLiveRefresh(data, startedAt);
-    } finally { clearTimeout(timer); }
+      const result = await fetchOwid(
+        COUNTRY_CODES.slice() as CountryCode[],
+        controller.signal,
+      );
+      run = await saveLiveRefresh(
+        result.data,
+        startedAt,
+        result.errors.length ? result.errors.join('; ') : undefined,
+      );
+    } finally {
+      clearTimeout(timer);
+    }
   } catch {
-    run = await saveLiveRefresh([], startedAt, 'The external data source did not return valid data. Previous values remain available.');
+    run = await saveLiveRefresh(
+      [],
+      startedAt,
+      'The external data source did not return valid data. Previous values remain available.',
+    );
   }
   const current = await getLiveCountries();
   return NextResponse.json({ run, metrics: current.countries });
