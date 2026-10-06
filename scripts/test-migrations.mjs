@@ -8,6 +8,7 @@ assert.ok(migrationFiles.length > 0, 'No migration files found');
 
 const tables = ['ai_requests','claim_links','committee_decisions','countries','criteria','criterion_weights','demand_regions','design_claims','design_parameters','designs','evidence_requirements','metric_definitions','metrics','narrative_steps','narratives','parameter_definitions','refresh_runs','requirement_claims','scenario_overrides','scenarios','seed_runs','site_assessments','sites','sources','step_claims','teams','units','users'];
 const appendOnly = ['sources','metrics','refresh_runs','design_parameters','scenario_overrides','design_claims','claim_links','criterion_weights','site_assessments','committee_decisions','requirement_claims','narratives','narrative_steps','step_claims','ai_requests'];
+tables.push('adviser_request_slots');
 const views = ['current_metrics','current_parameters','current_scenario_overrides','current_claims','current_sources','current_weights','current_assessments','current_narratives','stale_claims','requirement_status'];
 const indexes = ['idx_metrics_country','idx_metrics_site','idx_metrics_site_region','idx_params','idx_overrides','idx_claims','idx_links_claim','idx_assess','idx_requirements','idx_narratives','idx_ai_user_time','idx_runs'];
 

@@ -5,5 +5,7 @@ declare namespace Cloudflare {
     AUTH_ENABLED?: string;
     INITIAL_ADMIN_USER_ID?: string;
     SEED_DEPLOY_TOKEN?: string;
+    OPENAI_API_KEY?: string;
+    OPENAI_MODEL?: string;
   }
 }

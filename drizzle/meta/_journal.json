@@ -15,6 +15,13 @@
       "when": 1791314280991,
       "tag": "0002_seed_metadata",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791321871663,
+      "tag": "0003_adviser_request_slots",
+      "breakpoints": true
     }
   ]
 }

@@ -417,3 +417,11 @@ export const seedRuns = sqliteTable('seed_runs', {
   seedVersion: text('seed_version').primaryKey(),
   appliedAt: text('applied_at').notNull(),
 });
+
+export const adviserRequestSlots = sqliteTable('adviser_request_slots', {
+  id: integer().primaryKey({ autoIncrement: true }),
+  userId: integer('user_id').notNull().references(() => users.id),
+  teamId: integer('team_id').notNull().references(() => teams.id),
+  createdAt: text('created_at').notNull(),
+  reservedTokens: integer('reserved_tokens').notNull(),
+}, t => [index('idx_adviser_slots_user').on(t.userId,t.createdAt),index('idx_adviser_slots_team').on(t.teamId,t.createdAt)]);
