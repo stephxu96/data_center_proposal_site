@@ -40,3 +40,5 @@ next-env.d.ts
 *.tsbuildinfo
 /outputs/
 /work/
+/.presentation-build/
+/scripts/node_modules/
