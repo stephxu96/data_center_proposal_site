@@ -1,4 +1,3 @@
-import Link from 'next/link';
 const terms=[
   ['pue','PUE','Total facility power divided by IT equipment power. A lower value means less overhead for cooling and electrical systems.'],
   ['it-load','IT load','The electricity used by servers, storage and networking equipment.'],
@@ -14,5 +13,5 @@ const terms=[
 ];
 export default function Glossary(){return <>
   <section className="page-head"><div className="shell"><span className="eyebrow">Plain language</span><h1>Glossary.</h1><p>The terms behind the data center design and investment case.</p></div></section>
-  <section className="section"><div className="shell"><div className="grid-2">{terms.map(([id,name,definition])=><article className="card" id={id} key={id}><h3>{name}</h3><p>{definition}</p></article>)}</div><p className="lead"><Link className="text-link" href="/">Return to overview ↗</Link></p></div></section>
+  <section className="section"><div className="shell"><div className="grid-2">{terms.map(([id,name,definition])=><article className="card" id={id} key={id}><h3>{name}</h3><p>{definition}</p></article>)}</div><p className="lead"><a className="text-link" href="/">Return to overview ↗</a></p></div></section>
   </>}

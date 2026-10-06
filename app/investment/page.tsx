@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { applyScenario, investmentModel, numericInput, proposalData, tenYearCostPath } from '../../lib/db/proposal';
 
 type Params = Record<string,string|string[]|undefined>;
@@ -31,7 +30,7 @@ export default async function Investment({searchParams}:{searchParams:Promise<Pa
   const money=(n:number)=>'$'+n.toFixed(1)+'m';
   return <>
     <section className="page-head"><div className="shell"><span className="eyebrow">Investment case</span><h1>Make the economics visible.</h1><p>Compare ownership structures under one set of editable scenario assumptions. The same power and utilization inputs flow through every option.</p></div></section>
-    <section className="section"><div className="shell"><div className="section-head"><div><span className="eyebrow">Scenario model</span><h2>Change one input. See the effect.</h2></div><Link className="text-link" href="/investment?example=1">Load example scenario ↗</Link></div>
+    <section className="section"><div className="shell"><div className="section-head"><div><span className="eyebrow">Scenario model</span><h2>Change one input. See the effect.</h2></div><a className="text-link" href="/investment?example=1">Load example scenario ↗</a></div>
       <form action="/investment" method="get" className="card"><div className="field-grid"><div className="field"><label htmlFor="scenario">Scenario</label><select id="scenario" name="scenario" defaultValue={scenario}><option value="base">Base case</option><option value="grid-delay">Grid power one year late</option><option value="half-utilization">GPU use at half forecast</option></select></div><div className="field"><label htmlFor="option">Cost path</label><select id="option" name="option" defaultValue={selectedOption}><option value="build">Build and own</option><option value="lease">Lease capacity</option><option value="hybrid">Phased hybrid</option></select></div>{definitions.map(([key,label,unit,min,max])=><div className="field" key={key}><label htmlFor={key}>{label} <span className="subtle">({unit})</span></label><input id={key} name={key} type="number" min={min} max={max} step="any" defaultValue={values[key]??''} placeholder="Enter assumption"/></div>)}</div><div style={{marginTop:24}}><button className="button" type="submit">Recalculate scenario ↗</button></div></form>
       <p className="subtle">The example is a user-editable scenario, not a vendor quote or financing commitment. Replace inputs with project-specific offers before using results for approval.</p>
     </div></section>
