@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const nav = [
   ['Overview', '/'], ['Compare sites', '/countries'], ['Initial design', '/design'],
-  ['Investment case', '/investment'], ['Evidence', '/evidence'], ['Adviser', '/adviser'], ['Glossary', '/glossary'],
+  ['Investment case', '/investment'], ['Evidence', '/evidence'], ['Adviser', '/adviser'], ['Glossary', '/glossary'], ['Workspace', '/workspace'],
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

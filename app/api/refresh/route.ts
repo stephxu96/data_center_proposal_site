@@ -1,7 +1,6 @@
 import { env } from 'cloudflare:workers';
 import { NextResponse } from 'next/server';
-import { getChatGPTUser } from '../../chatgpt-auth';
-import { getDb } from '../../../lib/db/client';
+import { requireRole, routeError } from '../../../lib/access';
 import { getLiveCountries, saveLiveRefresh } from '../../../lib/db/live';
 import {
   COUNTRY_CODES,
@@ -17,18 +16,10 @@ export async function POST(request: Request) {
   // Only the isolated public demo Site has this temporary switch. Other Sites
   // require the existing server-side editor role, ready for the final auth phase.
   if (env.DEMO_PUBLIC_REFRESH !== '1') {
-    const user = await getChatGPTUser();
-    if (!user)
-      return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
-    const row = await getDb()
-      .$client.prepare('SELECT role FROM users WHERE authenticated_user_id = ?')
-      .bind(user.userId)
-      .first<{ role: string }>();
-    if (!row || !['editor', 'instructor', 'admin'].includes(row.role)) {
-      return NextResponse.json(
-        { error: 'Editor access required' },
-        { status: 403 },
-      );
+    try {
+      await requireRole(request, 'editor');
+    } catch (error) {
+      return routeError(error);
     }
   }
 

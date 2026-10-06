@@ -23,6 +23,7 @@ export default async function Evidence() {
             Design inputs, calculations, judgment scores and open questions are
             separated so the basis of the recommendation remains legible.
           </p>
+          <div className="button-row" style={{marginTop:24}}><a className="button secondary" href="/workspace?role=editor#add-evidence">Contribute evidence ↗</a></div>
         </div>
       </section>
       <section className="section">

@@ -17,6 +17,10 @@ See the challenge brief, Steps 15 and 18–21, and the [OpenAI API authenticatio
 
 ## Demo access and final access control
 
+The `/workspace` page includes the four role experiences from brief Steps 16–17: public visitor access, first-visit registration, registered-user adviser access, editor evidence controls, and administrator design/role controls. With `AUTH_ENABLED` absent, its registration and editing forms operate as in-memory previews. Preview role selection never authorizes an API request or creates a real account.
+
+The real `/api/register`, `/api/roles`, `/api/design` and `/api/metrics` handlers are implemented and remain inactive until the final authentication hookup. They use server identity and team-scoped database records; the browser cannot select its real role. At that final step, configure `AUTH_ENABLED=1` and `INITIAL_ADMIN_USER_ID` with the intended administrator's Sites-authenticated user ID, then redeploy and verify the signed-in registration and role matrix. The first registrant is never automatically made administrator. The final hookup remains deferred.
+
 The separate test Site currently has `DEMO_PUBLIC_REFRESH=1` as a **temporary hosted environment variable** so the fixed, three-country refresh can be demonstrated without sign-in. The main Site does not have that switch. At the final authentication phase, remove it from the test Site, redeploy, and verify that anonymous refresh returns `401` and non-editor refresh returns `403`. Do not treat the temporary public test setting as a production access policy.
 
 ## Local checks

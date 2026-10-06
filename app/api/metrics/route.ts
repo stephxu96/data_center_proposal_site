@@ -1,22 +1,22 @@
 import { AccessError, requireRole, routeError } from '../../../lib/access';
-import { saveTeamDesign } from '../../../lib/db/membership';
+import { addEvidence } from '../../../lib/db/membership';
 import {
-  validateDesign,
-  type DesignInputs,
+  validateEvidence,
+  type EvidenceInput,
 } from '../../../lib/workspace-model';
 export async function POST(request: Request) {
   try {
-    const member = await requireRole(request, 'admin');
-    const input = (await request.json()) as DesignInputs;
+    const member = await requireRole(request, 'editor');
+    const input = (await request.json()) as EvidenceInput;
     try {
-      validateDesign(input);
+      validateEvidence(input);
     } catch (error) {
       throw new AccessError(
-        error instanceof Error ? error.message : 'Invalid design',
+        error instanceof Error ? error.message : 'Invalid evidence',
         400,
       );
     }
-    return Response.json({ design: await saveTeamDesign(member, input) });
+    return Response.json(await addEvidence(member, input));
   } catch (error) {
     return error instanceof SyntaxError
       ? Response.json({ error: 'Invalid request' }, { status: 400 })
