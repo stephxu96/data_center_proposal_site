@@ -13,7 +13,7 @@ Authority: `Lesson 06 — Build a DataCenter Challenge.pdf`, pages 2–22, plus 
 | 7 | Registration, roles, server permissions, committee decisions (FR17) | Code done and tested (commit `7e18f82`). Sign-in activation is the final step |
 | 8 | Model-backed adviser, relevant D1 context, controlled tools, citations, rate limiting | Done locally (commit `b8fc90b`). Live answers blocked: instructor key not available |
 | 9 | Twelve functional tests, prompt-injection test, request trace | Server behaviour checked locally; 10 of 13 blocked on the deployed Site. See `submission/test-results.md` |
-| 10 | Published app, submission evidence, five-minute presentation, two-page memo, video | Submission documents in `docs/submission/`. Deck and memo audited, not edited; their build scripts need `deliverables/model-results.json`. Video remains |
+| 10 | Published app, submission evidence, five-minute presentation, two-page memo, video | Submission documents in `docs/submission/`. Deck and memo regenerated from `deliverables/model-results.json` (written by `scripts/export-model.mjs` from the app's model). Memo page count and deck layout need a human check in Word and PowerPoint. Video remains |
 
 Full requirement-by-requirement status: `docs/submission/requirements-traceability.md`.
 

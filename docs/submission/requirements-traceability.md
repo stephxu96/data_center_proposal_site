@@ -142,36 +142,28 @@ The twelve functional tests and the prompt-injection test are in `test-results.m
 
 ## 10. PS3 investment task (pp. 1–3), across the three deliverables
 
-App = deployed or local Site. Memo and deck = the files currently in `deliverables/`, dated October 6 at 16:19 and 15:47.
+App = deployed or local Site. Memo and deck = the files regenerated on October 6 at 18:13 from `deliverables/model-results.json`. That file is written by `scripts/export-model.mjs`, which runs the app's own model code, so document figures match the Site's Investment page.
 
-| # | Requirement | App | Memo (16:19 file) | Deck (15:47 file) |
+| # | Requirement | App | Memo | Deck |
 |---|---|---|---|---|
-| I1 | Recommend build, lease or hybrid; say what to own and what to contract | Met — deployed (`/investment` recommendation and governance) | Partly met: recommends diligence and Texas, with no clear build/lease/hybrid choice | Partly met: "Advance Texas diligence. Hold full capital approval." No delivery-path choice |
-| I2 | Label assumptions; separate estimates from verified facts; name unknowns that could reverse the recommendation | Met — deployed | Met: "Conditions and reversal tests" | Partly met: conditions, no reversal tests |
-| D-1 | Requirements: users, productive GPU-hours, timing, availability, security; whether they justify 25 MW | Met — local (`/design#workload_requirements`) | Partly met: no GPU-hours or scale judgment | Gap |
-| D-2 | Architecture, including the largest-component failure and a 48-hour outage | Met — deployed | Met | Met (slide 5) |
-| D-3 | Ten-year cash flow separating facility and GPU fleet; all cost lines; three options | Met — local (`test-economics`) | Partly met: describes the tool, no figures | Partly met: options described, no figures |
-| D-4 | Financing evidence and who bears each risk | Met — deployed (`/investment#funding-gates`, governance) | Met for evidence; risk bearers missing | Gap |
-| D-5 | Governance, including protection against capacity capture | Met — deployed (`/investment#governance`, capacity sharing) | Gap | Gap |
-| D-6 | Alternatives and external effects | Met — deployed (`/countries`, grid impact) | Partly met: comparators only | Gap |
-| SA1 | Base case plus a **one-year** full-grid delay plus GPU use at half forecast | Met — local (`/investment` comparison table) | **Gap: uses a three-month delay** | **Gap: no stress results** |
-| SA2 | For each case: cash before opening, annual operating cost, cost per productive GPU-hour, capital at risk | Met — local | **Gap** | **Gap** |
-| SA3 | On-site generation: how its contribution is assessed | Met — local: none is counted (`/design#design-record`, grid-impact narrative) | Gap | Gap |
-| SA4 | Data needed to verify the uptime target | Met — local (`/design#uptime-data`). The uptime target itself is **not set** (team decision) | Gap | Gap |
-| DL1 | Website model with visible assumptions and sensitivity analysis | Met — local (`/investment#sensitivity`) | — | — |
-| DL2 | One-page system diagram: power, cooling, network, failure paths | Met — deployed (storage added locally) | — | — |
-| DL3 | Five-minute presentation, followed by questions | — | — | Partly met: 8 slides, no timing marks or backup slides. **Rehearsal is a team task** |
-| DL4 | Two-page memo with a clear recommendation and **the three findings** most likely to change it | — | Partly met: recommendation present; four or five reversal tests rather than three named findings; page count not verified (no renderer here) | — |
+| I1 | Recommend build, lease or hybrid; say what to own and what to contract | Met — local (`/investment`) | Met: lease first, stage a hybrid, send the full build back; ownership and contracting stated | Met: slides 1, 6 and 8 |
+| I2 | Label assumptions; separate estimates from facts; name unknowns that could reverse the recommendation | Met — deployed | Met | Met (slide 7) |
+| D-1 | Requirements: users, productive GPU-hours, availability; whether they justify 25 MW | Met — local | Met: 67.99 million productive GPU-hours; scale not yet justified | Met (slide 2) |
+| D-2 | Architecture, largest-component failure, 48-hour outage | Met — deployed | Met | Met (slide 3) |
+| D-3 | Ten-year cash flow separating facility and GPU fleet; three options | Met — local (`test-economics`) | Met: capital split and cost lines | Met (slide 4) |
+| D-4 | Financing evidence and who bears each risk | Met — deployed | Met | Met (slide 6 notes) |
+| D-5 | Governance and protection against capacity capture | Met — deployed | Met: 20% reserve, 35% cap | Met (slide 6) |
+| D-6 | Alternatives and external effects | Met — deployed | Met: comparators, drought, noise, emissions, other grid customers | Partly met: alternatives in slide 7 notes |
+| SA1 | Base, one-year grid delay, half GPU utilisation | Met — local | Met (table) | Met (slide 5) |
+| SA2 | Cash before opening, annual operations, cost per productive GPU-hour, capital at risk, per case | Met — local | Met | Met |
+| SA3 | On-site generation contribution | Met — local (none counted) | Met: "no firm outage credit without hourly delivery evidence" | Met (slide 3 notes) |
+| SA4 | Data needed to verify the uptime target | Met — local; target itself not set | Met ("Evidence needed to verify uptime") | Met (slide 3 notes) |
+| DL1 | Website model with visible assumptions and sensitivity analysis | Met — local | — | — |
+| DL2 | One-page system diagram | Met — deployed (storage added locally) | — | — |
+| DL3 | Five-minute presentation, followed by questions | — | — | Met as written: speaker-note timings total 300 seconds; closing slide invites questions. **Rehearsal is a team task.** Slide layout not visually checked here |
+| DL4 | Two-page memo, clear recommendation, three findings | — | Met: three numbered findings; designed as two pages (page break before the economics section). **Confirm the page count in Word** | — |
 
-### Deck and memo: what is already prepared but not generated
-
-Codex updated both build scripts at 17:25 and 17:27, after the files above were generated. Read-only inspection shows the updated memo script adds the +12-month and half-utilisation table with all four outputs, a governance section and a "Three findings most likely to change the recommendation" section. The scripts **cannot run yet**:
-
-- Both read `deliverables/model-results.json`, which does not exist. Nothing in the repository writes it yet.
-- The deck script imports a tool that exists only inside the Codex runtime.
-- The memo script needs `python-docx`, which is not installed here.
-
-Regenerating them is left to the team, as agreed. Once regenerated, re-check rows I1 and D-1 to DL4 against the new files.
+**Model result to discuss before presenting.** In the one-year-delay case, build's cost per productive GPU-hour falls ($2.67 to $2.51) instead of rising. The ten-year window is the reason: a later opening pushes the second GPU-fleet replacement (about $240m) past year ten. The Site, memo and deck all show the same figures. Whether to change the model or explain this is a team decision.
 
 ## 11. Open items, by owner
 
@@ -182,6 +174,6 @@ Regenerating them is left to the team, as agreed. Once regenerated, re-check row
 | Source and verify data-center count, electricity use and water/cooling figures for the three countries | Team | P3, P4, P7 |
 | Verify three source records and record the verifier | Team member | E2 |
 | Set an uptime or availability target | Team decision | SA4 (target) |
-| Create `model-results.json`, regenerate the memo and deck, check memo length | Team | SA1–SA4, DL3, DL4 for the documents |
+| Confirm the memo prints as two pages; flip through the deck in PowerPoint; rehearse to five minutes | Team | DL3, DL4 |
 | Final step: `AUTH_ENABLED=1`, `INITIAL_ADMIN_USER_ID`, remove `DEMO_PUBLIC_REFRESH` and `SEED_DEPLOY_TOKEN`, redeploy, run the signed-in tests | Team, last | U3, R1, U7, Step 22 sign-in tests |
 | Record the two-minute video; write individual request-path explanations | Each student | Sub8, Sub9 |
