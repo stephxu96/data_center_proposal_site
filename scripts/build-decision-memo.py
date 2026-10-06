@@ -55,20 +55,23 @@ for label, value in [("To", "University investment committee"), ("From", "Projec
     if label != "Subject":
         meta.add_run("\n")
 
-doc.add_heading("Decision requested", level=1)
+doc.add_heading("Executive summary", level=1)
 doc.add_paragraph(
-    "Authorize the next stage of site, utility and member-demand diligence for a shared AI data center in Texas. "
-    "Do not authorize full construction or equipment procurement yet. The current comparison favors Texas, but "
-    "a binding capital decision depends on a written grid schedule and cost, a site-specific resilience design, "
-    "committed member demand and priced vendor offers."
+    "The committee is considering a shared AI data center for university members. We recommend Texas as the "
+    "reference location and authorization of a bounded diligence stage, not construction or equipment procurement. "
+    "Texas leads the weighted site comparison (3.60 versus 3.05 for Québec and Helsinki), chiefly because it "
+    "reaches more of the modeled member demand within the 50 ms threshold. The 20 MW IT reference design implies "
+    "25 MW at the facility and 219 GWh of annual electricity demand. That scale makes grid timing, power terms, "
+    "resilience and contracted member demand decisive. Return for a capital decision only with a written utility "
+    "schedule and cost, site-specific engineering, member commitments and priced delivery options."
 )
 
-doc.add_heading("Why Texas leads", level=1)
+doc.add_heading("1. Site selection: proximity gives Texas the lead", level=1)
 doc.add_paragraph(
-    "The project compared Texas, Québec and Helsinki using one weighted rubric. Texas scores 3.60; the other two "
-    "reference locations each score 3.05. Demand proximity has the largest weight. In the modeled demand distribution, "
-    "Texas places 62.3% of addressable demand inside a 50 ms round trip, compared with 50.7% for Québec and 19.5% "
-    "for Helsinki. These scores are planning judgments, not utility bids or a final property selection."
+    "The same weighted rubric compares Texas, Québec and Helsinki; demand proximity carries the largest weight "
+    "at 25%. In the modeled demand distribution, Texas places 62.3% of addressable demand inside a 50 ms round "
+    "trip, versus 50.7% for Québec and 19.5% for Helsinki. This explains the score advantage, while the table "
+    "remains a reference-site comparison rather than a final property decision."
 )
 table = doc.add_table(rows=1, cols=3)
 table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -95,56 +98,52 @@ for i, row in enumerate(table.rows):
                     run.bold = True
                     run.font.color.rgb = RGBColor(255, 255, 255)
 
-doc.add_heading("Reference design", level=1)
+doc.add_heading("2. Design: the grid and resilience set the gate", level=1)
 doc.add_paragraph(
     "The planning baseline is 20 MW of IT demand at a PUE of 1.25, producing 25 MW of total facility demand. "
     "At 8,760 operating hours, the calculated annual energy requirement is 219 GWh. The major design choice is "
     "closed-loop, non-evaporative cooling. The electrical concept includes protected distribution, UPS ride-through "
-    "and backup generation. A 48-hour grid outage at full facility demand would require 1,200 MWh of delivered energy "
-    "before any load shedding. The fuel plan, emissions permits and actual redundancy topology need engineering work."
+    "and backup generation. A 48-hour outage at full facility demand implies 1,200 MWh of delivered backup energy "
+    "before load shedding; the fuel plan, emissions permits and redundancy topology therefore require site-specific engineering."
 )
 
-doc.add_heading("Conditions for the next gate", level=1)
+investment_heading = doc.add_heading("3. Investment: stage capital against evidence", level=1)
+investment_heading.paragraph_format.page_break_before = True
+doc.add_paragraph(
+    "Build-and-own, lease and phased hybrid structures are available for comparison in the decision explorer. "
+    "The editable example assumes six months to grid energization; its delay stress adds a further year. It shows "
+    "how power price, utilization, PUE and delay affect pre-opening cash, operating cost, cost per productive "
+    "GPU-hour and capital at risk. This is a sensitivity tool, not a capital approval case: vendor prices, "
+    "financing terms, replacement schedules and contracted workloads must replace scenario inputs."
+)
+doc.add_paragraph(
+    "Development equity funds the utility study, site control, member-demand survey and early design. Construction "
+    "debt should follow a connection agreement, priced scope, permits and committed demand. Equipment financing "
+    "should follow GPU procurement terms and defined operating service levels."
+)
+
+doc.add_heading("4. Conditions and reversal tests", level=1)
 conditions = [
-    "Obtain a written utility energization timeline and the full connection cost for a specific property.",
-    "Confirm applicable large-load rules, curtailment obligations and operating flexibility.",
-    "Complete the site-specific resilience, backup-power and refuelling studies.",
-    "Preserve the closed-loop cooling requirement through vendor design and permitting.",
-    "Agree a procurement plan for electricity and carbon attributes that member institutions can accept.",
-    "Secure member demand commitments and a capacity policy that protects smaller institutions."
+    "Get a written energization date and full connection cost for a specific Texas property; confirm large-load rules and curtailment terms.",
+    "Complete resilience, backup-power, refuelling and closed-loop cooling engineering with permitting implications.",
+    "Secure member demand commitments, a capacity policy and an acceptable power and carbon-attribute procurement plan.",
+    "Obtain comparable priced build, lease and hybrid offers with financing and equipment replacement assumptions."
 ]
 for item in conditions:
     p = doc.add_paragraph(style="List Bullet")
     p.add_run(item)
-
-investment_heading = doc.add_heading("Investment path", level=1)
-investment_heading.paragraph_format.page_break_before = True
 doc.add_paragraph(
-    "Build-and-own, lease and phased hybrid structures are available for comparison in the decision explorer. "
-    "Its editable example demonstrates how power price, utilization, PUE and grid delay affect cash before opening, "
-    "annual operating cost, cost per productive GPU-hour and capital at risk. The example inputs are scenario "
-    "assumptions. Vendor quotes, financing terms, replacement schedules and contracted workloads are required "
-    "before the committee can use a ten-year cash flow to approve capital."
-)
-doc.add_paragraph(
-    "Development equity should fund the utility study, site control, demand survey and early design. Construction "
-    "debt follows a connection agreement, priced scope, permits and committed demand. Equipment financing follows "
-    "GPU procurement terms and operating service levels."
+    "Re-run the site rubric if Québec offers a materially earlier connection and durable delivered power rate, "
+    "if member workloads favor batch training or East Coast latency, or if Texas interconnection terms weaken "
+    "availability or economics. These are decision-changing tests, not reasons to commit capital now."
 )
 
-doc.add_heading("What would reverse the recommendation", level=1)
+doc.add_heading("Conclusion and recommendation", level=1)
 doc.add_paragraph(
-    "A materially earlier Québec connection paired with a durable delivered power rate could change the site result. "
-    "So could a member workload mix dominated by batch training, stronger East Coast latency needs, or Texas "
-    "interconnection terms that reduce availability or increase cost. The committee should revisit the same rubric "
-    "when those answers arrive."
-)
-
-doc.add_heading("Next action", level=1)
-doc.add_paragraph(
-    "Commission the utility and member-demand work, obtain priced build and lease proposals, and return to the "
-    "committee with a site-specific gate package. Keep the Texas reference design as the base case while the "
-    "alternative locations remain live comparators."
+    "Approve the bounded utility, site and member-demand diligence package. Keep Texas as the base case and "
+    "Québec and Helsinki as live comparators. The project team should return with a property-specific grid and "
+    "resilience design, member commitments and comparable priced delivery offers before requesting construction "
+    "or equipment capital."
 )
 
 footer = sec.footer.paragraphs[0]

@@ -53,13 +53,13 @@ export function applyScenario(input: ModelInputs, scenario: string): ModelInputs
 }
 
 export function tenYearCostPath(option: ReturnType<typeof investmentModel>[number], input: ModelInputs) {
-  const openingYear = 1 + Math.floor(input.gridDelayMonths / 12);
   let cumulative = 0;
   return Array.from({length: 10}, (_, index) => {
     const year = index + 1;
     const capital = year === 1 ? option.beforeOpening : 0;
-    const delay = year < openingYear ? input.delayCarryingMillionsPerMonth * 12 : year === openingYear ? input.delayCarryingMillionsPerMonth * (input.gridDelayMonths % 12) : 0;
-    const operating = year >= openingYear ? option.annual : 0;
+    const delayedMonths = Math.max(0, Math.min(12, input.gridDelayMonths - index * 12));
+    const delay = delayedMonths * input.delayCarryingMillionsPerMonth;
+    const operating = option.annual * (12 - delayedMonths) / 12;
     const net = -(capital + delay + operating);
     cumulative += net;
     return { year, capital, delay, operating, net, cumulative };
