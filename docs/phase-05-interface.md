@@ -250,10 +250,12 @@ Ten rows, one per year, each with: capital, operating, financing, replacement, r
 | Scenario | Overrides |
 |---|---|
 | Base case | None |
-| Stress A — grid one year late | `energization_delay_months` = 12 |
+| Stress A — grid delay | `energization_delay_months` = base value + 3 months in the demo example |
 | Stress B — utilization at half forecast | `gpu_utilization` = half the base value |
 
 Stored as `scenarios` with `scenario_overrides`, seeded through the content pipeline. Adding a case is a data change.
+
+Demo assumption addendum (October 6, 2026): the example now uses a small baseline grid delay of 0.5 months (about two weeks). The grid-delay stress adds three months, for 3.5 months total, following the project lead's feedback. This replaces the original one-year illustrative stress duration, not the existing base/stress scenario workflow or the parameter-override approach.
 
 ### 5.5 The what-if endpoint
 
