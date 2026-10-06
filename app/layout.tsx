@@ -29,7 +29,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return <html lang="en"><body>
     <header className="site-header"><div className="shell header-row">
       <a className="brand" href="/"><span className="brand-mark" aria-hidden="true"><i/><i/><i/><i/></span><span>Northstar<br/>Compute</span></a>
-      <nav className="nav" aria-label="Main navigation">{nav.map(([name,href]) => <a key={href} href={href}>{name}</a>)}</nav>
+      <nav className="nav" aria-label="Main navigation">{nav.filter(([name]) => !authenticated || user || (name !== 'Adviser' && name !== 'Workspace')).map(([name,href]) => <a key={href} href={href}>{name}</a>)}</nav>
       <a className="header-action" href={actionHref}>{actionLabel}</a>
     </div></header>
     <main>{children}</main>

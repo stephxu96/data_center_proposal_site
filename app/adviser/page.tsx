@@ -1,4 +1,5 @@
 import { env } from 'cloudflare:workers';
+import { redirect } from 'next/navigation';
 import { AdviserChat } from '../../components/adviser-chat';
 import { authEnabled } from '../../lib/access';
 import { getMember } from '../../lib/db/membership';
@@ -24,6 +25,7 @@ async function accessStatus() {
 }
 
 export default async function Adviser() {
+  if (authEnabled() && !(await getChatGPTUser())) redirect(chatGPTSignInPath('/adviser'));
   const status = await accessStatus();
   const live = Boolean(env.OPENAI_API_KEY?.trim());
   return <>

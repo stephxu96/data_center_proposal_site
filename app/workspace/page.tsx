@@ -1,4 +1,5 @@
 import { Workspace } from '../../components/workspace';
+import { redirect } from 'next/navigation';
 import { authEnabled } from '../../lib/access';
 import {
   getMember,
@@ -25,6 +26,7 @@ export default async function TeamWorkspace({
     : 'visitor';
   const enabled = authEnabled();
   const identity = enabled ? await getChatGPTUser() : null;
+  if (enabled && !identity) redirect(chatGPTSignInPath('/workspace'));
   const member = identity ? await getMember(identity.userId) : null;
   const teams =
     enabled && identity
