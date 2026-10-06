@@ -1,4 +1,7 @@
 import proposal from '../../seed/data/proposal.json';
+import economics from '../../seed/data/economics.json';
+import { calculateInvestment, type EconomicsInputs } from './economics';
+export const economicsDefaults=economics;
 
 export const proposalData = proposal;
 export type Candidate = (typeof proposal.candidates)[number];
@@ -28,7 +31,7 @@ export function numericInput(raw: string | string[] | undefined, min: number, ma
   return value !== null && Number.isFinite(value) && value >= min && value <= max ? value : null;
 }
 
-export type ModelInputs = typeof proposal.illustrativeModel & { pue: number };
+export type ModelInputs = typeof proposal.illustrativeModel & { pue: number } & Partial<typeof economics> & {itLoadMw?:number;operatingHours?:number};
 export const modelDefinitions = [
   ['powerPriceUsdMwh','Power price','USD / MWh',0,500],
   ['utilizationPct','GPU utilization','%',0,100],
@@ -41,40 +44,51 @@ export const modelDefinitions = [
   ['annualNonPowerOpsMillions','Non-power operations','USD millions / year',0,10000],
   ['delayCarryingMillionsPerMonth','Delay carrying cost','USD millions / month',0,10000],
   ['gridDelayMonths','Grid delay','months',0,60],
+  ['gpuPriceUsd','GPU acquisition price','USD / GPU',0,100000],
+  ['gridUpgradeMillions','Grid upgrades within capital','USD millions',0,10000],
+  ['landMillions','Land within capital','USD millions',0,10000],
+  ['staffMillions','Staff within non-power operations','USD millions / year',0,10000],
+  ['maintenanceMillions','Maintenance within non-power operations','USD millions / year',0,10000],
+  ['constructionMonths','Planned construction','months',0,60],
+  ['replacementYears','GPU replacement cycle','years',1,10],
+  ['debtSharePct','Debt share of initial capital','%',0,100],
+  ['debtRatePct','Debt interest','% / year',0,30],
+  ['debtTermYears','Debt amortization','years',1,30],
+  ['discountRatePct','Discount rate','%',0,30],
+  ['availabilityPct','Productive availability','%',0,100],
+  ['salvagePct','Year-three capital recovery','%',0,100],
+  ['leaseEscalationPct','Lease escalation','% / year',0,30],
+  ['hybridOwnedPct','Hybrid owned capacity','%',0,100],
+  ['hybridPhaseYear','Hybrid construction start','year',1,10],
+  ['memberChargeUsdHour','Member recovery charge','USD / productive GPU-hour',0,100],
 ] as const;
 export function investmentModel(input: ModelInputs) {
-  const annualPower = annualPowerCostMillions(input.powerPriceUsdMwh, input.pue);
-  const productiveHours = input.gpuCount * proposal.design.operatingHours * input.utilizationPct / 100;
-  const delayCarrying = input.gridDelayMonths * input.delayCarryingMillionsPerMonth;
-  const options = [
-    { id: 'build', name: 'Build and own', beforeOpening: input.buildCapexMillions, annual: input.annualNonPowerOpsMillions + annualPower, capitalAtRisk: input.buildCapexMillions },
-    { id: 'lease', name: 'Lease capacity', beforeOpening: 0, annual: input.annualLeaseMillions + annualPower, capitalAtRisk: 0 },
-    { id: 'hybrid', name: 'Phased hybrid', beforeOpening: input.hybridCapexMillions, annual: input.hybridLeaseMillions + input.annualNonPowerOpsMillions / 2 + annualPower, capitalAtRisk: input.hybridCapexMillions },
-  ];
-  return options.map(option => ({
-    ...option,
-    costPerProductiveHour: productiveHours > 0 ? option.annual * 1_000_000 / productiveHours : null,
-    beforeOpeningWithDelay: option.beforeOpening + delayCarrying,
-    capitalAtRiskWithDelay: option.capitalAtRisk + delayCarrying,
-  }));
+  return calculateInvestment({...economics,itLoadMw:proposal.design.itLoadMw,operatingHours:proposal.design.operatingHours,...input} as EconomicsInputs);
 }
 
 export function applyScenario(input: ModelInputs, scenario: string): ModelInputs {
   if (scenario === 'grid-delay') return { ...input, gridDelayMonths: input.gridDelayMonths + 3 };
+  if (scenario === 'grid-year-delay') return { ...input, gridDelayMonths: input.gridDelayMonths + 12 };
   if (scenario === 'half-utilization') return { ...input, utilizationPct: input.utilizationPct / 2 };
   return input;
 }
 
 export function tenYearCostPath(option: ReturnType<typeof investmentModel>[number], input: ModelInputs) {
-  let cumulative = 0;
-  return Array.from({length: 10}, (_, index) => {
-    const year = index + 1;
-    const capital = year === 1 ? option.beforeOpening : 0;
-    const delayedMonths = Math.max(0, Math.min(12, input.gridDelayMonths - index * 12));
-    const delay = delayedMonths * input.delayCarryingMillionsPerMonth;
-    const operating = option.annual * (12 - delayedMonths) / 12;
-    const net = -(capital + delay + operating);
-    cumulative += net;
-    return { year, capital, delay, operating, net, cumulative };
-  });
+  return option.rows;
+}
+
+// One-at-a-time sensitivity: each input moved ±25% from the current values, all
+// else held. Rows sort by the widest swing in ten-year cost per productive GPU-hour.
+export const sensitivityKeys = ['utilizationPct','annualLeaseMillions','buildCapexMillions','gpuPriceUsd','replacementYears','annualNonPowerOpsMillions','hybridLeaseMillions','hybridCapexMillions','powerPriceUsdMwh','pue','debtRatePct','gridDelayMonths'] as const;
+export function sensitivity(input: ModelInputs, swing = 0.25) {
+  const cost = (value: ModelInputs) => { try { return investmentModel(value).map(o => o.costPerProductiveHour); } catch { return null; } };
+  const base = cost(input);
+  return sensitivityKeys.map(key => {
+    const definition = modelDefinitions.find(([k]) => k === key)!;
+    const bounded = (v: number) => Math.min(definition[4], Math.max(definition[3], v));
+    const low = bounded((input[key] as number) * (1 - swing)), high = bounded((input[key] as number) * (1 + swing));
+    const lowCost = cost({ ...input, [key]: low }), highCost = cost({ ...input, [key]: high });
+    const spread = [0, 1, 2].map(i => lowCost?.[i] != null && highCost?.[i] != null ? Math.abs(highCost[i]! - lowCost[i]!) : 0);
+    return { key, label: definition[1], unit: definition[2], low, high, lowCost, highCost, swing: Math.max(...spread) };
+  }).sort((a, b) => b.swing - a.swing).map(row => ({ ...row, base }));
 }

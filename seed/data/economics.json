@@ -1,0 +1,19 @@
+{
+  "gpuPriceUsd": 20000,
+  "gridUpgradeMillions": 30,
+  "landMillions": 10,
+  "staffMillions": 12,
+  "maintenanceMillions": 8,
+  "constructionMonths": 18,
+  "replacementYears": 4,
+  "debtSharePct": 60,
+  "debtRatePct": 7,
+  "debtTermYears": 10,
+  "discountRatePct": 8,
+  "availabilityPct": 99.5,
+  "salvagePct": 20,
+  "leaseEscalationPct": 2,
+  "hybridOwnedPct": 50,
+  "hybridPhaseYear": 3,
+  "memberChargeUsdHour": 0
+}

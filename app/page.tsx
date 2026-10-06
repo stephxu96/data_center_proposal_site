@@ -1,5 +1,6 @@
 import { annualEnergyGwh, facilityPowerMw, proposalData, weightedScore } from '../lib/db/proposal';
 import { getPublishedDesignInputs } from '../lib/db/published-design';
+import { largestUncertainties, sixDecisions } from '../lib/open-questions';
 
 export const dynamic='force-dynamic';
 export default async function Overview() {
@@ -24,7 +25,9 @@ export default async function Overview() {
         <article className="card"><span className="eyebrow">Decision score</span><h3 className="number"><a href="/evidence#score-tx">{weightedScore(tx.scores).toFixed(2)}</a></h3><p>Weighted assessment across demand, power, grid, climate and operating criteria. <a className="text-link" href="/evidence#score-tx">See the method ↗</a></p></article>
         <article className="card dark"><span className="eyebrow" style={{color:'#90e5d1'}}>Principal design choice</span><h3>{d.cooling}</h3><p>Avoids routine evaporative demand while keeping the thermal design compatible with a high-density AI workload.</p></article>
       </div></div></section>
+    <section className="section"><div className="shell"><div className="section-head"><div><span className="eyebrow">Three largest uncertainties</span><h2>What could still change the answer.</h2></div><a className="text-link" href="/evidence#open-questions">See the open questions ↗</a></div><div className="grid-3">{largestUncertainties.map(u=><a className="card" key={u.key} href={`/evidence#${u.key}`}><span className="tag gray">Unknown</span><h3>{u.title}</h3><p>{u.text}</p></a>)}</div></div></section>
     <section className="section band"><div className="shell"><div className="section-head"><div><span className="eyebrow">Before a commitment</span><h2>Five conditions define the next gate.</h2></div><a className="text-link" href="/investment">View investment path ↗</a></div><div className="grid-2"><div className="card"><ul className="list">{proposalData.conditions.slice(0,3).map(x=><li key={x}>{x}</li>)}</ul></div><div className="card"><ul className="list">{proposalData.conditions.slice(3).map(x=><li key={x}>{x}</li>)}<li>Agree member demand and capacity allocation before financing.</li></ul></div></div></div></section>
+    <section className="section band" id="six-decisions"><div className="shell"><div className="section-head"><div><span className="eyebrow">The six investment decisions</span><h2>Where each question is answered.</h2></div></div><div className="grid-3">{sixDecisions.map(([title,text,href],i)=><a className="card" key={title} href={href}><div className="icon">{String(i+1).padStart(2,'0')}</div><h3>{title}</h3><p>{text}</p></a>)}</div></div></section>
     <section className="section"><div className="shell"><div className="section-head"><div><span className="eyebrow">The experience</span><h2>Follow the proposal from location to decision.</h2></div></div><div className="grid-3">
       <a className="card" href="/countries"><div className="icon">01</div><h3>Compare locations</h3><p>See how Texas, Québec and Helsinki perform against the same criteria.</p></a>
       <a className="card" href="/design"><div className="icon">02</div><h3>Walk the system</h3><p>Trace power, cooling and resilience through the initial design.</p></a>

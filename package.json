@@ -12,8 +12,9 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "db:generate": "drizzle-kit generate",
-    "test": "node scripts/test-migrations.mjs && node scripts/test-seed.mjs && node --experimental-strip-types scripts/test-workspace.mjs",
-    "seed:generate": "node --experimental-strip-types seed/generate.ts"
+    "test": "node scripts/test-migrations.mjs && node scripts/test-seed.mjs && node scripts/test-content.mjs && node --experimental-strip-types scripts/test-economics.mjs && node --experimental-strip-types scripts/test-workspace.mjs",
+    "seed:generate": "node --experimental-strip-types seed/generate.ts",
+    "seed:content": "node seed/generate-content.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

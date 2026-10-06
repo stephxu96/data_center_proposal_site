@@ -1,0 +1,2056 @@
+{
+  "version": "content-2026-10-06-v1",
+  "statements": [
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD million",
+        "USD million"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "years",
+        "years"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD/GPU",
+        "USD/GPU"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD/GPU-hour",
+        "USD/GPU-hour"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "MWh",
+        "MWh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "powerPriceUsdMwh",
+        "power Price Usd Mwh",
+        "USD/MWh",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-powerPriceUsdMwh",
+        "university-design",
+        "powerPriceUsdMwh",
+        80,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-powerPriceUsdMwh",
+        "university-design",
+        "power Price Usd Mwh is an illustrative planning assumption.",
+        "assumption",
+        80,
+        "USD/MWh",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-powerPriceUsdMwh-powerPriceUsdMwh",
+        "content-powerPriceUsdMwh",
+        "input",
+        "powerPriceUsdMwh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "utilizationPct",
+        "utilization Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-utilizationPct",
+        "university-design",
+        "utilizationPct",
+        65,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-utilizationPct",
+        "university-design",
+        "utilization Pct is an illustrative planning assumption.",
+        "assumption",
+        65,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-utilizationPct-utilizationPct",
+        "content-utilizationPct",
+        "input",
+        "utilizationPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gpuCount",
+        "gpu Count",
+        "count",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-gpuCount",
+        "university-design",
+        "gpuCount",
+        12000,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-gpuCount",
+        "university-design",
+        "gpu Count is an illustrative planning assumption.",
+        "assumption",
+        12000,
+        "count",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-gpuCount-gpuCount",
+        "content-gpuCount",
+        "input",
+        "gpuCount"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "buildCapexMillions",
+        "build Capex Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-buildCapexMillions",
+        "university-design",
+        "buildCapexMillions",
+        480,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-buildCapexMillions",
+        "university-design",
+        "build Capex Millions is an illustrative planning assumption.",
+        "assumption",
+        480,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-buildCapexMillions-buildCapexMillions",
+        "content-buildCapexMillions",
+        "input",
+        "buildCapexMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hybridCapexMillions",
+        "hybrid Capex Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-hybridCapexMillions",
+        "university-design",
+        "hybridCapexMillions",
+        210,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-hybridCapexMillions",
+        "university-design",
+        "hybrid Capex Millions is an illustrative planning assumption.",
+        "assumption",
+        210,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-hybridCapexMillions-hybridCapexMillions",
+        "content-hybridCapexMillions",
+        "input",
+        "hybridCapexMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "annualLeaseMillions",
+        "annual Lease Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-annualLeaseMillions",
+        "university-design",
+        "annualLeaseMillions",
+        92,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-annualLeaseMillions",
+        "university-design",
+        "annual Lease Millions is an illustrative planning assumption.",
+        "assumption",
+        92,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-annualLeaseMillions-annualLeaseMillions",
+        "content-annualLeaseMillions",
+        "input",
+        "annualLeaseMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hybridLeaseMillions",
+        "hybrid Lease Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-hybridLeaseMillions",
+        "university-design",
+        "hybridLeaseMillions",
+        48,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-hybridLeaseMillions",
+        "university-design",
+        "hybrid Lease Millions is an illustrative planning assumption.",
+        "assumption",
+        48,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-hybridLeaseMillions-hybridLeaseMillions",
+        "content-hybridLeaseMillions",
+        "input",
+        "hybridLeaseMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "annualNonPowerOpsMillions",
+        "annual Non Power Ops Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-annualNonPowerOpsMillions",
+        "university-design",
+        "annualNonPowerOpsMillions",
+        38,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-annualNonPowerOpsMillions",
+        "university-design",
+        "annual Non Power Ops Millions is an illustrative planning assumption.",
+        "assumption",
+        38,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-annualNonPowerOpsMillions-annualNonPowerOpsMillions",
+        "content-annualNonPowerOpsMillions",
+        "input",
+        "annualNonPowerOpsMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "delayCarryingMillionsPerMonth",
+        "delay Carrying Millions Per Month",
+        "ratio",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-delayCarryingMillionsPerMonth",
+        "university-design",
+        "delayCarryingMillionsPerMonth",
+        2,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-delayCarryingMillionsPerMonth",
+        "university-design",
+        "delay Carrying Millions Per Month is an illustrative planning assumption.",
+        "assumption",
+        2,
+        "ratio",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-delayCarryingMillionsPerMonth-delayCarryingMillionsPerMonth",
+        "content-delayCarryingMillionsPerMonth",
+        "input",
+        "delayCarryingMillionsPerMonth"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gridDelayMonths",
+        "grid Delay Months",
+        "months",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-gridDelayMonths",
+        "university-design",
+        "gridDelayMonths",
+        0.5,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-gridDelayMonths",
+        "university-design",
+        "grid Delay Months is an illustrative planning assumption.",
+        "assumption",
+        0.5,
+        "months",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-gridDelayMonths-gridDelayMonths",
+        "content-gridDelayMonths",
+        "input",
+        "gridDelayMonths"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gpuPriceUsd",
+        "gpu Price Usd",
+        "USD/GPU",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-gpuPriceUsd",
+        "university-design",
+        "gpuPriceUsd",
+        20000,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-gpuPriceUsd",
+        "university-design",
+        "gpu Price Usd is an illustrative planning assumption.",
+        "assumption",
+        20000,
+        "USD/GPU",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-gpuPriceUsd-gpuPriceUsd",
+        "content-gpuPriceUsd",
+        "input",
+        "gpuPriceUsd"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gridUpgradeMillions",
+        "grid Upgrade Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-gridUpgradeMillions",
+        "university-design",
+        "gridUpgradeMillions",
+        30,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-gridUpgradeMillions",
+        "university-design",
+        "grid Upgrade Millions is an illustrative planning assumption.",
+        "assumption",
+        30,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-gridUpgradeMillions-gridUpgradeMillions",
+        "content-gridUpgradeMillions",
+        "input",
+        "gridUpgradeMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "landMillions",
+        "land Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-landMillions",
+        "university-design",
+        "landMillions",
+        10,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-landMillions",
+        "university-design",
+        "land Millions is an illustrative planning assumption.",
+        "assumption",
+        10,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-landMillions-landMillions",
+        "content-landMillions",
+        "input",
+        "landMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "staffMillions",
+        "staff Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-staffMillions",
+        "university-design",
+        "staffMillions",
+        12,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-staffMillions",
+        "university-design",
+        "staff Millions is an illustrative planning assumption.",
+        "assumption",
+        12,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-staffMillions-staffMillions",
+        "content-staffMillions",
+        "input",
+        "staffMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "maintenanceMillions",
+        "maintenance Millions",
+        "USD million",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-maintenanceMillions",
+        "university-design",
+        "maintenanceMillions",
+        8,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-maintenanceMillions",
+        "university-design",
+        "maintenance Millions is an illustrative planning assumption.",
+        "assumption",
+        8,
+        "USD million",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-maintenanceMillions-maintenanceMillions",
+        "content-maintenanceMillions",
+        "input",
+        "maintenanceMillions"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "constructionMonths",
+        "construction Months",
+        "months",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-constructionMonths",
+        "university-design",
+        "constructionMonths",
+        18,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-constructionMonths",
+        "university-design",
+        "construction Months is an illustrative planning assumption.",
+        "assumption",
+        18,
+        "months",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-constructionMonths-constructionMonths",
+        "content-constructionMonths",
+        "input",
+        "constructionMonths"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "replacementYears",
+        "replacement Years",
+        "years",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-replacementYears",
+        "university-design",
+        "replacementYears",
+        4,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-replacementYears",
+        "university-design",
+        "replacement Years is an illustrative planning assumption.",
+        "assumption",
+        4,
+        "years",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-replacementYears-replacementYears",
+        "content-replacementYears",
+        "input",
+        "replacementYears"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "debtSharePct",
+        "debt Share Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-debtSharePct",
+        "university-design",
+        "debtSharePct",
+        60,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-debtSharePct",
+        "university-design",
+        "debt Share Pct is an illustrative planning assumption.",
+        "assumption",
+        60,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-debtSharePct-debtSharePct",
+        "content-debtSharePct",
+        "input",
+        "debtSharePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "debtRatePct",
+        "debt Rate Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-debtRatePct",
+        "university-design",
+        "debtRatePct",
+        7,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-debtRatePct",
+        "university-design",
+        "debt Rate Pct is an illustrative planning assumption.",
+        "assumption",
+        7,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-debtRatePct-debtRatePct",
+        "content-debtRatePct",
+        "input",
+        "debtRatePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "debtTermYears",
+        "debt Term Years",
+        "years",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-debtTermYears",
+        "university-design",
+        "debtTermYears",
+        10,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-debtTermYears",
+        "university-design",
+        "debt Term Years is an illustrative planning assumption.",
+        "assumption",
+        10,
+        "years",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-debtTermYears-debtTermYears",
+        "content-debtTermYears",
+        "input",
+        "debtTermYears"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "discountRatePct",
+        "discount Rate Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-discountRatePct",
+        "university-design",
+        "discountRatePct",
+        8,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-discountRatePct",
+        "university-design",
+        "discount Rate Pct is an illustrative planning assumption.",
+        "assumption",
+        8,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-discountRatePct-discountRatePct",
+        "content-discountRatePct",
+        "input",
+        "discountRatePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "availabilityPct",
+        "availability Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-availabilityPct",
+        "university-design",
+        "availabilityPct",
+        99.5,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-availabilityPct",
+        "university-design",
+        "availability Pct is an illustrative planning assumption.",
+        "assumption",
+        99.5,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-availabilityPct-availabilityPct",
+        "content-availabilityPct",
+        "input",
+        "availabilityPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "salvagePct",
+        "salvage Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-salvagePct",
+        "university-design",
+        "salvagePct",
+        20,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-salvagePct",
+        "university-design",
+        "salvage Pct is an illustrative planning assumption.",
+        "assumption",
+        20,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-salvagePct-salvagePct",
+        "content-salvagePct",
+        "input",
+        "salvagePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "leaseEscalationPct",
+        "lease Escalation Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-leaseEscalationPct",
+        "university-design",
+        "leaseEscalationPct",
+        2,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-leaseEscalationPct",
+        "university-design",
+        "lease Escalation Pct is an illustrative planning assumption.",
+        "assumption",
+        2,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-leaseEscalationPct-leaseEscalationPct",
+        "content-leaseEscalationPct",
+        "input",
+        "leaseEscalationPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hybridOwnedPct",
+        "hybrid Owned Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-hybridOwnedPct",
+        "university-design",
+        "hybridOwnedPct",
+        50,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-hybridOwnedPct",
+        "university-design",
+        "hybrid Owned Pct is an illustrative planning assumption.",
+        "assumption",
+        50,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-hybridOwnedPct-hybridOwnedPct",
+        "content-hybridOwnedPct",
+        "input",
+        "hybridOwnedPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hybridPhaseYear",
+        "hybrid Phase Year",
+        "years",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-hybridPhaseYear",
+        "university-design",
+        "hybridPhaseYear",
+        3,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-hybridPhaseYear",
+        "university-design",
+        "hybrid Phase Year is an illustrative planning assumption.",
+        "assumption",
+        3,
+        "years",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-hybridPhaseYear-hybridPhaseYear",
+        "content-hybridPhaseYear",
+        "input",
+        "hybridPhaseYear"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "memberChargeUsdHour",
+        "member Charge Usd Hour",
+        "USD/GPU-hour",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-memberChargeUsdHour",
+        "university-design",
+        "memberChargeUsdHour",
+        0,
+        "assumption",
+        "Zero recovery is an explicit cost-only scenario, not a missing-value placeholder; no signed member revenue is assumed.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-memberChargeUsdHour",
+        "university-design",
+        "member Charge Usd Hour is an illustrative planning assumption.",
+        "assumption",
+        0,
+        "USD/GPU-hour",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-memberChargeUsdHour-memberChargeUsdHour",
+        "content-memberChargeUsdHour",
+        "input",
+        "memberChargeUsdHour"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "smallInstitutionReservePct",
+        "small Institution Reserve Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-smallInstitutionReservePct",
+        "university-design",
+        "smallInstitutionReservePct",
+        20,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-smallInstitutionReservePct",
+        "university-design",
+        "small Institution Reserve Pct is an illustrative planning assumption.",
+        "assumption",
+        20,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-smallInstitutionReservePct-smallInstitutionReservePct",
+        "content-smallInstitutionReservePct",
+        "input",
+        "smallInstitutionReservePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "singleMemberCapPct",
+        "single Member Cap Pct",
+        "%",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-singleMemberCapPct",
+        "university-design",
+        "singleMemberCapPct",
+        35,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-singleMemberCapPct",
+        "university-design",
+        "single Member Cap Pct is an illustrative planning assumption.",
+        "assumption",
+        35,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-singleMemberCapPct-singleMemberCapPct",
+        "content-singleMemberCapPct",
+        "input",
+        "singleMemberCapPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gridOutageHours",
+        "grid Outage Hours",
+        "hours",
+        0,
+        null,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,source_id,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-P-gridOutageHours",
+        "university-design",
+        "gridOutageHours",
+        48,
+        "assumption",
+        "Illustrative committee planning assumption, editable independently of a vendor quote; not prescribed by the course.",
+        "S63",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-gridOutageHours",
+        "university-design",
+        "grid Outage Hours is an illustrative planning assumption.",
+        "assumption",
+        48,
+        "hours",
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-gridOutageHours-gridOutageHours",
+        "content-gridOutageHours",
+        "input",
+        "gridOutageHours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_outage_hours",
+        "university-design",
+        "Grid outage duration.",
+        "calculation",
+        null,
+        "hours",
+        "grid_outage_hours",
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-grid_outage_hours-gridOutageHours",
+        "content-grid_outage_hours",
+        "input",
+        "gridOutageHours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-backup_energy_mwh",
+        "university-design",
+        "Required delivered electrical energy during the reference grid outage.",
+        "calculation",
+        null,
+        "MWh",
+        "backup_energy_mwh",
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-backup_energy_mwh-gridOutageHours",
+        "content-backup_energy_mwh",
+        "input",
+        "gridOutageHours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-backup_energy_mwh-it_load_mw",
+        "content-backup_energy_mwh",
+        "input",
+        "it_load_mw"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-backup_energy_mwh-pue",
+        "content-backup_energy_mwh",
+        "input",
+        "pue"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-small_institution_reserve",
+        "university-design",
+        "Proposed consortium capacity-allocation rule.",
+        "design_decision",
+        null,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-small_institution_reserve-smallInstitutionReservePct",
+        "content-small_institution_reserve",
+        "input",
+        "smallInstitutionReservePct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-single_member_cap",
+        "university-design",
+        "Proposed consortium capacity-allocation rule.",
+        "design_decision",
+        null,
+        "%",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-link-single_member_cap-singleMemberCapPct",
+        "content-single_member_cap",
+        "input",
+        "singleMemberCapPct"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-development-gap",
+        "university-design",
+        "Site control, member demand survey, allocation agreement and preliminary utility response. These documents have not yet been supplied.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "financing",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO evidence_requirements (seed_key,design_id,stage,requirement_text,sort_order,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-development",
+        "university-design",
+        "development_equity",
+        "Site control, member demand survey, allocation agreement and preliminary utility response.",
+        0,
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO requirement_claims (requirement_id,claim_id) VALUES ((SELECT id FROM evidence_requirements WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-development",
+        "content-development-gap"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-construction-gap",
+        "university-design",
+        "Written energization date and upgrade cost, permits, priced construction and resilience design, and signed member commitments. These documents have not yet been supplied.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "financing",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO evidence_requirements (seed_key,design_id,stage,requirement_text,sort_order,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-construction",
+        "university-design",
+        "construction_debt",
+        "Written energization date and upgrade cost, permits, priced construction and resilience design, and signed member commitments.",
+        1,
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO requirement_claims (requirement_id,claim_id) VALUES ((SELECT id FROM evidence_requirements WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-construction",
+        "content-construction-gap"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-equipment-gap",
+        "university-design",
+        "GPU quotation, performance acceptance, replacement and service-level plan, utilization commitments and member credit support. These documents have not yet been supplied.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "financing",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO evidence_requirements (seed_key,design_id,stage,requirement_text,sort_order,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-equipment",
+        "university-design",
+        "equipment_financing",
+        "GPU quotation, performance acceptance, replacement and service-level plan, utilization commitments and member credit support.",
+        2,
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO requirement_claims (requirement_id,claim_id) VALUES ((SELECT id FROM evidence_requirements WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-equipment",
+        "content-equipment-gap"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narratives (seed_key,design_id,kind,key,version,title,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_largest_component",
+        "university-design",
+        "failure_walkthrough",
+        "failure_largest_component",
+        1,
+        "Largest transformer failure",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_largest_component-0",
+        "content-failure_largest_component",
+        1,
+        "Protective relays isolate the failed transformer and open its breakers; the remaining path must be rated for the required critical load."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_largest_component-1",
+        "content-failure_largest_component",
+        2,
+        "UPS bridges the transfer while operators verify the alternate supply and cooling pumps. No uptime credit is assigned to untested transfer behavior."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_largest_component-2",
+        "content-failure_largest_component",
+        3,
+        "Shed discretionary batch jobs before interrupting teaching, critical inference or storage integrity; checkpoint long-running training when available capacity is insufficient."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_largest_component-3",
+        "content-failure_largest_component",
+        4,
+        "Return only after fault clearance and a witnessed load test. Transformer ratings, selective coordination, UPS autonomy and common-mode faults require the site engineering study."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narratives (seed_key,design_id,kind,key,version,title,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h",
+        "university-design",
+        "failure_walkthrough",
+        "failure_grid_48h",
+        1,
+        "Extended grid outage",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-0",
+        "content-failure_grid_48h",
+        1,
+        "The reference outage lasts {claim:grid_outage_hours}. At full facility demand it requires {claim:backup_energy_mwh} of delivered backup energy."
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-0",
+        "content-grid_outage_hours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-0",
+        "content-backup_energy_mwh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-1",
+        "content-failure_grid_48h",
+        2,
+        "UPS bridges generator startup; the protected cooling, controls, network and storage remain on the critical-power path."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-2",
+        "content-failure_grid_48h",
+        3,
+        "Fuel quantity equals delivered backup energy divided by the tested generator electrical yield per unit of fuel. The fuel yield and usable tank capacity are not established; procurement requires both, a reserve and a refuelling contract."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-failure_grid_48h-3",
+        "content-failure_grid_48h",
+        4,
+        "Shed flexible training first, then nonessential teaching; preserve critical inference, network controls, safe cooling and storage shutdown. Resupply access, permits, restart time and simultaneous generator failures must be tested."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narratives (seed_key,design_id,kind,key,version,title,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact",
+        "university-design",
+        "grid_impact",
+        "grid_impact",
+        1,
+        "Grid and community impact",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-0",
+        "content-grid_impact",
+        1,
+        "The utility sees {claim:facility_power_mw} peak facility demand and {claim:annual_energy_gwh} annual energy at the operating baseline."
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-0",
+        "facility_power_mw"
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-0",
+        "annual_energy_gwh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-1",
+        "content-grid_impact",
+        2,
+        "Stage cluster startup and cap load ramps; flexible batch work may be curtailed under an agreed utility protocol without promising that critical workloads can always stop."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-2",
+        "content-grid_impact",
+        3,
+        "Do not credit annual renewable certificates as firm hourly backup. No onsite solar, wind, gas or storage contribution is assumed in the adequacy calculation."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-grid_impact-3",
+        "content-grid_impact",
+        4,
+        "The interconnection study must establish upgrades, fault levels, power quality, curtailment rights and who pays. Allocate project-driven upgrades to the consortium rather than assuming other customers subsidize them."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narratives (seed_key,design_id,kind,key,version,title,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing",
+        "university-design",
+        "access_policy",
+        "capacity_sharing",
+        1,
+        "Fair capacity and cost allocation",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-0",
+        "content-capacity_sharing",
+        1,
+        "Reserve {claim:small_institution_reserve} of discretionary productive capacity for smaller institutions and teaching; cap any one member at {claim:single_member_cap} of discretionary allocation."
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-0",
+        "content-small_institution_reserve"
+      ]
+    },
+    {
+      "sql": "INSERT INTO step_claims (step_id,claim_id) VALUES ((SELECT id FROM narrative_steps WHERE seed_key=?),(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-0",
+        "content-single_member_cap"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-1",
+        "content-capacity_sharing",
+        2,
+        "Assign reserved capacity through take-or-pay commitments and transparent peer review. Release unused reservations to a common queue; large training jobs use scheduled blocks while teaching and inference receive protected windows."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-2",
+        "content-capacity_sharing",
+        3,
+        "Charge fixed costs by reserved capacity and variable costs by metered use. Publish utilization, queue time and allocation outcomes. An independent scientific panel hears appeals and conflicts of interest are disclosed."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-capacity_sharing-3",
+        "content-capacity_sharing",
+        4,
+        "The consortium board owns the facility, approves prices and admits members. Universities retain data ownership. Contract construction, utility supply and specialist operations with performance and security obligations."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narratives (seed_key,design_id,kind,key,version,title,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-workload_requirements",
+        "university-design",
+        "access_policy",
+        "workload_requirements",
+        1,
+        "What the members must demonstrate",
+        "2026-10-06T21:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-workload_requirements-0",
+        "content-workload_requirements",
+        1,
+        "Training researchers need contiguous GPU allocations and checkpoint storage; teaching users need scheduled sessions, and inference services need responsive protected capacity."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-workload_requirements-1",
+        "content-workload_requirements",
+        2,
+        "Productive GPU-hour demand, reservation timing and signed minimum commitments are not established. The modeled GPU-hours are capacity, not proof of demand; the facility scale remains conditional on the member survey."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-workload_requirements-2",
+        "content-workload_requirements",
+        3,
+        "Set workload-specific availability and recovery objectives. Separate tenants and sensitive datasets, use least privilege and encryption, log administrator actions and test restore procedures."
+      ]
+    },
+    {
+      "sql": "INSERT INTO narrative_steps (seed_key,narrative_id,step_no,step_text) VALUES (?,(SELECT id FROM narratives WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "content-workload_requirements-3",
+        "content-workload_requirements",
+        4,
+        "The consortium owns the facility and GPU fleet in the build case; lease purchases managed capacity. The hybrid contracts immediate access and defers owned capacity until financing gates close."
+      ]
+    },
+    {
+      "sql": "INSERT OR IGNORE INTO seed_runs (seed_version,applied_at) VALUES (?,?)",
+      "params": [
+        "content-2026-10-06-v1",
+        "2026-10-06T00:00:00Z"
+      ]
+    }
+  ]
+}

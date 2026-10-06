@@ -1,6 +1,7 @@
 import { applyScenario, investmentModel, modelDefinitions, proposalData, tenYearCostPath, type ModelInputs } from '../../../lib/db/proposal';
+import { getModelInputs } from '../../../lib/db/model-inputs';
 
-const scenarios = ['base', 'grid-delay', 'half-utilization'] as const;
+const scenarios = ['base', 'grid-delay', 'grid-year-delay', 'half-utilization'] as const;
 const optionIds = ['build', 'lease', 'hybrid'] as const;
 const limits = new Map<string, readonly [number, number]>(modelDefinitions.map(([key,,,min,max]) => [key, [min, max]]));
 
@@ -28,9 +29,10 @@ export async function POST(request: Request) {
     if (value < range[0] || value > range[1]) return invalid(`Value outside the allowed range for ${key}.`);
   }
 
-  const base = { ...proposalData.illustrativeModel, pue: proposalData.design.pue };
+  const base = await getModelInputs();
   const input = applyScenario({ ...base, ...overrides } as ModelInputs, payload.scenario);
-  const options = investmentModel(input);
+  let options:ReturnType<typeof investmentModel>;
+  try{options=investmentModel(input);}catch(error){return invalid(error instanceof Error?error.message:'Invalid model assumptions.');}
   const selected = options.find(option => option.id === payload.option);
   if (!selected) return invalid('Unknown option.');
   return Response.json({

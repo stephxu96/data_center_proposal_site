@@ -10,6 +10,7 @@ import { LiveEvidenceTable } from '../../components/live-evidence-table';
 import { ClaimLedger } from '../../components/claim-ledger';
 import { getPublicDesign,getDesignClaims,getSources,getClaimSourceMap } from '../../lib/db/evidence';
 import { getPublishedDesignInputs } from '../../lib/db/published-design';
+import { largestUncertainties } from '../../lib/open-questions';
 
 export const dynamic = 'force-dynamic';
 
@@ -245,16 +246,23 @@ export default async function Evidence() {
                   utilization.
                 </li>
                 <li>
-                  Cash before opening = option capital + delay months × monthly
-                  carrying cost.
+                  Cash before opening = peak cumulative pre-opening funding:
+                  facility, grid and land capital, the GPU fleet at commissioning,
+                  delay carrying cost, construction interest and interim lease,
+                  less member recovery.
                 </li>
                 <li>
-                  Annual operating cost = option-specific lease and operating
-                  costs + annual power cost.
+                  Annual operating cost = full-year electricity, staffing,
+                  maintenance, other operations and lease after opening.
                 </li>
                 <li>
-                  Cost per productive GPU-hour = annual operating cost ÷
-                  productive GPU-hours.
+                  Cost per productive GPU-hour = ten-year capital, operating,
+                  financing, replacement and delay cost ÷ ten-year productive
+                  GPU-hours.
+                </li>
+                <li>
+                  Capital at risk = capital, replacement, delay and interest spent
+                  by year three, less the entered recovery percentage of capital.
                 </li>
                 <li>
                   The ten-year path prorates operating cost in a partial opening
@@ -265,7 +273,8 @@ export default async function Evidence() {
           </div>
           <p className="subtle" style={{ marginTop: 18 }}>
             The scenario controls may replace these example assumptions. The
-            grid-delay stress adds three months to the entered grid delay; the
+            required grid stress adds twelve months (one year) to the entered
+            grid delay, a smaller sensitivity adds three months, and the
             utilization stress halves the entered utilization.
           </p>
         </div>
@@ -274,35 +283,18 @@ export default async function Evidence() {
         <div className="shell">
           <div className="section-head">
             <div>
-              <span className="eyebrow">Open questions</span>
+              <span className="eyebrow" id="open-questions">Open questions</span>
               <h2>What still determines approval.</h2>
             </div>
           </div>
           <div className="grid-3">
-            <div className="card">
-              <span className="tag gray">Unknown</span>
-              <h3>Grid connection</h3>
-              <p>
-                No site-specific energization date or connection cost is
-                established for the three candidates.
-              </p>
-            </div>
-            <div className="card">
-              <span className="tag gray">Unknown</span>
-              <h3>Member commitment</h3>
-              <p>
-                Contracted GPU-hours and each institution’s minimum reservation
-                remain to be agreed.
-              </p>
-            </div>
-            <div className="card">
-              <span className="tag gray">Unknown</span>
-              <h3>Vendor pricing</h3>
-              <p>
-                Equipment, construction, lease and service-level offers
-                determine the bankable economics.
-              </p>
-            </div>
+            {largestUncertainties.map((u) => (
+              <div className="card" key={u.key} id={u.key}>
+                <span className="tag gray">Unknown</span>
+                <h3>{u.title}</h3>
+                <p>{u.text}</p>
+              </div>
+            ))}
           </div>
           <p className="lead" style={{ marginTop: 30 }}>
             The{' '}

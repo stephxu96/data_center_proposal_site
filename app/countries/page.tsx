@@ -2,11 +2,19 @@ import { proposalData, weightedScore } from '../../lib/db/proposal';
 import { getLiveCountries } from '../../lib/db/live';
 import { RefreshData } from '../../components/refresh-data';
 import { env } from 'cloudflare:workers';
+import { getComparison,getComparisonMetrics } from '../../lib/db/comparison';
+import { getPublishedDesignInputs } from '../../lib/db/published-design';
 
 export const dynamic = 'force-dynamic';
 
-export default async function Countries() {
-  const candidates = proposalData.candidates;
+export default async function Countries({searchParams}:{searchParams:Promise<{threshold?:string}>}) {
+  const params=await searchParams;
+  const design=await getPublishedDesignInputs();
+  const requested=Number(params.threshold);
+  const threshold=params.threshold&&Number.isFinite(requested)&&requested>=0&&requested<=1000?requested:design.latencyThresholdMs;
+  const {candidates,criteria,gates}=await getComparison(threshold);
+  const comparisonMetrics=await getComparisonMetrics();
+  const weightedScore=(scores:number[])=>criteria.reduce((sum,c,i)=>sum+scores[i]*c.weight/100,0);
   const live = await getLiveCountries();
   return (
     <>
@@ -45,7 +53,7 @@ export default async function Countries() {
                 </div>
                 <p style={{ marginTop: 20 }}>
                   {c.demandShare}% of modeled addressable demand within{' '}
-                  {proposalData.design.latencyThresholdMs} ms round trip ·
+                  {threshold} ms round trip ·
                   calculation
                 </p>
               </article>
@@ -176,7 +184,7 @@ export default async function Countries() {
                 </tr>
               </thead>
               <tbody>
-                {proposalData.criteria.map((criterion, index) => (
+                {criteria.map((criterion, index) => (
                   <tr key={criterion.id}>
                     <td>
                       <strong>{criterion.name}</strong>
@@ -214,6 +222,7 @@ export default async function Countries() {
           </p>
         </div>
       </section>
+      <section className="section" id="site-evidence"><div className="shell"><h2>Country inventory and regional evidence.</h2><form action="/countries" method="get" className="card"><label htmlFor="threshold">Latency threshold (ms) · assumption</label><input id="threshold" type="number" name="threshold" min="0" max="1000" defaultValue={threshold}/><button className="button" type="submit">Recalculate proximity ↗</button></form><p className="subtle">Threshold changes are temporary. National electricity values and regional site values have different scopes; do not substitute one for the other.</p><div className="table-scroll"><table className="data-table"><thead><tr><th>Measure</th>{candidates.map(c=><th key={c.id}>{c.country} / {c.site}</th>)}</tr></thead><tbody>{[['datacenter_count','Reported data centers'],['dc_electricity_use','Reported data-center electricity'],['industrial_electricity_price','Regional electricity price'],['grid_carbon_intensity','Regional carbon intensity'],['cooling_degree_days','Cooling-degree days'],['water_stress_score','Water constraint measure'],['avg_outage_minutes_per_customer','Grid outage measure'],['leasable_gpu_count','Lease-market GPU capacity'],['grid_connection_months','Site-specific connection time']].map(([key,label])=><tr key={key}><td>{label}</td>{candidates.map((c,i)=>{const m=comparisonMetrics.find(m=>m.metric_name===key&&(m.site===c.id||m.country===['US','CA','FI'][i]));return <td key={c.id}>{m&&m.value!==null?<><strong>{m.value} {m.unit}</strong><br/><span className="tag">{m.claim_type}</span><p>{m.notes}</p><a className="text-link" href={m.url} target="_blank" rel="noreferrer">{m.publisher} ↗</a><p className="subtle">Period {m.reporting_period} · retrieved {m.retrieved_at.slice(0,10)}</p></>:<><strong>Not established</strong><p>No comparable {label.toLowerCase()} record has been entered for this location.</p></>}</td>;})}</tr>)}</tbody></table></div><h3>Entry gates</h3><div className="grid-3">{candidates.map(c=><div className="card" key={c.id}><h3>{c.site}</h3>{gates.filter(g=>g.site_key===c.id).map(g=><p key={g.criterion_code}><a className="text-link" href={`/evidence#claim-${g.claim_id}`}>{g.criterion_code}: {g.gate_result} ↗</a></p>)}<p>Demand-weighted round trip: {c.meanRtt?.toFixed(1)??'Not established'} ms · calculation.</p></div>)}</div></div></section>
       <section className="section band">
         <div className="shell">
           <div className="section-head">
