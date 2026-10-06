@@ -220,8 +220,42 @@ export async function saveLiveRefresh(
         year: item.year,
       }));
   });
+  // Recognized units: a value is saved only when its unit and range match the
+  // registered metric definition. A rejected country keeps its last valid record.
+  const definitions = new Map(
+    (
+      await db
+        .prepare(
+          "SELECT name, unit, min_value AS min, max_value AS max FROM metric_definitions WHERE name LIKE 'live_%'",
+        )
+        .all<{ name: string; unit: string; min: number | null; max: number | null }>()
+    ).results.map((row) => [row.name, row]),
+  );
+  const rejected = new Set(
+    changed
+      .filter((metric) => {
+        const definition = definitions.get(metric.name);
+        return (
+          !definition ||
+          definition.unit !== metric.unit ||
+          (definition.min !== null && metric.value < definition.min) ||
+          (definition.max !== null && metric.value > definition.max)
+        );
+      })
+      .map((metric) => metric.countryCode),
+  );
+  if (rejected.size) {
+    const message = `${[...rejected].join(', ')}: unit or range does not match the registered metric definition`;
+    error = error ? `${error}; ${message}` : message;
+    changed.splice(
+      0,
+      changed.length,
+      ...changed.filter((metric) => !rejected.has(metric.countryCode)),
+    );
+  }
+  const accepted = data.filter((item) => !rejected.has(item.countryCode));
   const status: RefreshSummary['status'] = error
-    ? data.length
+    ? accepted.length
       ? 'partial'
       : 'failed'
     : 'ok';
