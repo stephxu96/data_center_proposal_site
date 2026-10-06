@@ -19,6 +19,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <a className="header-action" href="/investment">Explore the case ↗</a>
     </div></header>
     <main>{children}</main>
-    <footer className="footer"><div className="shell footer-inner"><div><strong>Northstar Compute</strong><p>A shared AI infrastructure concept for university decision-makers.</p></div><div><p><a href="/countries">Compare locations</a> &nbsp; <a href="/design">Explore design</a> &nbsp; <a href="/investment">Investment case</a></p></div></div></footer>
+    <footer className="footer"><div className="shell footer-inner"><div><strong>Northstar Compute</strong><p>A shared AI infrastructure concept for university decision-makers.</p></div><div><p><a href="/countries">Compare locations</a> &nbsp; <a href="/design">Explore design</a> &nbsp; <a href="/investment">Investment case</a> &nbsp; <a href="/glossary">Glossary</a></p></div></div></footer>
   </body></html>;
 }
