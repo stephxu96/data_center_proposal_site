@@ -25,6 +25,7 @@ const NOW = () => new Date().toISOString();
 export type StoredCountry = LiveCountry & {
   retrievedAt: string;
   sourceUrl: string;
+  mixSourceUrl: string;
 };
 export type RefreshSummary = {
   status: 'ok' | 'partial' | 'failed';
@@ -81,6 +82,9 @@ export async function getLiveCountries(): Promise<{
         mix: mix as StoredCountry['mix'],
         retrievedAt: intensity.retrievedAt,
         sourceUrl: intensity.sourceUrl,
+        mixSourceUrl:
+          list.find((item) => item.name === 'live_share_coal')?.sourceUrl ??
+          intensity.sourceUrl,
       },
     ];
   });

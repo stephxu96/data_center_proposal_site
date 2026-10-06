@@ -107,7 +107,16 @@ export default async function Countries() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            Ember / OWID source ↗
+                            Carbon source ↗
+                          </a>
+                          {' · '}
+                          <a
+                            className="text-link"
+                            href={item.mixSourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Generation mix source ↗
                           </a>
                         </p>
                       </>
