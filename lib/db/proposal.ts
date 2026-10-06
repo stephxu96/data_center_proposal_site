@@ -32,15 +32,36 @@ export type ModelInputs = typeof proposal.illustrativeModel & { pue: number };
 export function investmentModel(input: ModelInputs) {
   const annualPower = annualPowerCostMillions(input.powerPriceUsdMwh, input.pue);
   const productiveHours = input.gpuCount * proposal.design.operatingHours * input.utilizationPct / 100;
-  const delayCapital = input.gridDelayMonths / 12;
+  const delayCarrying = input.gridDelayMonths * input.delayCarryingMillionsPerMonth;
   const options = [
     { id: 'build', name: 'Build and own', beforeOpening: input.buildCapexMillions, annual: input.annualNonPowerOpsMillions + annualPower, capitalAtRisk: input.buildCapexMillions },
-    { id: 'lease', name: 'Lease capacity', beforeOpening: 0, annual: input.annualLeaseMillions + annualPower, capitalAtRisk: input.annualLeaseMillions * delayCapital },
+    { id: 'lease', name: 'Lease capacity', beforeOpening: 0, annual: input.annualLeaseMillions + annualPower, capitalAtRisk: 0 },
     { id: 'hybrid', name: 'Phased hybrid', beforeOpening: input.hybridCapexMillions, annual: input.hybridLeaseMillions + input.annualNonPowerOpsMillions / 2 + annualPower, capitalAtRisk: input.hybridCapexMillions },
   ];
   return options.map(option => ({
     ...option,
     costPerProductiveHour: productiveHours > 0 ? option.annual * 1_000_000 / productiveHours : null,
-    beforeOpeningWithDelay: option.beforeOpening + option.annual * delayCapital,
+    beforeOpeningWithDelay: option.beforeOpening + delayCarrying,
+    capitalAtRiskWithDelay: option.capitalAtRisk + delayCarrying,
   }));
+}
+
+export function applyScenario(input: ModelInputs, scenario: string): ModelInputs {
+  if (scenario === 'grid-delay') return { ...input, gridDelayMonths: input.gridDelayMonths + 12 };
+  if (scenario === 'half-utilization') return { ...input, utilizationPct: input.utilizationPct / 2 };
+  return input;
+}
+
+export function tenYearCostPath(option: ReturnType<typeof investmentModel>[number], input: ModelInputs) {
+  const openingYear = 1 + Math.floor(input.gridDelayMonths / 12);
+  let cumulative = 0;
+  return Array.from({length: 10}, (_, index) => {
+    const year = index + 1;
+    const capital = year === 1 ? option.beforeOpening : 0;
+    const delay = year < openingYear ? input.delayCarryingMillionsPerMonth * 12 : year === openingYear ? input.delayCarryingMillionsPerMonth * (input.gridDelayMonths % 12) : 0;
+    const operating = year >= openingYear ? option.annual : 0;
+    const net = -(capital + delay + operating);
+    cumulative += net;
+    return { year, capital, delay, operating, net, cumulative };
+  });
 }

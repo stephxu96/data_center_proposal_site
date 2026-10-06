@@ -19,6 +19,7 @@
     "annualLeaseMillions": 92,
     "hybridLeaseMillions": 48,
     "annualNonPowerOpsMillions": 38,
+    "delayCarryingMillionsPerMonth": 2,
     "gridDelayMonths": 0
   },
   "candidates": [
