@@ -704,11 +704,7 @@ export function Workspace(props: Props) {
                                     disabled={
                                       busy || member.id === props.member?.id
                                     }
-                                    value={
-                                      member.role === 'committee'
-                                        ? 'viewer'
-                                        : member.role
-                                    }
+                                    value={member.role}
                                     onChange={(e) =>
                                       assign(
                                         member.id,
@@ -720,6 +716,9 @@ export function Workspace(props: Props) {
                                       Registered user
                                     </option>
                                     <option value="editor">Editor</option>
+                                    <option value="committee">
+                                      Committee member
+                                    </option>
                                     <option value="admin">
                                       Team administrator
                                     </option>

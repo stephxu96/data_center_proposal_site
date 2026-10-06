@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     if (
       !input ||
       !Number.isInteger(input.memberId) ||
-      !['viewer', 'editor', 'admin'].includes(input.role) ||
+      !['viewer', 'editor', 'committee', 'admin'].includes(input.role) ||
       input.memberId === member.id
     )
       throw new AccessError(

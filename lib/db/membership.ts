@@ -81,7 +81,7 @@ export async function assignRole(
   if (
     actor.role !== 'admin' ||
     actor.id === memberId ||
-    !['viewer', 'editor', 'admin'].includes(role)
+    !['viewer', 'editor', 'committee', 'admin'].includes(role)
   )
     throw new Error('Select another member of your team and a valid role.');
   const result = await getDb()

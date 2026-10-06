@@ -2,6 +2,12 @@ import { applyScenario,investmentModel,modelDefinitions,numericInput,sensitivity
 import { getModelInputs } from '../../lib/db/model-inputs';
 import { DesignNarratives } from '../../components/design-narratives';
 import { getFundingRequirements } from '../../lib/db/content';
+import { getPublicDesign } from '../../lib/db/evidence';
+import { getDecisions } from '../../lib/db/decisions';
+import { CommitteeDecisionForm } from '../../components/committee-decision';
+import { authEnabled } from '../../lib/access';
+import { getMember } from '../../lib/db/membership';
+import { getChatGPTUser } from '../chatgpt-auth';
 export const dynamic='force-dynamic';
 type Params=Record<string,string|string[]|undefined>;
 const scenarios=[['base','Base case'],['grid-delay','Additional three-month delay'],['grid-year-delay','Required stress: one-year grid delay'],['half-utilization','Required stress: half forecast GPU use']];
@@ -9,6 +15,12 @@ const money=(n:number)=>`${n<0?'−':''}$${Math.abs(n).toFixed(1)}m`;
 export default async function Investment({searchParams}:{searchParams:Promise<Params>}){
  const params=await searchParams,defaults=await getModelInputs();
  const funding=await getFundingRequirements();
+ const publicDesign=await getPublicDesign();
+ const decisions=publicDesign?await getDecisions(publicDesign.id):[];
+ // Recorder identity is shown only to signed-in members of the same team.
+ const identity=authEnabled()?await getChatGPTUser():null;
+ const viewer=identity?await getMember(identity.userId):null;
+ const outcomeLabel={approve:'Approved',reject:'Rejected',send_back:'Sent back for more evidence'} as const;
  const scenario=typeof params.scenario==='string'&&scenarios.some(([k])=>k===params.scenario)?params.scenario:'base';
  const option=typeof params.option==='string'&&['build','lease','hybrid'].includes(params.option)?params.option:'build';
  const values={...defaults,...Object.fromEntries(modelDefinitions.map(([key,,,min,max])=>[key,numericInput(params[key],min,max)??defaults[key]]))};
@@ -26,6 +38,7 @@ export default async function Investment({searchParams}:{searchParams:Promise<Pa
  <section className="section" id="governance"><div className="shell"><span className="eyebrow">Governance · proposed design decisions</span><h2>Shared access needs enforceable rules.</h2><div className="grid-3"><article className="card"><h3>Ownership and control</h3><p>A university-owned consortium owns the facility and research-data policies. Contract construction, utility supply, specialist maintenance and overflow cloud capacity. A representative board admits members and approves pricing; an independent scientific panel resolves research/teaching conflicts.</p></article><article className="card"><h3>Capacity and fairness</h3><p>Allocate reservations against take-or-pay commitments, protect a teaching and small-institution pool, and release unused reservations explicitly. Publish allocations and actual usage with an appeal process. Set a single-member discretionary-use cap before expansion.</p></article><article className="card"><h3>Costs and risk</h3><p>Allocate fixed costs by reservation and variable costs by metered productive use. Sponsors bear grid-delay risk until contractual transfer; members bear committed-demand risk. Withdrawal requires notice, a replacement member or payment of unrecovered commitments.</p></article></div></div></section>
  <section className="section band" id="funding-gates"><div className="shell"><h2>Evidence before capital.</h2><div className="grid-3">{[['Development equity','Site control, member demand survey, allocation rules, preliminary utility response and capped diligence budget.'],['Construction debt','Written grid schedule and upgrade price, permits, construction contract, resilience study and take-or-pay commitments.'],['Equipment finance','GPU quotations, acceptance criteria, replacement plan, utilization commitments and member credit support.']].map(([title,text])=><article className="card" key={title}><span className="tag gray">Required evidence</span><h3>{title}</h3><p>{text}</p><a className="text-link" href="/evidence?type=unknown#claim-ledger">Inspect open conditions ↗</a></article>)}</div></div></section>
  <section className="section dark"><div className="shell"><span className="eyebrow">Recommendation</span><h2>Approve diligence. Do not approve the full build.</h2><p className="lead">Start with leased access and a staged hybrid option. Release owned capacity only against a priced utility agreement, signed productive demand and a validated resilience design. Reconsider if Québec offers better grid terms, workloads shift away from latency-sensitive use, or Texas interconnection constraints change.</p></div></section>
+ <section className="section band" id="committee-decision"><div className="shell"><span className="eyebrow">Investment committee</span><h2>Approve, reject or send back.</h2><div className="grid-2"><div className="card"><h3>Decision record</h3>{decisions.length?<ul className="list">{decisions.map(d=><li key={d.id}><span className={`tag ${d.outcome==='approve'?'':'amber'}`}>Round {d.round} · {outcomeLabel[d.outcome]}</span><p style={{marginTop:10}}>{d.reason}</p><p className="subtle">Recorded {d.recordedAt.slice(0,16).replace('T',' ')} UTC by {viewer&&publicDesign&&viewer.teamId===publicDesign.team_id?d.recorderEmail??`member ${d.recordedBy}`:'a committee member'}</p></li>)}</ul>:<p>No committee decision has been recorded yet.</p>}</div><CommitteeDecisionForm/></div></div></section>
  <section className="section"><div className="shell"><h2>Allocation policy and funding evidence.</h2><DesignNarratives keys={['capacity_sharing']}/><div className="grid-3" style={{marginTop:24}}>{funding.map(f=><article className="card" key={f.requirement_id}><span className="tag gray">{f.status}</span><h3>{f.stage.replaceAll('_',' ')}</h3><p>{f.requirement_text}</p><a className="text-link" href="/evidence#claim-ledger">Evidence trail ↗</a></article>)}</div></div></section>
  </>;
 }
