@@ -1,0 +1,655 @@
+<title>20 MW AI Data Center Requirements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single engineering-notebook column (~70ch) that widens for the diagram and tables; three lanes (power, cooling, network) carry a fixed color each everywhere on the page. */
+:root {
+  --bg: #f5f6f3;
+  --surface: #ffffff;
+  --ink: #1b2129;
+  --muted: #5a6370;
+  --rule: #d7dbd6;
+  --band: #eceee9;
+  --power: #b45f06;
+  --cool: #0b7285;
+  --net: #5f4bb6;
+  --fail: #c0362c;
+  --tint-power: #fbf1e5;
+  --tint-cool: #e6f3f5;
+  --tint-net: #efecfa;
+  --tint-fail: #fbeceb;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161b; --surface: #1a2027; --ink: #e6e9ec; --muted: #9aa4af; --rule: #2e3640; --band: #1e252d;
+    --power: #f0a24a; --cool: #4cc3d4; --net: #a898f0; --fail: #f2766b;
+    --tint-power: #2a2116; --tint-cool: #13272b; --tint-net: #221f33; --tint-fail: #2e1a19;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161b; --surface: #1a2027; --ink: #e6e9ec; --muted: #9aa4af; --rule: #2e3640; --band: #1e252d;
+  --power: #f0a24a; --cool: #4cc3d4; --net: #a898f0; --fail: #f2766b;
+  --tint-power: #2a2116; --tint-cool: #13272b; --tint-net: #221f33; --tint-fail: #2e1a19;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; }
+.prose { max-width: 72ch; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; letter-spacing: -0.01em; }
+h2 { font-size: 28px; font-weight: 700; margin-top: 8px; }
+h3 { font-size: 19px; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--net); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.section { display: flex; flex-direction: column; gap: 20px; padding-block: 44px 8px; border-top: 1px solid var(--rule); margin-top: 44px; }
+header.stack { gap: 16px; }
+.lede { font-size: 19px; color: var(--ink); }
+.meta { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.toc { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; }
+.toc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.toc a:hover, .toc a:focus-visible { border-color: var(--ink); }
+:focus-visible { outline: 2px solid var(--net); outline-offset: 2px; }
+
+.note { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--fail); padding: 16px 18px; border-radius: 4px; display: flex; flex-direction: column; gap: 8px; }
+.note strong { font-family: var(--display); }
+
+/* scale strip */
+.scale { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.scale div { background: var(--surface); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.scale b { font-family: var(--mono); font-weight: 500; font-size: 22px; font-variant-numeric: tabular-nums; }
+.scale span { font-size: 14px; color: var(--muted); }
+
+/* tables */
+.tbl { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--band); }
+tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+td .src { font-size: 12.5px; color: var(--muted); display: block; margin-top: 4px; }
+.lane-h { display: flex; align-items: center; gap: 10px; }
+.chip { display: inline-block; width: 12px; height: 12px; border-radius: 2px; flex: none; }
+.c-power { background: var(--power); } .c-cool { background: var(--cool); } .c-net { background: var(--net); } .c-fail { background: var(--fail); } .c-ink { background: var(--ink); }
+
+/* diagram */
+figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.diagram { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); padding: 8px; }
+.diagram svg { display: block; width: 100%; min-width: 980px; height: auto; color: var(--ink); font-family: var(--body); }
+figcaption { font-size: 15px; color: var(--muted); max-width: 80ch; }
+svg .band { fill: var(--band); }
+svg .box { fill: var(--surface); stroke: currentColor; stroke-width: 1.2; }
+svg .box.p { stroke: var(--power); fill: var(--tint-power); }
+svg .box.c { stroke: var(--cool); fill: var(--tint-cool); }
+svg .box.n { stroke: var(--net); fill: var(--tint-net); }
+svg .rack { fill: none; stroke: currentColor; stroke-width: 2; }
+svg .t { font-size: 13px; font-weight: 700; fill: currentColor; }
+svg .s { font-size: 11px; fill: var(--muted); }
+svg .lane { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; font-weight: 500; }
+svg .lp { fill: var(--power); } svg .lc { fill: var(--cool); } svg .ln { fill: var(--net); } svg .lf { fill: var(--fail); }
+svg .a { fill: none; stroke-width: 2; }
+svg .ap { stroke: var(--power); } svg .ac { stroke: var(--cool); } svg .an { stroke: var(--net); }
+svg .af { stroke: var(--fail); stroke-dasharray: 6 4; }
+svg .mk-p { fill: var(--power); } svg .mk-c { fill: var(--cool); } svg .mk-n { fill: var(--net); } svg .mk-f { fill: var(--fail); }
+svg .lbl { font-size: 11px; fill: currentColor; }
+svg .lbl.f { fill: var(--fail); font-weight: 600; }
+svg .fdot { fill: var(--fail); }
+svg .fnum { font-family: var(--mono); font-size: 11px; font-weight: 500; fill: var(--surface); }
+
+/* FR table */
+.fr-group td { background: var(--band); font-family: var(--display); font-weight: 700; font-size: 15.5px; }
+.tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; padding: 2px 6px; border-radius: 3px; white-space: nowrap; border: 1px solid var(--rule); }
+.tag.core { color: var(--muted); }
+.tag.new { color: var(--net); border-color: var(--net); }
+.id { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.two > * { min-width: 0; }
+.card { background: var(--surface); border: 1px solid var(--rule); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; border-radius: 4px; }
+ul.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.nongoal { display: grid; grid-template-columns: minmax(150px, 0.9fr) 2fr; gap: 0; border: 1px solid var(--rule); background: var(--surface); }
+.nongoal > div { padding: 12px 14px; border-bottom: 1px solid var(--rule); min-width: 0; }
+.nongoal > div:nth-last-child(-n+2) { border-bottom: 0; }
+.nongoal .ng { font-family: var(--display); font-weight: 700; font-size: 15.5px; border-right: 1px solid var(--rule); }
+.nongoal .why { font-size: 15px; }
+@media (max-width: 620px) {
+  .nongoal { grid-template-columns: 1fr; }
+  .nongoal .ng { border-right: 0; border-bottom: 0; padding-bottom: 2px; }
+  .nongoal > div:nth-last-child(2) { border-bottom: 0; }
+}
+ol.sources { font-size: 14px; color: var(--muted); padding-left: 22px; display: flex; flex-direction: column; gap: 4px; margin: 0; }
+ol.sources a { word-break: break-word; }
+.flag { color: var(--fail); font-weight: 600; }
+</style>
+
+<div class="wrap">
+
+<header class="stack">
+  <p class="eyebrow">Axiomatic design inputs · AI training data center · October 6, 2026</p>
+  <h1>20 MW AI Data Center Requirements</h1>
+  <p class="lede prose">What a 20 MW AI training data center physically needs, how its power, cooling and network fit together and fail, and the functional requirements and non-goals that follow. xAI's Colossus 1 and Colossus 2 in Memphis, 15 to 60 times larger, serve as the reference case for what goes wrong at scale.</p>
+  <nav class="toc" aria-label="Sections">
+    <a href="#baseline">Baseline</a>
+    <a href="#video">0 · The video</a>
+    <a href="#physical">1 · Physical requirements</a>
+    <a href="#diagram">2 · System diagram</a>
+    <a href="#frs">3 · Functional requirements</a>
+    <a href="#nongoals">Non-goals</a>
+    <a href="#sources">Sources</a>
+  </nav>
+</header>
+
+<!-- BASELINE -->
+<section class="section" id="baseline">
+  <p class="eyebrow">Design baseline</p>
+  <h2>A 20 MW training site, about one-fifteenth the size of Colossus 1</h2>
+  <p class="prose">Every target in sections 2 and 3 is sized to the given values below. The derived values follow from them and the research in section 1; each shows its working so it can be changed if the baseline changes.</p>
+  <div class="two">
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Given</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Computing (IT) load</td><td class="num">20 MW</td></tr>
+          <tr><td>Overhead ratio, total ÷ IT (PUE)</td><td class="num">1.25</td></tr>
+          <tr><td>Facility electrical load</td><td class="num">25 MW</td></tr>
+          <tr><td>Operating hours per year</td><td class="num">8,760</td></tr>
+          <tr><td>Facility electricity per year</td><td class="num">219 GWh</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Derived</th><th>Value</th><th>Working</th></tr></thead>
+        <tbody>
+          <tr><td>Power for cooling, losses, lighting</td><td class="num">5 MW</td><td class="num">25 − 20</td></tr>
+          <tr><td>GPU racks</td><td class="num">~145–165</td><td class="num">20 MW ÷ 120–140 kW</td></tr>
+          <tr><td>GPUs (72 per rack)</td><td class="num">~10,000–12,000</td><td class="num">racks × 72</td></tr>
+          <tr><td>Heat to remove</td><td class="num">~25 MW</td><td class="num">all power ends as heat</td></tr>
+          <tr><td>Largest load jump to absorb</td><td class="num">up to ~18 MW</td><td class="num">90% × 20 MW</td></tr>
+          <tr><td>Water if evaporative cooling</td><td class="num">0.9–1.9 M L/day</td><td class="num">175 GWh IT × 1.8–4 L/kWh</td></tr>
+          <tr><td>Backup energy for 12 h</td><td class="num">300 MWh</td><td class="num">25 MW × 12 h</td></tr>
+          <tr><td>Training interruptions</td><td class="num">~1 every 4–5 h</td><td class="num">Llama 3 rate scaled to ~11,000 GPUs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="prose" style="font-size:15px;color:var(--muted)">219 GWh assumes the site runs at full load every hour of the year. Training clusters run close to that, but the load jumps described below mean average draw sits somewhat under peak, so 219 GWh is an upper bound. A PUE of 1.25 is better than the 1.54 industry average and worse than the 1.10–1.15 the largest operators report; it is realistic for a new liquid-cooled site, but evaporative cooling would make it easier to hit at the cost of the water above.</p>
+</section>
+
+<!-- VIDEO -->
+<section class="section" id="video">
+  <p class="eyebrow">0 · Source video</p>
+  <h2>The video is about a chip factory, not a data center</h2>
+  <div class="note prose">
+    <strong>Read this before citing the video.</strong>
+    <p>"How Elon Musk is Building the World's Most Impossible Chip Factory" (NextGen Manufacturing, 16:52) is about <b>Terafab</b>, the Tesla/SpaceX/xAI chip factory planned for Grimes County, Texas. Construction is scheduled to start on December 1, 2026, so nothing in the video has been built yet. It narrates the build in the present tense over footage that appears to be AI-generated. Its site, schedule and cost match public announcements, but many of its specific numbers (50,000 piles, 47 scrapers, 5 GW) could not be traced to any source. It still matters here because a chip factory and an AI data center share a backbone: huge round-the-clock power from on-site gas turbines, Tesla Megapacks as a buffer, recycled water, and work that a one-second power interruption can ruin.</p>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>What the video claims</th><th>Status after checking</th><th>Use for this assignment</th></tr></thead>
+      <tbody>
+        <tr><td>Ground breaks December 1, 2026 on a closed coal-plant site; Phase 1 running December 2028</td><td>Matches announced plan (Gibbons Creek site, construction Dec 1, 2026 to end of 2028) <span class="src">[2]</span></td><td>Context only</td></tr>
+        <tr><td>$119 billion; 100 million sq ft; 6,000 acres</td><td>$55–119B across all phases; "up to" 100M sq ft is a goal; about 4,620 acres are controlled <span class="src">[2][3]</span></td><td>Context only</td></tr>
+        <tr><td>Intel 14A process ("1.4 nanometers")</td><td>Intel joined April 7, 2026 to supply 14A <span class="src">[2]</span></td><td>Not relevant to data centers</td></tr>
+        <tr><td>Texas grid cannot deliver the 5 GW needed; 20+ GE 7F.05 turbines of ~200 MW each, off-grid</td><td>No power figure has been published. Plans mention on-site gas, Megapacks and some solar <span class="src">[2]</span></td><td>Same pattern as Colossus: build your own power plant when the grid is too slow → FR1.1, FR1.5</td></tr>
+        <tr><td>Tesla Megapacks back up power because "a one-second power blip destroys an entire batch of wafers"</td><td>Plausible; batch-loss sensitivity is general fab knowledge <span class="src">—</span></td><td>Direct analogue: a blip stops a training job across every GPU → FR1.3–FR1.5, F1</td></tr>
+        <tr><td>Ultrapure water from the reservoir in five stages; 80% recycled on site</td><td>Reservoir and Navasota River pump station (up to 11,000 gal/min) are real; recycling rate not published <span class="src">[3]</span></td><td>Water limits and recycling → FR2.4, F4</td></tr>
+        <tr><td>Thousands of sensors cast into the foundation; 10,000 gas sensors; digital twin updated every 15 min</td><td>Not verifiable <span class="src">—</span></td><td>Supports the monitoring requirements → FR7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 1 PHYSICAL -->
+<section class="section" id="physical">
+  <p class="eyebrow">1 · Physical components and requirements</p>
+  <h2>An AI data center turns electricity into computation, and nearly all of it comes back out as heat</h2>
+  <p class="prose">Four things have to arrive at the site in very large and very steady amounts: electricity, a way to get rid of heat, data connections, and the hardware itself. The figures below are what that means at Colossus scale. For comparison, an average US home uses about 1.2 kW on average across the year.</p>
+
+  <div class="scale" role="list">
+    <div role="listitem"><b>120–140 kW</b><span>one current GPU rack, about 100 homes in a single cabinet</span></div>
+    <div role="listitem"><b>~300 MW</b><span>grid supply to Colossus 1, about 250,000 homes</span></div>
+    <div role="listitem"><b>~1.2 GW</b><span>permitted gas plant for Colossus 2, about 1 million homes</span></div>
+    <div role="listitem"><b>Tens of MW in &lt;1 s</b><span>how fast the load jumps when all GPUs pause or resume together</span></div>
+    <div role="listitem"><b>1 every ~3 h</b><span>job interruptions on a 16,384-GPU cluster, mostly hardware</span></div>
+  </div>
+
+  <h3 class="lane-h"><span class="chip c-power"></span>Energy: how much power, and from where</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th style="width:20%">Component</th><th style="width:34%">What it has to do</th><th style="width:22%">Typical figures</th><th>Colossus example</th></tr></thead>
+      <tbody>
+        <tr><td>Grid connection and substation</td><td>Bring high-voltage power onto the site and step it down. Waiting for a new grid connection often takes longer than building the data center.</td><td class="num">115–345 kV in; 5–7 year connection queues</td><td>Two 150 MW substations, about 300 MW from the local utility (MLGW/TVA). xAI built one substation for the utility in 97 days.<span class="src">[4][6][32][33]</span></td></tr>
+        <tr><td>On-site generation</td><td>Supply power before the grid can, or alongside it.</td><td class="num">35 MW per mobile gas turbine</td><td>Colossus 1: about 35 turbines (~420 MW) seen on site while 15 were permitted. Colossus 2: about 59 temporary turbines; a 41-turbine, ~1.2 GW plant in Southaven, MS was permitted in March 2026.<span class="src">[5][6][7]</span></td></tr>
+        <tr><td>Overhead for cooling and losses</td><td>Power the cooling plant, lighting and conversion losses on top of the computers.</td><td class="num">+54% industry average; +10–15% best large operators</td><td>Not published for Colossus.<span class="src">[14]</span></td></tr>
+        <tr><td>Backup fuel</td><td>Keep critical systems running when both grid and main generation are lost.</td><td class="num">≥12 h of fuel at full load (Uptime Institute rule)</td><td>Not published.<span class="src">[15]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="lane-h"><span class="chip c-power"></span>Power consistency: the load is huge and it jumps</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th style="width:20%">Issue</th><th style="width:34%">What happens</th><th style="width:22%">Typical figures</th><th>What sites do about it</th></tr></thead>
+      <tbody>
+        <tr><td>Training load swings</td><td>All GPUs in a training job work in lockstep. When they pause together to exchange results or save progress, the whole site's demand drops, then jumps back. Turbines and the grid feel each jump.</td><td class="num">Tens of MW in under a second; swings up to 90% of load, repeating every few seconds</td><td>xAI put Tesla Megapack batteries between the generators and the GPUs to absorb the jumps. Reported counts range from 119 to 208 units. NVIDIA's GB300 racks add capacitors and a mode that keeps GPUs drawing power so load ramps down gently.<span class="src">[8][9][10][17][31]</span></td></tr>
+        <tr><td>Staying online through grid faults</td><td>If a site's own protection disconnects it during a brief grid dip, hundreds of MW vanish at once and the grid has to rebalance instantly.</td><td class="num">~1,500 MW of data centers dropped at once in Virginia, July 10, 2024</td><td>Regulators now require it: NERC issued a Level 3 alert in May 2026, and FERC ordered mandatory standards for large computing loads in July 2026.<span class="src">[11][12][13]</span></td></tr>
+        <tr><td>Voltage steps inside the site</td><td>Convert grid voltage down to what the rack uses, with batteries in between to cover dips.</td><td class="num">13.8–34.5 kV → 480 V → 54 V DC at the rack; 800 V DC planned for 2027</td><td>Racks above about 600 kW cannot be fed at 54 V, so NVIDIA is moving to 800 V DC distribution.<span class="src">[16]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="lane-h"><span class="chip c-cool"></span>Utilities and site: water, land, fiber, permits</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th style="width:20%">Need</th><th style="width:34%">Why it matters</th><th style="width:22%">Typical figures</th><th>Colossus example</th></tr></thead>
+      <tbody>
+        <tr><td>Water</td><td>Evaporative cooling towers use water to reject heat. Closed-loop systems use little water but more electricity.</td><td class="num">~1.8–4 L per kWh with evaporation; near zero closed-loop after filling</td><td>Colossus 1 is reported at about 1 million gallons a day. An $80M plant to recycle up to 13 million gallons a day of treated city wastewater broke ground in October 2025, paused in April 2026, and is promised to restart by Q1 2027.<span class="src">[17][18][19][29]</span></td></tr>
+        <tr><td>Land</td><td>Halls, substation, cooling yard, generators and setbacks from neighbors.</td><td class="num">~300 acres per GW</td><td>Microsoft's Fairwater: 315 acres for a gigawatt-class site.<span class="src">[20]</span></td></tr>
+        <tr><td>Fiber</td><td>Long-distance connections for data in and models out, on routes that cannot both be cut at once.</td><td class="num">2+ separate routes</td><td>Not published.</td></tr>
+        <tr><td>Permits and community</td><td>Gas turbines need air permits. Pollution and noise near homes create legal and schedule risk.</td><td class="num">Clean Air Act permits per turbine site</td><td>Permit appeal by SELC for the NAACP (2025); NAACP federal lawsuit over Colossus 2 turbines (April 2026).<span class="src">[28][7]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="lane-h"><span class="chip c-net"></span>Hardware: compute, cooling and network inside the hall</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th style="width:20%">Component</th><th style="width:34%">What it has to do</th><th style="width:22%">Typical figures</th><th>Colossus example</th></tr></thead>
+      <tbody>
+        <tr><td>GPUs and racks</td><td>Do the computation. Newer racks link 72 GPUs so they act as one large GPU.</td><td class="num">120–140 kW per rack now; 600 kW–1 MW per rack planned for 2027</td><td>Colossus 1: about 230,000 GPUs (H100, H200, GB200). Colossus 2: 110,000 GB200 and 440,000 GB300 claimed by late September 2026.<span class="src">[4][21][22]</span></td></tr>
+        <tr><td>Liquid cooling at the chip</td><td>Carry heat off the chips through cold plates and coolant. Every MW of power becomes about 1 MW of heat.</td><td class="num">Facility water 30–45 °C (ASHRAE W32–W45)</td><td>Supermicro racks, each with its own coolant pump unit with spare pumps that can be replaced while it runs.<span class="src">[23][24]</span></td></tr>
+        <tr><td>Network</td><td>Link every GPU to every other fast enough that they don't sit waiting. Keep storage and outside traffic on a separate network.</td><td class="num">400–800 Gb/s per GPU</td><td>NVIDIA Spectrum-X Ethernet, eight 400 Gb/s network cards per server.<span class="src">[25][17]</span></td></tr>
+        <tr><td>Reliability</td><td>Expect constant small failures and recover without losing much work.</td><td class="num">419 interruptions in 54 days on 16,384 GPUs; 78% hardware, 8.4% network</td><td>Colossus failure rates are not published. At 10× the GPU count, interruptions would come roughly every 20 minutes.<span class="src">[26]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prose" style="font-size:15px;color:var(--muted)">Figures from xAI are often reported only by trade press or from Elon Musk's own posts, and sources disagree: Megapack counts range from 119 to 208, Colossus 1 draw from 150 to 300 MW depending on date, and satellite analysis disputes that Colossus 2 has reached 1 GW of cooling [30]. Treat Colossus numbers as indicative, not as-built.</p>
+</section>
+
+<!-- 2 DIAGRAM -->
+<section class="section" id="diagram">
+  <p class="eyebrow">2 · System diagram</p>
+  <h2>Three flows converge on the rack; seven failures can stop it</h2>
+  <p class="prose">Labels are sized to the 20 MW baseline.</p>
+  <figure>
+    <div class="diagram">
+      <svg viewBox="0 0 1200 810" role="img" aria-label="System diagram: power flows from the grid and on-site turbines through a substation, medium-voltage ring, UPS and busway to GPU racks, with a battery buffer absorbing load swings. Heat flows from the racks through coolant pump units, a facility water loop and heat-rejection plant to outside air, with makeup water from a city or recycled source. Data flows from long-haul fiber through a front-end network and storage to the racks, while a separate GPU fabric links racks to each other. Seven numbered failure points are marked in red.">
+        <defs>
+          <marker id="mp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk-p" d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="mc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk-c" d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="mn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk-n" d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="mf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk-f" d="M0,0 L10,5 L0,10 z"/></marker>
+        </defs>
+
+        <!-- lane bands -->
+        <rect class="band" x="20" y="40" width="940" height="236" rx="4"/>
+        <rect class="band" x="20" y="290" width="940" height="214" rx="4"/>
+        <rect class="band" x="20" y="518" width="940" height="212" rx="4"/>
+        <text class="lane lp" x="40" y="64">POWER  →  toward the rack</text>
+        <text class="lane lc" x="40" y="314">COOLING  ←  heat leaves the rack</text>
+        <text class="lane ln" x="40" y="542">NETWORK  ↔  data in and between racks</text>
+
+        <!-- POWER boxes -->
+        <rect class="box p" x="40" y="80" width="150" height="64" rx="3"/>
+        <text class="t" x="115" y="106" text-anchor="middle">Utility grid</text>
+        <text class="s" x="115" y="126" text-anchor="middle">115–345 kV lines</text>
+
+        <rect class="box p" x="230" y="80" width="150" height="64" rx="3"/>
+        <text class="t" x="305" y="106" text-anchor="middle">Substation</text>
+        <text class="s" x="305" y="126" text-anchor="middle">25 MW facility load</text>
+
+        <rect class="box p" x="420" y="80" width="150" height="64" rx="3"/>
+        <text class="t" x="495" y="106" text-anchor="middle">Site power ring</text>
+        <text class="s" x="495" y="126" text-anchor="middle">13.8–34.5 kV</text>
+
+        <rect class="box p" x="610" y="80" width="150" height="64" rx="3"/>
+        <text class="t" x="685" y="106" text-anchor="middle">UPS + transformers</text>
+        <text class="s" x="685" y="126" text-anchor="middle">480 V, minutes of battery</text>
+
+        <rect class="box p" x="800" y="80" width="150" height="64" rx="3"/>
+        <text class="t" x="875" y="106" text-anchor="middle">Power rails to racks</text>
+        <text class="s" x="875" y="126" text-anchor="middle">~155 racks × ~130 kW</text>
+
+        <rect class="box p" x="40" y="180" width="150" height="64" rx="3"/>
+        <text class="t" x="115" y="206" text-anchor="middle">On-site gas turbines</text>
+        <text class="s" x="115" y="226" text-anchor="middle">bridge or backup supply</text>
+
+        <rect class="box p" x="230" y="180" width="150" height="64" rx="3"/>
+        <text class="t" x="305" y="206" text-anchor="middle">Battery buffer</text>
+        <text class="s" x="305" y="226" text-anchor="middle">Tesla Megapacks</text>
+
+        <!-- POWER arrows -->
+        <line class="a ap" x1="190" y1="112" x2="228" y2="112" marker-end="url(#mp)"/>
+        <line class="a ap" x1="380" y1="112" x2="418" y2="112" marker-end="url(#mp)"/>
+        <line class="a ap" x1="570" y1="112" x2="608" y2="112" marker-end="url(#mp)"/>
+        <line class="a ap" x1="760" y1="112" x2="798" y2="112" marker-end="url(#mp)"/>
+        <line class="a ap" x1="950" y1="112" x2="998" y2="112" marker-end="url(#mp)"/>
+        <line class="a ap" x1="190" y1="212" x2="228" y2="212" marker-end="url(#mp)"/>
+        <text class="lbl" x="209" y="204" text-anchor="middle">charges</text>
+        <polyline class="a ap" points="380,212 470,212 470,146" marker-end="url(#mp)"/>
+        <text class="lbl" x="386" y="228">steady supply</text>
+        <!-- power to cooling plant: coupling -->
+        <line class="a ap" x1="530" y1="144" x2="530" y2="328" marker-end="url(#mp)"/>
+        <text class="lbl" x="538" y="190">powers chillers</text>
+        <text class="lbl" x="538" y="204">and pumps</text>
+
+        <!-- F2 load-swing path -->
+        <polyline class="a af" points="998,150 966,150 966,258 305,258 305,246" marker-end="url(#mf)"/>
+        <text class="lbl f" x="760" y="252" text-anchor="middle">load jumps: up to ~18 MW in under 1 s</text>
+
+        <!-- COOLING boxes -->
+        <rect class="box c" x="230" y="330" width="150" height="64" rx="3"/>
+        <text class="t" x="305" y="356" text-anchor="middle">Outside air</text>
+        <text class="s" x="305" y="376" text-anchor="middle">heat + evaporated water</text>
+
+        <rect class="box c" x="420" y="330" width="150" height="64" rx="3"/>
+        <text class="t" x="495" y="356" text-anchor="middle">Heat rejection</text>
+        <text class="s" x="495" y="376" text-anchor="middle">chillers, dry coolers, towers</text>
+
+        <rect class="box c" x="610" y="330" width="150" height="64" rx="3"/>
+        <text class="t" x="685" y="356" text-anchor="middle">Facility water loop</text>
+        <text class="s" x="685" y="376" text-anchor="middle">30–45 °C supply</text>
+
+        <rect class="box c" x="800" y="330" width="150" height="64" rx="3"/>
+        <text class="t" x="875" y="356" text-anchor="middle">Coolant pump units</text>
+        <text class="s" x="875" y="376" text-anchor="middle">spare pumps, swappable live</text>
+
+        <rect class="box c" x="230" y="424" width="150" height="64" rx="3"/>
+        <text class="t" x="305" y="450" text-anchor="middle">Water source</text>
+        <text class="s" x="305" y="470" text-anchor="middle">city or recycled wastewater</text>
+
+        <!-- COOLING arrows: warm leftward (top), cool rightward (bottom) -->
+        <line class="a ac" x1="998" y1="352" x2="952" y2="352" marker-end="url(#mc)"/>
+        <line class="a ac" x1="952" y1="374" x2="998" y2="374" marker-end="url(#mc)"/>
+        <line class="a ac" x1="800" y1="352" x2="762" y2="352" marker-end="url(#mc)"/>
+        <line class="a ac" x1="762" y1="374" x2="800" y2="374" marker-end="url(#mc)"/>
+        <line class="a ac" x1="610" y1="352" x2="572" y2="352" marker-end="url(#mc)"/>
+        <line class="a ac" x1="572" y1="374" x2="610" y2="374" marker-end="url(#mc)"/>
+        <line class="a ac" x1="420" y1="362" x2="382" y2="362" marker-end="url(#mc)"/>
+        <polyline class="a ac" points="380,456 495,456 495,396" marker-end="url(#mc)"/>
+        <text class="lbl" x="390" y="448">makeup water</text>
+        <text class="lbl" x="975" y="344" text-anchor="middle">hot</text>
+        <text class="lbl" x="975" y="390" text-anchor="middle">cool</text>
+        <text class="lbl" x="700" y="420" text-anchor="middle">~25 MW of heat out for 25 MW in</text>
+
+        <!-- NETWORK boxes -->
+        <rect class="box n" x="40" y="560" width="150" height="64" rx="3"/>
+        <text class="t" x="115" y="586" text-anchor="middle">Long-haul fiber</text>
+        <text class="s" x="115" y="606" text-anchor="middle">2+ separate routes</text>
+
+        <rect class="box n" x="230" y="560" width="150" height="64" rx="3"/>
+        <text class="t" x="305" y="586" text-anchor="middle">Front-end network</text>
+        <text class="s" x="305" y="606" text-anchor="middle">users, data, operators</text>
+
+        <rect class="box n" x="420" y="560" width="150" height="64" rx="3"/>
+        <text class="t" x="495" y="586" text-anchor="middle">Storage</text>
+        <text class="s" x="495" y="606" text-anchor="middle">training data, saved progress</text>
+
+        <rect class="box n" x="610" y="650" width="150" height="64" rx="3"/>
+        <text class="t" x="685" y="676" text-anchor="middle">GPU fabric core</text>
+        <text class="s" x="685" y="696" text-anchor="middle">Spectrum-X Ethernet</text>
+
+        <rect class="box n" x="800" y="650" width="150" height="64" rx="3"/>
+        <text class="t" x="875" y="676" text-anchor="middle">Rack-row switches</text>
+        <text class="s" x="875" y="696" text-anchor="middle">400–800 Gb/s per GPU</text>
+
+        <!-- NETWORK arrows -->
+        <line class="a an" x1="190" y1="592" x2="228" y2="592" marker-start="url(#mn)" marker-end="url(#mn)"/>
+        <line class="a an" x1="380" y1="592" x2="418" y2="592" marker-start="url(#mn)" marker-end="url(#mn)"/>
+        <line class="a an" x1="570" y1="580" x2="998" y2="580" marker-end="url(#mn)"/>
+        <text class="lbl" x="785" y="572" text-anchor="middle">loads data, saves progress</text>
+        <line class="a an" x1="760" y1="682" x2="798" y2="682" marker-start="url(#mn)" marker-end="url(#mn)"/>
+        <polyline class="a an" points="950,682 1080,682 1080,626" marker-end="url(#mn)"/>
+        <text class="lbl" x="1015" y="700" text-anchor="middle">GPU-to-GPU</text>
+        <!-- recovery path -->
+        <line class="a af" x1="998" y1="606" x2="572" y2="606" marker-start="url(#mf)"/>
+        <text class="lbl f" x="785" y="626" text-anchor="middle">after F5/F6: restart from last saved progress</text>
+
+        <!-- RACK -->
+        <rect class="rack" x="980" y="40" width="200" height="690" rx="6"/>
+        <text class="lane" x="1080" y="64" text-anchor="middle" fill="currentColor">GPU RACK · DATA HALL</text>
+        <rect class="box p" x="1000" y="80" width="160" height="64" rx="3"/>
+        <text class="t" x="1080" y="106" text-anchor="middle">Power shelves</text>
+        <text class="s" x="1080" y="126" text-anchor="middle">54 V DC; 800 V DC from 2027</text>
+
+        <rect class="box" x="1000" y="190" width="160" height="64" rx="3"/>
+        <text class="t" x="1080" y="216" text-anchor="middle">In-rack GPU links</text>
+        <text class="s" x="1080" y="236" text-anchor="middle">72 GPUs act as one</text>
+
+        <rect class="box c" x="1000" y="330" width="160" height="64" rx="3"/>
+        <text class="t" x="1080" y="356" text-anchor="middle">GPUs on cold plates</text>
+        <text class="s" x="1080" y="376" text-anchor="middle">~120 kW in → ~120 kW heat</text>
+
+        <rect class="box n" x="1000" y="560" width="160" height="64" rx="3"/>
+        <text class="t" x="1080" y="586" text-anchor="middle">Network cards</text>
+        <text class="s" x="1080" y="606" text-anchor="middle">8 × 400 Gb/s per server</text>
+
+        <!-- failure markers -->
+        <g>
+          <circle class="fdot" cx="209" cy="138" r="10"/><text class="fnum" x="209" y="142" text-anchor="middle">F1</text>
+          <circle class="fdot" cx="966" cy="204" r="10"/><text class="fnum" x="966" y="208" text-anchor="middle">F2</text>
+          <circle class="fdot" cx="950" cy="330" r="10"/><text class="fnum" x="950" y="334" text-anchor="middle">F3</text>
+          <circle class="fdot" cx="380" cy="424" r="10"/><text class="fnum" x="380" y="428" text-anchor="middle">F4</text>
+          <circle class="fdot" cx="950" cy="650" r="10"/><text class="fnum" x="950" y="654" text-anchor="middle">F5</text>
+          <circle class="fdot" cx="1160" cy="330" r="10"/><text class="fnum" x="1160" y="334" text-anchor="middle">F6</text>
+          <circle class="fdot" cx="380" cy="180" r="10"/><text class="fnum" x="380" y="184" text-anchor="middle">F7</text>
+        </g>
+
+        <!-- legend -->
+        <g transform="translate(20,768)">
+          <line class="a ap" x1="0" y1="0" x2="30" y2="0"/><text class="lbl" x="38" y="4">electric power</text>
+          <line class="a ac" x1="150" y1="0" x2="180" y2="0"/><text class="lbl" x="188" y="4">coolant / water / heat</text>
+          <line class="a an" x1="340" y1="0" x2="370" y2="0"/><text class="lbl" x="378" y="4">data</text>
+          <line class="a af" x1="440" y1="0" x2="470" y2="0"/><text class="lbl" x="478" y="4">failure or recovery path</text>
+          <circle class="fdot" cx="640" cy="0" r="9"/><text class="fnum" x="640" y="4" text-anchor="middle">F</text><text class="lbl" x="656" y="4">failure point, explained in the table below</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Power, coolant and data all have to reach the same rack at the same time. The cooling plant runs on the same electricity as the GPUs (the vertical arrow), so losing power also means losing cooling, and backup power has to cover the pumps as well as the computers. The red dashed path along the bottom of the power lane shows the jumps in training load travelling back toward the generators and the grid; the battery buffer is there to absorb them.</figcaption>
+  </figure>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th>#</th><th style="width:18%">Failure</th><th style="width:30%">If nothing catches it</th><th style="width:32%">What the design has to do</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td class="id flag">F1</td><td>Grid fault or voltage dip</td><td>Every hall disconnects at once; the grid loses hundreds of MW without warning</td><td>Stay connected through brief dips, switch to batteries in milliseconds and generators in seconds, reconnect in stages</td><td>Virginia, July 2024: ~1,500 MW lost<span class="src">[11]</span></td></tr>
+        <tr><td class="id flag">F2</td><td>Training load jumps</td><td>Turbines and grid see sudden swings every few seconds; equipment wears and the grid can oscillate</td><td>Absorb swings locally so the grid and turbines see a steady load; agree a maximum ramp rate with the utility</td><td>xAI Megapacks; NVIDIA GB300 smoothing<span class="src">[8][10]</span></td></tr>
+        <tr><td class="id flag">F3</td><td>Coolant pump or pump-unit failure</td><td>A 120 kW rack overheats within seconds to minutes; GPUs slow down, then shut off</td><td>Spare pumps that take over automatically; replace parts while the rack runs; alarm on flow and temperature</td><td>Colossus rack pump units<span class="src">[23]</span></td></tr>
+        <tr><td class="id flag">F4</td><td>Water supply cut or restricted</td><td>Evaporative cooling loses capacity on hot days; computing has to be cut back</td><td>Store water on site, keep a second source (recycled wastewater), or reject heat without evaporation</td><td>Colossus recycling plant paused April 2026<span class="src">[19]</span></td></tr>
+        <tr><td class="id flag">F5</td><td>Network link or switch failure</td><td>One bad link stalls a job running across every GPU</td><td>Provide spare paths, route around the failure, restart from the last saved progress</td><td>8.4% of Llama 3 interruptions<span class="src">[26]</span></td></tr>
+        <tr><td class="id flag">F6</td><td>GPU or memory failure</td><td>The whole training job stops; at 16,384 GPUs this happened about every 3 hours</td><td>Detect it within minutes, swap in a spare server, resume from saved progress; stock spares on site</td><td>419 interruptions in 54 days<span class="src">[26]</span></td></tr>
+        <tr><td class="id flag">F7</td><td>Battery fire</td><td>A lithium battery fire spreads between units and is hard to put out</td><td>Space and separate battery units, detect early, contain the fire</td><td>NFPA 855<span class="src">[27]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3 FRs -->
+<section class="section" id="frs">
+  <p class="eyebrow">3 · Functional requirements</p>
+  <h2>What the data center must do, independent of how</h2>
+  <p class="prose">Each requirement says what the system must do, not which equipment does it, so that step 3 (mapping requirements to design parameters) stays open. Rows tagged <span class="tag core">core</span> are the obvious minimum. Rows tagged <span class="tag new">added</span> came out of the video and research, mostly from the failure paths above. The <span class="tag new">baseline</span> row comes straight from the given efficiency target, and all targets are sized to the 20 MW baseline.</p>
+
+  <div class="card prose">
+    <h3>Customer attributes these trace to</h3>
+    <ul class="plain">
+      <li><b>CA1 · AI training team:</b> train the largest models with as little lost time as possible.</li>
+      <li><b>CA2 · Owner:</b> get computing online in months, and grow it later.</li>
+      <li><b>CA3 · Utility and grid operator:</b> the site must not destabilize the grid.</li>
+      <li><b>CA4 · Neighbors and regulators:</b> clean air, limited water draw, safety, legal compliance.</li>
+      <li><b>CA5 · Operations staff:</b> fix and maintain equipment safely without shutting everything down.</li>
+    </ul>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th style="width:7%">ID</th><th style="width:40%">Functional requirement</th><th style="width:30%">Measure / starting target</th><th style="width:8%">From</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr class="fr-group"><td colspan="5">FR0 · Turn 25 MW of electricity into sustained AI-training computation on a 20 MW IT load</td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-power"></span>FR1 · Supply electric power to the computing equipment</span></td></tr>
+        <tr><td class="id">FR1.1</td><td>Deliver the design computing load continuously</td><td>20 MW of IT load, every hour of the year (8,760 h)</td><td>CA1, CA2</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR1.2</td><td>Deliver power at the density each rack needs</td><td>120–140 kW per rack now; path to 600 kW–1 MW</td><td>CA1</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR1.3</td><td>Keep the site's demand on its supply steady while the computing load jumps</td><td>Absorb jumps up to ~18 MW within 1 s; supply-side ramp below the utility's agreed limit</td><td>CA3</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR1.4</td><td>Stay connected through brief grid faults</td><td>Stay online through the voltage dips the utility and NERC specify; no mass disconnection</td><td>CA3</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR1.5</td><td>Keep critical loads powered when grid and main supply are lost</td><td>Switch-over with no dropped racks; ≥12 h backup (~300 MWh if the full 25 MW is covered)</td><td>CA1, CA5</td><td><span class="tag new">added</span></td></tr>
+
+        <tr><td class="id">FR1.6</td><td>Limit energy used for anything other than computing</td><td>PUE ≤ 1.25: ≤ 5 MW overhead; ≤ 219 GWh/year at full load</td><td>CA2, CA4</td><td><span class="tag new">baseline</span></td></tr>
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-cool"></span>FR2 · Remove heat</span></td></tr>
+        <tr><td class="id">FR2.1</td><td>Remove heat from the chips fast enough to keep them within vendor temperature limits</td><td>Remove ~20 MW of chip heat; coolant supply within vendor range</td><td>CA1</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR2.2</td><td>Reject all site heat to the environment on the hottest design day</td><td>Reject ~25 MW at full load on the local 1-in-20-year hot day</td><td>CA1</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR2.3</td><td>Keep cooling through a single pump or cooling-unit failure</td><td>No rack exceeds temperature limit after any single cooling failure</td><td>CA1, CA5</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR2.4</td><td>Limit fresh-water draw</td><td>Below 0.9–1.9 M litres/day (the evaporative range) or a site-set cap; prefer non-drinking-water sources</td><td>CA4</td><td><span class="tag new">added</span></td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-net"></span>FR3 · Move data</span></td></tr>
+        <tr><td class="id">FR3.1</td><td>Link GPUs to each other fast enough that computation, not communication, sets the pace</td><td>400–800 Gb/s per GPU; no dropped data under full load</td><td>CA1</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR3.2</td><td>Move training data in and saved progress out without slowing GPU-to-GPU traffic</td><td>Save a full copy of training progress in minutes; storage traffic kept apart from GPU traffic</td><td>CA1</td><td><span class="tag core">core</span></td></tr>
+        <tr><td class="id">FR3.3</td><td>Connect the site to the outside world on independent routes</td><td>No single cut isolates the site</td><td>CA1, CA2</td><td><span class="tag new">added</span></td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-fail"></span>FR4 · Keep training progressing through failures</span></td></tr>
+        <tr><td class="id">FR4.1</td><td>Detect a failed GPU, server, link or cooling unit quickly</td><td>Detection in under 1–2 minutes</td><td>CA1</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR4.2</td><td>Limit the work lost to any single failure</td><td>≤ 10–30 minutes of lost training per interruption</td><td>CA1</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR4.3</td><td>Allow repair and replacement while the rest of the site runs</td><td>Any rack, pump unit or electrical section can be isolated without stopping other halls</td><td>CA5</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR4.4</td><td>Sustain a high share of useful training time</td><td>≥ 90%, with an interruption expected roughly every 4–5 hours at ~11,000 GPUs</td><td>CA1</td><td><span class="tag new">added</span></td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-ink"></span>FR5 · Grow and change without stopping</span></td></tr>
+        <tr><td class="id">FR5.1</td><td>Add capacity in blocks while existing halls keep running</td><td>New block energised with zero downtime to running blocks</td><td>CA2</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR5.2</td><td>Accept the next hardware generation without rebuilding the building</td><td>Supports higher rack power, 800 V DC and warmer coolant</td><td>CA2</td><td><span class="tag new">added</span></td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-ink"></span>FR6 · Protect people, equipment and the neighborhood</span></td></tr>
+        <tr><td class="id">FR6.1</td><td>Detect and contain fires, including battery fires</td><td>Fire in one battery unit or room does not spread</td><td>CA4, CA5</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR6.2</td><td>Keep air emissions, noise and water discharge within permit limits</td><td>Per permit; continuous measurement at the boundary</td><td>CA4</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR6.3</td><td>Control who can physically reach equipment</td><td>Layered access with logging</td><td>CA2, CA5</td><td><span class="tag new">added</span></td></tr>
+
+        <tr class="fr-group"><td colspan="5"><span class="lane-h"><span class="chip c-ink"></span>FR7 · Measure and report the site's condition</span></td></tr>
+        <tr><td class="id">FR7.1</td><td>Measure power, temperature, coolant flow and network health down to the rack</td><td>Rack-level readings every few seconds</td><td>CA1, CA5</td><td><span class="tag new">added</span></td></tr>
+        <tr><td class="id">FR7.2</td><td>Record grid-side events for the utility and regulators</td><td>High-speed fault recording, as NERC's 2026 alert requires</td><td>CA3</td><td><span class="tag new">added</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3>Constraints (limits, not functions)</h3>
+      <p style="font-size:15px">In axiomatic design these bound the acceptable designs rather than being requirements to satisfy one by one.</p>
+      <ul class="plain" style="font-size:15px">
+        <li>Electrical, fire and battery codes: NFPA 70, 75, 110, 855; IEEE 519 for electrical distortion fed back to the grid</li>
+        <li>NERC/FERC rules for large computing loads (mandatory standards ordered for filing by Dec 31, 2026)</li>
+        <li>Clean Air Act permits for every on-site turbine</li>
+        <li>Vendor limits: rack power, coolant temperature, flow and pressure for the chosen GPU</li>
+        <li>Land, water rights, budget and schedule (Colossus 1 went from empty building to training in 122 days)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Where requirements may be coupled</h3>
+      <p style="font-size:15px">Flags for step 3, where the Independence Axiom asks that each design parameter affect only its own requirement.</p>
+      <ul class="plain" style="font-size:15px">
+        <li><b>FR1.3 and FR1.5:</b> one battery bank smoothing swings wants to sit half-charged; the same bank as backup wants to stay full.</li>
+        <li><b>FR1 and FR2:</b> the cooling plant runs on site power, so any power design also changes cooling.</li>
+        <li><b>FR2.1 and FR2.4:</b> warmer coolant saves water but leaves chips less temperature margin.</li>
+        <li><b>FR1.1 and FR6.2:</b> on-site gas turbines add capacity and add emissions at the same time.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NON-GOALS -->
+<section class="section" id="nongoals">
+  <p class="eyebrow">Explicit non-goals</p>
+  <h2>What this project does not deliver</h2>
+  <div class="nongoal">
+    <div class="ng">Construction-ready engineering design</div><div class="why">No stamped drawings, cable and pipe sizing, structural calculations or equipment schedules.</div>
+    <div class="ng">Real-time grid-control system</div><div class="why">States what the site must do toward the grid (FR1.3, FR1.4), not the control software or settings that do it.</div>
+    <div class="ng">Financial investment model</div><div class="why">No capital cost, payback, electricity price forecasts or GPU pricing.</div>
+    <div class="ng">Chip, server or rack design</div><div class="why">GPUs, racks and in-rack links are bought components, described only by vendor limits.</div>
+    <div class="ng">The Terafab chip factory</div><div class="why">The video's subject. Its clean rooms, ultrapure water and fab tools are a different facility.</div>
+    <div class="ng">AI software stack</div><div class="why">Training code, job scheduler and checkpoint software are out of scope. FR4 only requires the facility to make fast recovery possible.</div>
+    <div class="ng">Power-plant design</div><div class="why">On-site generation is treated as a supplier with stated output, ramp rate and emissions.</div>
+    <div class="ng">Site selection, permitting or legal strategy</div><div class="why">Permits appear only as constraints.</div>
+    <div class="ng">Cybersecurity architecture</div><div class="why">Covers physical access only; network and control-system security are a separate design.</div>
+    <div class="ng">Serving AI products to users</div><div class="why">The site is for training; response-time requirements for live products are not addressed.</div>
+    <div class="ng">Environmental impact statement</div><div class="why">Water and emissions appear as limits to meet, not as a full life-cycle or carbon assessment.</div>
+    <div class="ng">An audit of xAI's facilities</div><div class="why">Colossus figures come from public reporting and disagree in places; they illustrate scale and are not as-built data.</div>
+  </div>
+</section>
+
+<!--     <li>NextGen Manufacturing, "How Elon Musk is Building the World's Most Impossible Chip Factory" (YouTube video 4JLHUHkOC5s). <a href="https://www.youtube.com/watch?v=4JLHUHkOC5s">https://www.youtube.com/watch?v=4JLHUHkOC5s</a></li>
+    <li>Wikipedia, Terafab. <a href="https://en.wikipedia.org/wiki/Terafab">https://en.wikipedia.org/wiki/Terafab</a></li>
+    <li>KBTX, Musk-connected company controls over 4,600 acres in Grimes County (Aug 2026). <a href="https://www.kbtx.com/2026/08/21/elon-musk-connected-company-now-controls-over-4600-acres-grimes-county/">https://www.kbtx.com/2026/08/21/elon-musk-connected-company-now-controls-over-4600-acres-grimes-county/</a></li>
+    <li>Introl, xAI Memphis Colossus infrastructure. <a href="https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure">https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure</a></li>
+    <li>TechCrunch, xAI faces lawsuit over 400+ MW of unpermitted turbines (Jun 2025). <a href="https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits">https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits</a></li>
+    <li>Cleanview, Behind-the-meter data centers: Colossus. <a href="https://cleanview.co/reports/behind-the-meter-data-centers/full-report/colossus">https://cleanview.co/reports/behind-the-meter-data-centers/full-report/colossus</a></li>
+    <li>Wikipedia, Colossus (data center). <a href="https://en.wikipedia.org/wiki/Colossus_(data_center)">https://en.wikipedia.org/wiki/Colossus_(data_center)</a></li>
+    <li>NextBigFuture, Inside the xAI AI data center. <a href="https://nextbigfuture.substack.com/p/inside-the-xai-ai-data-center">https://nextbigfuture.substack.com/p/inside-the-xai-ai-data-center</a></li>
+    <li>Data Center Dynamics, xAI deploys 168 Tesla Megapacks (May 2025). <a href="https://www.datacenterdynamics.com/en/news/xai-deploys-168-tesla-megapacks-to-power-its-colossus-supercomputer-in-memphis/">https://www.datacenterdynamics.com/en/news/xai-deploys-168-tesla-megapacks-to-power-its-colossus-supercomputer-in-memphis/</a></li>
+    <li>NVIDIA, How new GB300 NVL72 features provide steady power for AI. <a href="https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/">https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/</a></li>
+    <li>NERC, Incident Review: Considering Simultaneous Voltage-Sensitive Load Reductions. <a href="https://nerc.com/pa/rrm/ea/Documents/Incident_Review_Large_Load_Loss.pdf">https://nerc.com/pa/rrm/ea/Documents/Incident_Review_Large_Load_Loss.pdf</a></li>
+    <li>Data Center Frontier, Why NERC now sees AI data centers as grid actors (2026). <a href="https://www.datacenterfrontier.com/energy/article/55376679/why-nerc-now-sees-ai-data-centers-as-grid-actors">https://www.datacenterfrontier.com/energy/article/55376679/why-nerc-now-sees-ai-data-centers-as-grid-actors</a></li>
+    <li>FERC Docket RD26-7-000 (Jul 2026). <a href="https://www.ferc.gov/sites/default/files/2026-07/RD26-7-000.pdf">https://www.ferc.gov/sites/default/files/2026-07/RD26-7-000.pdf</a></li>
+    <li>Uptime Institute, Global Data Center Survey 2025. <a href="https://intelligence.uptimeinstitute.com/resource/uptime-institute-global-data-center-survey-2025">https://intelligence.uptimeinstitute.com/resource/uptime-institute-global-data-center-survey-2025</a></li>
+    <li>Uptime Institute Journal, Fuel system design and reliability. <a href="https://journal.uptimeinstitute.com/fuel-system-design-reliability/">https://journal.uptimeinstitute.com/fuel-system-design-reliability/</a></li>
+    <li>NVIDIA, 800 V HVDC architecture for AI factories. <a href="https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-Generation-of-ai-factories">https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-Generation-of-ai-factories</a></li>
+    <li>Glenn Lockwood, Colossus system notes. <a href="https://glennklockwood.com/garden/systems/colossus">https://glennklockwood.com/garden/systems/colossus</a></li>
+    <li>Datacentres.com, Data centre water usage guide (secondary). <a href="https://www.datacentres.com/guides/data-centre-water-usage">https://www.datacentres.com/guides/data-centre-water-usage</a></li>
+    <li>ConstructConnect, xAI commits to resuming Colossus water treatment plant. <a href="https://news.constructconnect.com/spacexai-commits-to-resuming-water-treatment-plant-at-colossus-memphis-tennessee-supercomputer-campus">https://news.constructconnect.com/spacexai-commits-to-resuming-water-treatment-plant-at-colossus-memphis-tennessee-supercomputer-campus</a></li>
+    <li>Microsoft, Infinite scale: the architecture behind the Azure AI superfactory (Nov 2025). <a href="https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/">https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/</a></li>
+    <li>TweakTown, 230k GPUs at Colossus 1. <a href="https://www.tweaktown.com/news/106571/elon-musk-230k-ai-gpus-train-grok-at-colossus-1-550k-gb200-gb300s-at-colossus-2-coming-soon/index.html">https://www.tweaktown.com/news/106571/elon-musk-230k-ai-gpus-train-grok-at-colossus-1-550k-gb200-gb300s-at-colossus-2-coming-soon/index.html</a></li>
+    <li>Benzinga, Colossus 2 could exceed 1.2M GB200/GB300 by year-end (Sep 2026). <a href="https://www.benzinga.com/markets/tech/26/09/61991512/elon-musk-says-spacexais-colossus-2-could-run-more-than-1-2-million-nvidia-gb200-and-gb300-chips-by-year-end-if-we-get-lucky">https://www.benzinga.com/markets/tech/26/09/61991512/elon-musk-says-spacexais-colossus-2-could-run-more-than-1-2-million-nvidia-gb200-and-gb300-chips-by-year-end-if-we-get-lucky</a></li>
+    <li>ServeTheHome, Inside the 100,000-GPU xAI Colossus cluster. <a href="https://www.servethehome.com/inside-100000-nvidia-gpu-xai-colossus-cluster-supermicro-helped-build-for-elon-musk/">https://www.servethehome.com/inside-100000-nvidia-gpu-xai-colossus-cluster-supermicro-helped-build-for-elon-musk/</a></li>
+    <li>Upsite, ASHRAE thermal guidelines 5th ed., liquid cooling classes. <a href="https://www.upsite.com/blog/major-changes-to-ashraes-fifth-edition-of-thermal-guidelines-part-3-liquid-cooling-chapter-updates/">https://www.upsite.com/blog/major-changes-to-ashraes-fifth-edition-of-thermal-guidelines-part-3-liquid-cooling-chapter-updates/</a></li>
+    <li>NVIDIA, Ethernet networking accelerates world's largest AI supercomputer (2024). <a href="https://investor.nvidia.com/news/press-release-details/2024/NVIDIA-Ethernet-Networking-Accelerates-Worlds-Largest-AI-Supercomputer-Built-by-xAI">https://investor.nvidia.com/news/press-release-details/2024/NVIDIA-Ethernet-Networking-Accelerates-Worlds-Largest-AI-Supercomputer-Built-by-xAI</a></li>
+    <li>Meta, The Llama 3 Herd of Models (arXiv 2407.21783). <a href="https://arxiv.org/abs/2407.21783">https://arxiv.org/abs/2407.21783</a></li>
+    <li>Data Center Frontier, New NFPA battery standard could impact data center UPS designs. <a href="https://datacenterfrontier.com/new-nfpa-battery-standard-could-impact-data-center-ups-designs/">https://datacenterfrontier.com/new-nfpa-battery-standard-could-impact-data-center-ups-designs/</a></li>
+    <li>KAIT8, SELC and NAACP appeal xAI turbine permit (Jul 2025). <a href="https://www.kait8.com/2025/07/17/selc-naacp-appeal-health-dept-approval-xai-turbines">https://www.kait8.com/2025/07/17/selc-naacp-appeal-health-dept-approval-xai-turbines</a></li>
+    <li>Daily Memphian, xAI water recycling plant groundbreaking. <a href="https://dailymemphian.com/article/56043/xai-groundbreaking">https://dailymemphian.com/article/56043/xai-groundbreaking</a></li>
+    <li>Tom's Hardware, Colossus 2 nowhere near 1 GW, satellite imagery suggests. <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musks-xai-colossus-2-is-nowhere-near-1-gigawatt-capacity-satellite-imagery-suggests-despite-claims-site-only-has-350-megawatts-of-cooling-capacity">https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musks-xai-colossus-2-is-nowhere-near-1-gigawatt-capacity-satellite-imagery-suggests-despite-claims-site-only-has-350-megawatts-of-cooling-capacity</a></li>
+    <li>SemiAnalysis, AI training load fluctuations at gigawatt scale. <a href="https://newsletter.semianalysis.com/p/ai-training-load-fluctuations-at-gigawatt-scale-risk-of-power-grid-blackout">https://newsletter.semianalysis.com/p/ai-training-load-fluctuations-at-gigawatt-scale-risk-of-power-grid-blackout</a></li>
+    <li>Prince William Times, Power crunch keeps data centers in the dark (Dominion 7-year wait). <a href="https://www.princewilliamtimes.com/localnews/the-big-bottleneck-power-crunch-keeps-data-centers-in-the-dark/article_3b45f243-defa-573c-8ed1-c8709f73ce94.html">https://www.princewilliamtimes.com/localnews/the-big-bottleneck-power-crunch-keeps-data-centers-in-the-dark/article_3b45f243-defa-573c-8ed1-c8709f73ce94.html</a></li>
+    <li>Lawrence Berkeley National Lab, Queued Up 2025. <a href="https://emp.lbl.gov/sites/default/files/2025-12/Queued%20Up%202025%20Edition%20-%2012.15.2025.pdf">https://emp.lbl.gov/sites/default/files/2025-12/Queued%20Up%202025%20Edition%20-%2012.15.2025.pdf</a></li> -->
+<section class="section" id="sources">
+  <p class="eyebrow">Sources</p>
+  <ol class="sources">
+    <li>NextGen Manufacturing, "How Elon Musk is Building the World's Most Impossible Chip Factory" (YouTube video 4JLHUHkOC5s). <a href="https://www.youtube.com/watch?v=4JLHUHkOC5s">https://www.youtube.com/watch?v=4JLHUHkOC5s</a></li>
+    <li>Wikipedia, Terafab. <a href="https://en.wikipedia.org/wiki/Terafab">https://en.wikipedia.org/wiki/Terafab</a></li>
+    <li>KBTX, Musk-connected company controls over 4,600 acres in Grimes County (Aug 2026). <a href="https://www.kbtx.com/2026/08/21/elon-musk-connected-company-now-controls-over-4600-acres-grimes-county/">https://www.kbtx.com/2026/08/21/elon-musk-connected-company-now-controls-over-4600-acres-grimes-county/</a></li>
+    <li>Introl, xAI Memphis Colossus infrastructure. <a href="https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure">https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure</a></li>
+    <li>TechCrunch, xAI faces lawsuit over 400+ MW of unpermitted turbines (Jun 2025). <a href="https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits">https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits</a></li>
+    <li>Cleanview, Behind-the-meter data centers: Colossus. <a href="https://cleanview.co/reports/behind-the-meter-data-centers/full-report/colossus">https://cleanview.co/reports/behind-the-meter-data-centers/full-report/colossus</a></li>
+    <li>Wikipedia, Colossus (data center). <a href="https://en.wikipedia.org/wiki/Colossus_(data_center)">https://en.wikipedia.org/wiki/Colossus_(data_center)</a></li>
+    <li>NextBigFuture, Inside the xAI AI data center. <a href="https://nextbigfuture.substack.com/p/inside-the-xai-ai-data-center">https://nextbigfuture.substack.com/p/inside-the-xai-ai-data-center</a></li>
+    <li>Data Center Dynamics, xAI deploys 168 Tesla Megapacks (May 2025). <a href="https://www.datacenterdynamics.com/en/news/xai-deploys-168-tesla-megapacks-to-power-its-colossus-supercomputer-in-memphis/">https://www.datacenterdynamics.com/en/news/xai-deploys-168-tesla-megapacks-to-power-its-colossus-supercomputer-in-memphis/</a></li>
+    <li>NVIDIA, How new GB300 NVL72 features provide steady power for AI. <a href="https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/">https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/</a></li>
+    <li>NERC, Incident Review: Considering Simultaneous Voltage-Sensitive Load Reductions. <a href="https://nerc.com/pa/rrm/ea/Documents/Incident_Review_Large_Load_Loss.pdf">https://nerc.com/pa/rrm/ea/Documents/Incident_Review_Large_Load_Loss.pdf</a></li>
+    <li>Data Center Frontier, Why NERC now sees AI data centers as grid actors (2026). <a href="https://www.datacenterfrontier.com/energy/article/55376679/why-nerc-now-sees-ai-data-centers-as-grid-actors">https://www.datacenterfrontier.com/energy/article/55376679/why-nerc-now-sees-ai-data-centers-as-grid-actors</a></li>
+    <li>FERC Docket RD26-7-000 (Jul 2026). <a href="https://www.ferc.gov/sites/default/files/2026-07/RD26-7-000.pdf">https://www.ferc.gov/sites/default/files/2026-07/RD26-7-000.pdf</a></li>
+    <li>Uptime Institute, Global Data Center Survey 2025. <a href="https://intelligence.uptimeinstitute.com/resource/uptime-institute-global-data-center-survey-2025">https://intelligence.uptimeinstitute.com/resource/uptime-institute-global-data-center-survey-2025</a></li>
+    <li>Uptime Institute Journal, Fuel system design and reliability. <a href="https://journal.uptimeinstitute.com/fuel-system-design-reliability/">https://journal.uptimeinstitute.com/fuel-system-design-reliability/</a></li>
+    <li>NVIDIA, 800 V HVDC architecture for AI factories. <a href="https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-Generation-of-ai-factories">https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-Generation-of-ai-factories</a></li>
+    <li>Glenn Lockwood, Colossus system notes. <a href="https://glennklockwood.com/garden/systems/colossus">https://glennklockwood.com/garden/systems/colossus</a></li>
+    <li>Datacentres.com, Data centre water usage guide (secondary). <a href="https://www.datacentres.com/guides/data-centre-water-usage">https://www.datacentres.com/guides/data-centre-water-usage</a></li>
+    <li>ConstructConnect, xAI commits to resuming Colossus water treatment plant. <a href="https://news.constructconnect.com/spacexai-commits-to-resuming-water-treatment-plant-at-colossus-memphis-tennessee-supercomputer-campus">https://news.constructconnect.com/spacexai-commits-to-resuming-water-treatment-plant-at-colossus-memphis-tennessee-supercomputer-campus</a></li>
+    <li>Microsoft, Infinite scale: the architecture behind the Azure AI superfactory (Nov 2025). <a href="https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/">https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/</a></li>
+    <li>TweakTown, 230k GPUs at Colossus 1. <a href="https://www.tweaktown.com/news/106571/elon-musk-230k-ai-gpus-train-grok-at-colossus-1-550k-gb200-gb300s-at-colossus-2-coming-soon/index.html">https://www.tweaktown.com/news/106571/elon-musk-230k-ai-gpus-train-grok-at-colossus-1-550k-gb200-gb300s-at-colossus-2-coming-soon/index.html</a></li>
+    <li>Benzinga, Colossus 2 could exceed 1.2M GB200/GB300 by year-end (Sep 2026). <a href="https://www.benzinga.com/markets/tech/26/09/61991512/elon-musk-says-spacexais-colossus-2-could-run-more-than-1-2-million-nvidia-gb200-and-gb300-chips-by-year-end-if-we-get-lucky">https://www.benzinga.com/markets/tech/26/09/61991512/elon-musk-says-spacexais-colossus-2-could-run-more-than-1-2-million-nvidia-gb200-and-gb300-chips-by-year-end-if-we-get-lucky</a></li>
+    <li>ServeTheHome, Inside the 100,000-GPU xAI Colossus cluster. <a href="https://www.servethehome.com/inside-100000-nvidia-gpu-xai-colossus-cluster-supermicro-helped-build-for-elon-musk/">https://www.servethehome.com/inside-100000-nvidia-gpu-xai-colossus-cluster-supermicro-helped-build-for-elon-musk/</a></li>
+    <li>Upsite, ASHRAE thermal guidelines 5th ed., liquid cooling classes. <a href="https://www.upsite.com/blog/major-changes-to-ashraes-fifth-edition-of-thermal-guidelines-part-3-liquid-cooling-chapter-updates/">https://www.upsite.com/blog/major-changes-to-ashraes-fifth-edition-of-thermal-guidelines-part-3-liquid-cooling-chapter-updates/</a></li>
+    <li>NVIDIA, Ethernet networking accelerates world's largest AI supercomputer (2024). <a href="https://investor.nvidia.com/news/press-release-details/2024/NVIDIA-Ethernet-Networking-Accelerates-Worlds-Largest-AI-Supercomputer-Built-by-xAI">https://investor.nvidia.com/news/press-release-details/2024/NVIDIA-Ethernet-Networking-Accelerates-Worlds-Largest-AI-Supercomputer-Built-by-xAI</a></li>
+    <li>Meta, The Llama 3 Herd of Models (arXiv 2407.21783). <a href="https://arxiv.org/abs/2407.21783">https://arxiv.org/abs/2407.21783</a></li>
+    <li>Data Center Frontier, New NFPA battery standard could impact data center UPS designs. <a href="https://datacenterfrontier.com/new-nfpa-battery-standard-could-impact-data-center-ups-designs/">https://datacenterfrontier.com/new-nfpa-battery-standard-could-impact-data-center-ups-designs/</a></li>
+    <li>KAIT8, SELC and NAACP appeal xAI turbine permit (Jul 2025). <a href="https://www.kait8.com/2025/07/17/selc-naacp-appeal-health-dept-approval-xai-turbines">https://www.kait8.com/2025/07/17/selc-naacp-appeal-health-dept-approval-xai-turbines</a></li>
+    <li>Daily Memphian, xAI water recycling plant groundbreaking. <a href="https://dailymemphian.com/article/56043/xai-groundbreaking">https://dailymemphian.com/article/56043/xai-groundbreaking</a></li>
+    <li>Tom's Hardware, Colossus 2 nowhere near 1 GW, satellite imagery suggests. <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musks-xai-colossus-2-is-nowhere-near-1-gigawatt-capacity-satellite-imagery-suggests-despite-claims-site-only-has-350-megawatts-of-cooling-capacity">https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musks-xai-colossus-2-is-nowhere-near-1-gigawatt-capacity-satellite-imagery-suggests-despite-claims-site-only-has-350-megawatts-of-cooling-capacity</a></li>
+    <li>SemiAnalysis, AI training load fluctuations at gigawatt scale. <a href="https://newsletter.semianalysis.com/p/ai-training-load-fluctuations-at-gigawatt-scale-risk-of-power-grid-blackout">https://newsletter.semianalysis.com/p/ai-training-load-fluctuations-at-gigawatt-scale-risk-of-power-grid-blackout</a></li>
+    <li>Prince William Times, Power crunch keeps data centers in the dark (Dominion 7-year wait). <a href="https://www.princewilliamtimes.com/localnews/the-big-bottleneck-power-crunch-keeps-data-centers-in-the-dark/article_3b45f243-defa-573c-8ed1-c8709f73ce94.html">https://www.princewilliamtimes.com/localnews/the-big-bottleneck-power-crunch-keeps-data-centers-in-the-dark/article_3b45f243-defa-573c-8ed1-c8709f73ce94.html</a></li>
+    <li>Lawrence Berkeley National Lab, Queued Up 2025. <a href="https://emp.lbl.gov/sites/default/files/2025-12/Queued%20Up%202025%20Edition%20-%2012.15.2025.pdf">https://emp.lbl.gov/sites/default/files/2025-12/Queued%20Up%202025%20Edition%20-%2012.15.2025.pdf</a></li>
+  </ol>
+</section>
+
+</div>
