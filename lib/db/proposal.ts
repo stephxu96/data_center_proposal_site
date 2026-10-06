@@ -29,6 +29,19 @@ export function numericInput(raw: string | string[] | undefined, min: number, ma
 }
 
 export type ModelInputs = typeof proposal.illustrativeModel & { pue: number };
+export const modelDefinitions = [
+  ['powerPriceUsdMwh','Power price','USD / MWh',0,500],
+  ['utilizationPct','GPU utilization','%',0,100],
+  ['gpuCount','GPU count','units',1,100000],
+  ['pue','Facility PUE','ratio',1,3],
+  ['buildCapexMillions','Build capital','USD millions',0,10000],
+  ['hybridCapexMillions','Hybrid capital','USD millions',0,10000],
+  ['annualLeaseMillions','Annual lease','USD millions',0,10000],
+  ['hybridLeaseMillions','Hybrid annual lease','USD millions',0,10000],
+  ['annualNonPowerOpsMillions','Non-power operations','USD millions / year',0,10000],
+  ['delayCarryingMillionsPerMonth','Delay carrying cost','USD millions / month',0,10000],
+  ['gridDelayMonths','Grid delay','months',0,60],
+] as const;
 export function investmentModel(input: ModelInputs) {
   const annualPower = annualPowerCostMillions(input.powerPriceUsdMwh, input.pue);
   const productiveHours = input.gpuCount * proposal.design.operatingHours * input.utilizationPct / 100;
