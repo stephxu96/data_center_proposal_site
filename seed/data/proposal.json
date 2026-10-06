@@ -1,0 +1,55 @@
+{
+  "design": {
+    "name": "Shared university AI data center",
+    "location": "Texas, United States",
+    "referenceCity": "Dallas–Fort Worth region",
+    "itLoadMw": 20,
+    "pue": 1.25,
+    "operatingHours": 8760,
+    "cooling": "Closed-loop, non-evaporative cooling",
+    "gridOutageHours": 48,
+    "latencyThresholdMs": 50
+  },
+  "illustrativeModel": {
+    "powerPriceUsdMwh": 80,
+    "utilizationPct": 65,
+    "gpuCount": 12000,
+    "buildCapexMillions": 480,
+    "hybridCapexMillions": 210,
+    "annualLeaseMillions": 92,
+    "hybridLeaseMillions": 48,
+    "annualNonPowerOpsMillions": 38,
+    "gridDelayMonths": 0
+  },
+  "candidates": [
+    { "id": "tx", "country": "United States", "site": "Texas", "score": 3.6, "demandShare": 62.3, "scores": [5,4,3,2,5,2,2,4,3,1,0] },
+    { "id": "qc", "country": "Canada", "site": "Québec", "score": 3.05, "demandShare": 50.7, "scores": [4,1,2,3,4,5,4,3,3,3,0] },
+    { "id": "hel", "country": "Finland", "site": "Helsinki", "score": 3.05, "demandShare": 19.5, "scores": [2,2,3,4,3,4,5,5,3,5,0] }
+  ],
+  "criteria": [
+    { "id": "K10", "name": "Demand proximity", "weight": 25 },
+    { "id": "K1", "name": "Power cost", "weight": 15 },
+    { "id": "K2", "name": "Grid access", "weight": 15 },
+    { "id": "K4", "name": "Climate", "weight": 10 },
+    { "id": "K6", "name": "Research network", "weight": 10 },
+    { "id": "K3", "name": "Grid carbon", "weight": 5 },
+    { "id": "K5", "name": "Water", "weight": 5 },
+    { "id": "K7", "name": "Reliability", "weight": 5 },
+    { "id": "K8", "name": "Lease market", "weight": 5 },
+    { "id": "K9", "name": "Policy", "weight": 5 },
+    { "id": "K11", "name": "Connection timing", "weight": 0 }
+  ],
+  "conditions": [
+    "Obtain a written utility energization schedule and full connection cost.",
+    "Confirm the applicable large-load rules and curtailment obligations before procurement.",
+    "Complete a site-specific resilience and backup-power study.",
+    "Use a closed-loop cooling design with no routine evaporative water demand.",
+    "Secure an electricity and carbon procurement plan acceptable to the member institutions."
+  ],
+  "reversalTriggers": [
+    "Québec confirms an earlier connection and a durable, competitive delivered power rate.",
+    "Member demand shifts materially toward batch training rather than latency-sensitive use.",
+    "The member survey places substantially more weight on East Coast proximity.",
+    "Texas interconnection or large-load rules change the economics or operating flexibility."
+  ]
+}

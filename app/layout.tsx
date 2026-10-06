@@ -1,34 +1,25 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import Link from 'next/link';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 export const metadata: Metadata = {
-  title: 'Global Datacenter Design Explorer',
-  description: 'Phase 3 application shell for the university data center proposal.',
+  title: 'University AI Infrastructure | Decision Explorer',
+  description: 'A decision explorer for a shared university AI data center.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+const nav = [
+  ['Overview', '/'], ['Compare sites', '/countries'], ['Initial design', '/design'],
+  ['Investment case', '/investment'], ['Evidence', '/evidence'], ['Adviser', '/adviser'], ['Glossary', '/glossary'],
+];
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body>
+    <header className="site-header"><div className="shell header-row">
+      <Link className="brand" href="/"><span className="brand-mark" aria-hidden="true"><i/><i/><i/><i/></span><span>Northstar<br/>Compute</span></Link>
+      <nav className="nav" aria-label="Main navigation">{nav.map(([name,href]) => <Link key={href} href={href}>{name}</Link>)}</nav>
+      <Link className="header-action" href="/investment">Explore the case ↗</Link>
+    </div></header>
+    <main>{children}</main>
+    <footer className="footer"><div className="shell footer-inner"><div><strong>Northstar Compute</strong><p>A shared AI infrastructure concept for university decision-makers.</p></div><div><p><Link href="/countries">Compare locations</Link> &nbsp; <Link href="/design">Explore design</Link> &nbsp; <Link href="/investment">Investment case</Link></p></div></div></footer>
+  </body></html>;
 }
