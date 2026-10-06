@@ -1,0 +1,824 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "metrics": [
+    {
+      "seed_key": "demand-east",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "east"
+      },
+      "metric_name": "demand_share",
+      "value": 36.3,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "demand-central",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "central"
+      },
+      "metric_name": "demand_share",
+      "value": 14.4,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "demand-west",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "west"
+      },
+      "metric_name": "demand_share",
+      "value": 11.6,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "demand-europe",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "europe"
+      },
+      "metric_name": "demand_share",
+      "value": 19.5,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "demand-asia",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "asia"
+      },
+      "metric_name": "demand_share",
+      "value": 15.2,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "demand-rest",
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "rest"
+      },
+      "metric_name": "demand_share",
+      "value": 3,
+      "unit": "%",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-east",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "east"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 39,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-central",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "central"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 23,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-west",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "west"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 45,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-europe",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "europe"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 116,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-asia",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "asia"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 179,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-rest",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "rest"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 147.5,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-tx-china",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "china"
+      },
+      "metric_name": "round_trip_latency",
+      "value": null,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "No service-market latency established for the excluded China region.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-east",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "east"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 11,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-central",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "central"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 21,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-west",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "west"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 66,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-europe",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "europe"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 83,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-asia",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "asia"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 208,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-rest",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "rest"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 145.5,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-qc-china",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "china"
+      },
+      "metric_name": "round_trip_latency",
+      "value": null,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "No service-market latency established for the excluded China region.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-east",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "east"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 106,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-central",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "central"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 129,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-west",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "west"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 169,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-europe",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "europe"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 30,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-asia",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "asia"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 224,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-rest",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "rest"
+      },
+      "metric_name": "round_trip_latency",
+      "value": 127,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "latency-hel-china",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "demand_region_id": {
+        "ref": "demand_regions",
+        "key": "china"
+      },
+      "metric_name": "round_trip_latency",
+      "value": null,
+      "unit": "ms",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "No service-market latency established for the excluded China region.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "price-tx",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "metric_name": "industrial_electricity_price",
+      "value": 67.2,
+      "unit": "USD/MWh",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S5"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "6.72 cents/kWh × 10; EIA Jan–Jul 2026 industrial average, not a delivered site offer.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "price-qc",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "metric_name": "industrial_electricity_price",
+      "value": 46.2,
+      "unit": "USD/MWh",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S15"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "65.9 CAD/MWh divided by 1.4254 CAD/USD (M-FX-CAD-USD, 2026-10-05); excludes proposed tariff.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "price-hel",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "metric_name": "industrial_electricity_price",
+      "value": 73,
+      "unit": "USD/MWh",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S27"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "(42.2 + 22.4) EUR/MWh × 1.13 USD/EUR (M-FX-EUR-USD, 2025); combined energy and tax estimate.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "M-FX-CAD-USD",
+      "country_id": {
+        "ref": "countries",
+        "key": "CA"
+      },
+      "metric_name": "fx_rate",
+      "value": 0.7015574575557738,
+      "unit": "ratio",
+      "reporting_period": "2026",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S1"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "USD per CAD; reciprocal of 1 USD = 1.4254 CAD on 2026-10-05.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "M-FX-EUR-USD",
+      "country_id": {
+        "ref": "countries",
+        "key": "FI"
+      },
+      "metric_name": "fx_rate",
+      "value": 1.13,
+      "unit": "ratio",
+      "reporting_period": "2025",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S30"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "USD per EUR; 2025 average conversion assumption in phase-one specification.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "carbon-tx",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "metric_name": "grid_carbon_intensity",
+      "value": 373,
+      "unit": "gCO2/kWh",
+      "reporting_period": "2024",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S7"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "carbon-qc",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "metric_name": "grid_carbon_intensity",
+      "value": 7.8,
+      "unit": "gCO2/kWh",
+      "reporting_period": "2025",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S18"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+      "verified_by": null,
+      "verified_at": null
+    },
+    {
+      "seed_key": "carbon-hel",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "metric_name": "grid_carbon_intensity",
+      "value": 66,
+      "unit": "gCO2/kWh",
+      "reporting_period": "2025",
+      "claim_type": "estimate",
+      "source_id": {
+        "ref": "sources",
+        "key": "S30"
+      },
+      "retrieved_at": "2026-10-06T00:00:00Z",
+      "confidence": "medium",
+      "notes": "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+      "verified_by": null,
+      "verified_at": null
+    }
+  ]
+}

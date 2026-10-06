@@ -1,0 +1,127 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "design_parameters": [
+    {
+      "seed_key": "P-it_load_mw",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "it_load_mw",
+      "value": 20,
+      "claim_type": "assumption",
+      "rationale": "Baseline defined in the challenge brief and phase-one design specification.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "P-pue",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "pue",
+      "value": 1.25,
+      "claim_type": "assumption",
+      "rationale": "Baseline defined in the challenge brief and phase-one design specification.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "P-operating_hours",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "operating_hours",
+      "value": 8760,
+      "claim_type": "assumption",
+      "rationale": "Baseline defined in the challenge brief and phase-one design specification.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "P-latency_threshold_ms",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "latency_threshold_ms",
+      "value": 50,
+      "claim_type": "assumption",
+      "rationale": "Baseline defined in the challenge brief and phase-one design specification.",
+      "created_at": "2026-10-06T00:00:00Z"
+    }
+  ],
+  "teams": [
+    {
+      "seed_key": "university-demo-team",
+      "name": "University AI infrastructure team",
+      "course_section": null
+    }
+  ],
+  "designs": [
+    {
+      "seed_key": "university-design",
+      "team_id": {
+        "ref": "teams",
+        "key": "university-demo-team"
+      },
+      "name": "Shared university AI data center",
+      "selected_country_id": {
+        "ref": "countries",
+        "key": "US"
+      },
+      "selected_site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "design_summary": "Stage-gated hybrid; Texas reference location, conditional on utility and member commitments.",
+      "created_at": "2026-10-06T00:00:00Z",
+      "updated_at": "2026-10-06T00:00:00Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "seed_key": "base",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "Base case",
+      "kind": "base",
+      "description": "Small delay assumption: 0.5 months.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "grid-delay",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "Three-month additional delay",
+      "kind": "variant",
+      "description": "Sensitivity requested by the team.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "grid-year-delay",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "One-year grid delay",
+      "kind": "stress",
+      "description": "Required challenge stress: full grid power delayed one year.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "half-utilization",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "name": "Half forecast utilization",
+      "kind": "stress",
+      "description": "Required challenge stress: utilization is half the base forecast.",
+      "created_at": "2026-10-06T00:00:00Z"
+    }
+  ]
+}

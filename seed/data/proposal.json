@@ -29,16 +29,16 @@
   ],
   "criteria": [
     { "id": "K10", "name": "Demand proximity", "weight": 25 },
-    { "id": "K1", "name": "Power cost", "weight": 15 },
-    { "id": "K2", "name": "Grid access", "weight": 15 },
-    { "id": "K4", "name": "Climate", "weight": 10 },
+    { "id": "K1", "name": "Grid connection", "weight": 15 },
+    { "id": "K2", "name": "Power cost", "weight": 15 },
+    { "id": "K4", "name": "Grid reliability", "weight": 10 },
     { "id": "K6", "name": "Research network", "weight": 10 },
     { "id": "K3", "name": "Grid carbon", "weight": 5 },
-    { "id": "K5", "name": "Water", "weight": 5 },
-    { "id": "K7", "name": "Reliability", "weight": 5 },
-    { "id": "K8", "name": "Lease market", "weight": 5 },
-    { "id": "K9", "name": "Policy", "weight": 5 },
-    { "id": "K11", "name": "Connection timing", "weight": 0 }
+    { "id": "K5", "name": "Climate & water", "weight": 5 },
+    { "id": "K7", "name": "Lease options", "weight": 5 },
+    { "id": "K8", "name": "Permitting", "weight": 5 },
+    { "id": "K9", "name": "Heat reuse", "weight": 5 },
+    { "id": "K11", "name": "Data-transfer price", "weight": 0 }
   ],
   "conditions": [
     "Obtain a written utility energization schedule and full connection cost.",

@@ -1,0 +1,5220 @@
+{
+  "version": "seed-2026-10-06-v1",
+  "statements": [
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "MW",
+        "MW"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "GW",
+        "GW"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "GWh",
+        "GWh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "TWh",
+        "TWh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "%",
+        "%"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "gCO2/kWh",
+        "gCO2/kWh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "count",
+        "count"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD/MWh",
+        "USD/MWh"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD/TB",
+        "USD/TB"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "ms",
+        "ms"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "score",
+        "score"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "months",
+        "months"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hours",
+        "hours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "ratio",
+        "ratio"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "CDD",
+        "CDD"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "minutes",
+        "minutes"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "USD/CAD",
+        "USD/CAD"
+      ]
+    },
+    {
+      "sql": "INSERT INTO units (code,description) VALUES (?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "EUR/USD",
+        "EUR/USD"
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "dc_electricity_use",
+        "dc electricity use",
+        "TWh",
+        "demand_region",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "dc_capacity_in_service",
+        "dc capacity in service",
+        "MW",
+        "country",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "datacenter_count",
+        "datacenter count",
+        "count",
+        "country",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "industrial_electricity_price",
+        "industrial electricity price",
+        "USD/MWh",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "wholesale_electricity_price",
+        "wholesale electricity price",
+        "USD/MWh",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "electricity_tax",
+        "electricity tax",
+        "USD/MWh",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid_carbon_intensity",
+        "grid carbon intensity",
+        "gCO2/kWh",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "cooling_degree_days",
+        "cooling degree days",
+        "CDD",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "share_hours_below_18c",
+        "share hours below 18c",
+        "%",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "water_stress_score",
+        "water stress score",
+        "score",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "avg_outage_minutes_per_customer",
+        "avg outage minutes per customer",
+        "minutes",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "r1_university_count",
+        "r1 university count",
+        "count",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "ai_research_faculty",
+        "ai research faculty",
+        "count",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "leasable_gpu_count",
+        "leasable gpu count",
+        "count",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "large_load_threshold_mw",
+        "large load threshold mw",
+        "MW",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid_connection_months",
+        "grid connection months",
+        "months",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "round_trip_latency",
+        "round trip latency",
+        "ms",
+        "site_to_region",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "data_transfer_price",
+        "data transfer price",
+        "USD/TB",
+        "site",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "fx_rate",
+        "fx rate",
+        "ratio",
+        "country",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metric_definitions (name,description,unit,subject,min_value,max_value) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand_share",
+        "demand share",
+        "%",
+        "demand_region",
+        0,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "it_load_mw",
+        "it load mw",
+        "MW",
+        0.1,
+        2000,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "pue",
+        "pue",
+        "ratio",
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "operating_hours",
+        "operating hours",
+        "hours",
+        1,
+        8760,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO parameter_definitions (name,description,unit,min_value,max_value,user_adjustable) VALUES (?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency_threshold_ms",
+        "latency threshold ms",
+        "ms",
+        0,
+        1000,
+        1
+      ]
+    },
+    {
+      "sql": "INSERT INTO countries (seed_key,name,region) VALUES (?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "US",
+        "United States",
+        "North America"
+      ]
+    },
+    {
+      "sql": "INSERT INTO countries (seed_key,name,region) VALUES (?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "CA",
+        "Canada",
+        "North America"
+      ]
+    },
+    {
+      "sql": "INSERT INTO countries (seed_key,name,region) VALUES (?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "FI",
+        "Finland",
+        "Europe"
+      ]
+    },
+    {
+      "sql": "INSERT INTO sites (seed_key,country_id,name,proxy_city,notes) VALUES (?,(SELECT id FROM countries WHERE seed_key=?),?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "tx",
+        "US",
+        "Texas",
+        "Dallas",
+        "Candidate metro; final parcel and utility connection require a site-specific offer."
+      ]
+    },
+    {
+      "sql": "INSERT INTO sites (seed_key,country_id,name,proxy_city,notes) VALUES (?,(SELECT id FROM countries WHERE seed_key=?),?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "qc",
+        "CA",
+        "Québec",
+        "Montréal",
+        "Candidate metro; final parcel and utility connection require a site-specific offer."
+      ]
+    },
+    {
+      "sql": "INSERT INTO sites (seed_key,country_id,name,proxy_city,notes) VALUES (?,(SELECT id FROM countries WHERE seed_key=?),?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "hel",
+        "FI",
+        "Helsinki",
+        "Helsinki",
+        "Candidate metro; final parcel and utility connection require a site-specific offer."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "east",
+        "US East",
+        "New York / Washington / Boston",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "central",
+        "US Central + Canada/Mexico",
+        "Chicago",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "west",
+        "US West",
+        "San Francisco",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "europe",
+        "Europe",
+        "Frankfurt / London",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "asia",
+        "Asia-Pacific excluding China",
+        "Tokyo / Singapore",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "rest",
+        "Rest of world",
+        "Europe / Asia proxy",
+        1,
+        "Demand proxy, not signed member demand."
+      ]
+    },
+    {
+      "sql": "INSERT INTO demand_regions (seed_key,name,proxy_cities,addressable,notes) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "china",
+        "China",
+        "Not addressable",
+        0,
+        "Excluded by consortium service-market design decision."
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S1",
+        "Bank of Canada",
+        "USD/CAD exchange rate",
+        "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?recent=3",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S2",
+        "Texas Legislature",
+        "SB 6 enrolled bill analysis",
+        "https://capitol.texas.gov/tlodocs/89R/analysis/html/SB00006F.htm",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S3",
+        "Foley & Lardner",
+        "PUC proposed large-load interconnection rules (Mar 2026)",
+        "https://www.foley.com/insights/publications/2026/03/public-utility-commission-of-texas-issues-proposed-rules-for-large-load-interconn/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S4",
+        "POWER Magazine",
+        "governor orders audit of the Texas data center queue",
+        "https://powermag.com/abbott-orders-full-audit-of-texas-data-center-interconnection-queue-threatens-to-deny-grid-access/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S5",
+        "EIA",
+        "Electric Power Monthly, Table 5.6.B",
+        "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_b",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S6",
+        "ERCOT",
+        "commercial markets update (Jan 2025)",
+        "https://www.ercot.com/files/docs/2025/01/27/9-3-commercial-markets-update.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S7",
+        "EIA",
+        "Texas electricity profile",
+        "https://www.eia.gov/electricity/state/texas/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S8",
+        "FOX 4",
+        "Texas health department Uri death toll",
+        "https://www.fox4news.com/news/texas-dshs-reports-higher-death-toll-from-february-winter-storm",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S9",
+        "Texas Tribune",
+        "Hurricane Beryl outages",
+        "https://www.texastribune.org/2024/07/08/hurricane-beryl-texas-damage-updates-rain",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S10",
+        "National Weather Service",
+        "Austin climate normals",
+        "https://www.weather.gov/media/ewx/climate/ATTJuly.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S11",
+        "UTSA",
+        "Carnegie classification reaffirmed (2025)",
+        "https://utsa.edu/today/2025/02/story/carnegie-classification-reaffirmed.html",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S12",
+        "Government of Québec",
+        "Bill 2 adopted",
+        "https://www.quebec.ca/nouvelles/actualites/details/adoption-du-projet-de-loi-no-2-hausse-des-tarifs-dhydro-quebec-limitee-a-3-pour-les-quebecois-45784",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S13",
+        "BLG",
+        "data centre regulation in Québec (Jul 2026)",
+        "https://www.blg.com/en/insights/2026/07/data-centre-regulation-in-quebec-from-honeyed-promise-to-iron-control",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S14",
+        "Radio-Canada",
+        "half of electricity requests are data centers",
+        "https://ici.radio-canada.ca/nouvelle/2289961/moitie-demandes-electricite-centres-donnees-quebec",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S15",
+        "Hydro-Québec",
+        "electricity rates (Apr 1, 2026)",
+        "https://www.hydroquebec.com/data/documents-donnees/pdf/electricity-rates.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S16",
+        "Hydro-Québec",
+        "proposed rate for large data centres",
+        "https://news.hydroquebec.com/news/press-releases/all-quebec/hydro-quebec-proposing-regie-energie-new-rate-large-data-centres-adjustment-rate-cryptographic-use-applied-blockchains.html",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S17",
+        "CP24",
+        "Hydro-Québec data centre rate hearing (Oct 2026)",
+        "https://www.cp24.com/news/canada/2026/10/01/hydro-quebec-to-face-off-against-industry-actors-like-google-in-data-centre-hearing/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S18",
+        "Hydro-Québec",
+        "GHG emission rate 2025",
+        "https://www.hydroquebec.com/data/developpement-durable/pdf/2026G195A-4_Emission_GES.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S19",
+        "Hydro-Québec",
+        "supply mix 2025",
+        "https://www.hydroquebec.com/data/developpement-durable/pdf/2026G195A-1_Quebec.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S20",
+        "Hydro-Québec",
+        "1998 ice storm; CBC, April 2023 outages",
+        "https://www.hydroquebec.com/ice-storm-1998/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Additional reference: https://www.cbc.ca/1.6802034",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S21",
+        "Hydro-Québec",
+        "2024 distribution accountability report",
+        "https://news.hydroquebec.com/news/press-releases/all-quebec/hydro-quebec-positive-assessment-2024-distribution-activities-published-annual-accountability-report.html",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S22",
+        "Environment and Climate Change Canada",
+        "Montréal climate normals",
+        "https://api.weather.gc.ca/collections/climate-normals/items?CLIMATE_IDENTIFIER=7025250&MONTH=13",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S23",
+        "WRI Aqueduct baseline water stress (Resource Watch)",
+        "WRI Aqueduct baseline water stress (Resource Watch)",
+        "https://resourcewatch.org",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S24",
+        "Fingrid",
+        "phases of a grid connection agreement",
+        "https://www.fingrid.fi/en/grid/grid-connection-agreement-phases/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S25",
+        "Fingrid",
+        "consumption connections temporarily tight in southern Finland (Jan 2025)",
+        "https://www.fingrid.fi/en/news/news/2025/the-connection-of-electricity-consumption-to-the-main-grid-is-temporarily-tight-in-southern-finland",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S26",
+        "Fingrid",
+        "half-year report 2026",
+        "https://www.investegate.co.uk/announcement/gnw/fingrid-oyj--38fe/fingrid-group-s-half-year-report-1-1-30-6-20-/9684352",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S27",
+        "Eurostat",
+        "non-household electricity prices (nrg_pc_205)",
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_205?geo=FI&nrg_cons=MWH70000-149999",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S28",
+        "Finnish Tax Administration",
+        "electricity tax",
+        "https://vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/valmisteverotus/sahkovero/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S29",
+        "The Star (wire)",
+        "Finland drops planned data center support (Sep 2026)",
+        "https://www.thestar.com.my/news/world/2026/09/02/finland-drops-planned-financial-support-for-data-centers",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S30",
+        "Electricity Maps",
+        "Finland grid review 2025",
+        "https://www.electricitymaps.com/grid-in-review-2025/finland",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S31",
+        "Fingrid",
+        "Estlink 2 returns to use (Jun 2025)",
+        "https://www.fingrid.fi/en/news/news/2025/estlink-2-electricity-transmission-link-returns-to-commercial-use/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S32",
+        "Finnish Meteorological Institute",
+        "open data (Kaisaniemi)",
+        "https://opendata.fmi.fi/wfs",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S33",
+        "WRI",
+        "Aqueduct 4.0 country rankings",
+        "https://datasets.wri.org/datasets/aqueduct-40-current-and-future-country-rankings",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S34",
+        "Mila",
+        "about",
+        "https://mila.quebec/en/mila/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S35",
+        "FCAI",
+        "about",
+        "https://fcai.fi/about",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S36",
+        "TACC",
+        "Horizon and Vista announcements",
+        "https://tacc.utexas.edu/news/latest-news/2025/11/17/nsf-lccf-horizon-supercomputer-to-power-breakthroughs-for-the-nations-leading-scientists/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S37",
+        "CBRE",
+        "North American data center trends, first half of 2026",
+        "https://www.cbre.com/press-releases/north-american-data-center-demand-continues-to-outpace-supply-despite-record-construction-activity",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S38",
+        "Digital Research Alliance of Canada",
+        "Rorqual",
+        "https://alliancecan.ca/en/services/compute/rorqual",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S39",
+        "Government of Canada",
+        "Sovereign AI Compute Strategy note",
+        "https://search.open.canada.ca/qpnotes/record/ic%2CAIDI-2026-QP-00004",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S40",
+        "LUMI documentation and TOP500 entry",
+        "LUMI documentation and TOP500 entry",
+        "https://docs.lumi-supercomputer.eu/hardware/lumig/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Additional reference: https://www.top500.org/system/180048/",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S41",
+        "AMD",
+        "LUMI-AI announcement (Aug 2026)",
+        "https://newsroom.amd.com/news/amd-instinct-gpus-epyc-cpus-power-lumi-ai-supercomputer/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S42",
+        "CSC",
+        "Roihu documentation",
+        "https://docs.csc.fi/computing/systems-roihu",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S43",
+        "UT Arlington",
+        "Powering Large Loads: diesel generators",
+        "https://uta.pressbooks.pub/poweringlargeloads/chapter/4-diesel-generators/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S44",
+        "E&E News",
+        "Texas water plan and data centers",
+        "https://www.eenews.net/articles/texas-water-plan-ignores-data-center-surge/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S45",
+        "Le Nouvelliste",
+        "calls for a BAPE review of data centres (Sep 2026)",
+        "https://www.lenouvelliste.ca/actualites/environnement/2026/09/17/le-boom-des-centres-de-donnees-ravive-les-appels-a-un-bape-STQ736KECRDFTFHADPME4UZQN4/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S46",
+        "Finlex",
+        "Environmental Protection Act 527/2014 and decree",
+        "https://finlex.fi/api/media/statute/59827/mainPdf/main.pdf",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S47",
+        "DLA Piper",
+        "EU data centre reporting regulation 2024/1364",
+        "https://www.dlapiper.com/en/insights/publications/2024/09/new-data-centre-sustainability-reporting-obligations-introduced-through-eu-20241364-regulation",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S48",
+        "Government of Québec",
+        "Montréal heat recovery grant; Sustainable Biz, QScale and Énergir",
+        "https://sustainablebiz.ca/qscale-partners-with-energir-for-waste-heat-recovery-projects",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S49",
+        "Helen",
+        "waste heat from new data centre (2026)",
+        "https://www.helen.fi/en/news/2026/helen-hyodyntaa-uuden-datakeskuksen-hukkalampoa-helsingin-kaukolammossa",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S50",
+        "Microsoft",
+        "Finland datacenter region and district heating (2022)",
+        "https://news.microsoft.com/europe/2022/03/17/microsoft-announces-intent-to-build-a-new-datacenter-region-in-finland-accelerating-sustainable-digital-transformation-and-enabling-large-scale-carbon-free-district-heating/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S51",
+        "IEA",
+        "Energy and AI, regional data (Apr 2026), via Our World in Data",
+        "https://www.iea.org/data-and-statistics/data-product/energy-and-ai",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Additional reference: https://api.ourworldindata.org/v1/indicators/1295512.metadata.json",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S52",
+        "Synergy Research Group",
+        "US accounts for 54% of hyperscale capacity (Mar 2025)",
+        "https://srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S53",
+        "AWS",
+        "global infrastructure: Regions and Availability Zones",
+        "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S54",
+        "Stanford HAI",
+        "AI Index 2026, research and development",
+        "https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S55",
+        "Anthropic",
+        "Economic Index: geography (Sep 2025)",
+        "https://www.anthropic.com/research/economic-index-geography",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S56",
+        "Microsoft",
+        "Azure network round-trip latency statistics",
+        "https://learn.microsoft.com/en-us/azure/networking/azure-network-latency",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S57",
+        "WonderNetwork",
+        "global ping statistics (Dallas, Montreal, Helsinki)",
+        "https://wondernetwork.com/pings/Dallas",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S58",
+        "AWS",
+        "data transfer pricing (Price List API, Sep 2026)",
+        "https://aws.amazon.com/ec2/pricing/on-demand/",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S59",
+        "TeleGeography",
+        "IP transit price erosion (2026)",
+        "https://resources.telegeography.com/ip-transit-price-erosion-significant-regional-differences-remain",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S60",
+        "Internet2 dues and fees; CANARIE connection fees; CSC/Funet",
+        "Internet2 dues and fees; CANARIE connection fees; CSC/Funet",
+        "https://internet2.edu/community/membership/research-and-education-networks-membership/research-and-education-network-dues-and-fees",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S61",
+        "Steptoe",
+        "rescission of the AI diffusion rule (2025)",
+        "https://www.steptoe.com/en/news-publications/international-compliance-blog/trump-administration-charts-new-path-on-ai-export-controls-with-significant-new-guidance-and-rescission-of-diffusion-rule.html",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S62",
+        "Bird & Bird",
+        "EU–US Data Privacy Framework upheld (Sep 2025)",
+        "https://cm.twobirds.com/en/insights/2025/euus-data-privacy-framework-survives-legal-challenge-what-the-latombe-decision-means-for-internation",
+        "research_firm",
+        0,
+        "2026-10-06T00:00:00Z",
+        null,
+        "Source catalog imported from phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO sources (seed_key,publisher,title,url,source_type,is_primary,accessed_at,excerpt,notes,verified_by,verified_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "S63",
+        "Course instructor",
+        "Lesson 06 — Build a DataCenter Challenge",
+        "/challenge-brief.pdf",
+        "course_material",
+        1,
+        "2026-10-06T00:00:00Z",
+        "Proposed facility electrical demand includes computing and cooling. Member commitments and grid energization terms are not yet established.",
+        "Assignment supplied with the project.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-east",
+        "east",
+        "demand_share",
+        36.3,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-central",
+        "central",
+        "demand_share",
+        14.4,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-west",
+        "west",
+        "demand_share",
+        11.6,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-europe",
+        "europe",
+        "demand_share",
+        19.5,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-asia",
+        "asia",
+        "demand_share",
+        15.2,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "demand-rest",
+        "rest",
+        "demand_share",
+        3,
+        "%",
+        "2026",
+        "estimate",
+        "S51",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Rounded allocation from phase-one IEA regional demand and CBRE US-market split; proxy rather than contracted demand.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-east",
+        "tx",
+        "east",
+        "round_trip_latency",
+        39,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-central",
+        "tx",
+        "central",
+        "round_trip_latency",
+        23,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-west",
+        "tx",
+        "west",
+        "round_trip_latency",
+        45,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-europe",
+        "tx",
+        "europe",
+        "round_trip_latency",
+        116,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-asia",
+        "tx",
+        "asia",
+        "round_trip_latency",
+        179,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-rest",
+        "tx",
+        "rest",
+        "round_trip_latency",
+        147.5,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-tx-china",
+        "tx",
+        "china",
+        "round_trip_latency",
+        null,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "No service-market latency established for the excluded China region.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-east",
+        "qc",
+        "east",
+        "round_trip_latency",
+        11,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-central",
+        "qc",
+        "central",
+        "round_trip_latency",
+        21,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-west",
+        "qc",
+        "west",
+        "round_trip_latency",
+        66,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-europe",
+        "qc",
+        "europe",
+        "round_trip_latency",
+        83,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-asia",
+        "qc",
+        "asia",
+        "round_trip_latency",
+        208,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-rest",
+        "qc",
+        "rest",
+        "round_trip_latency",
+        145.5,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-qc-china",
+        "qc",
+        "china",
+        "round_trip_latency",
+        null,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "No service-market latency established for the excluded China region.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-east",
+        "hel",
+        "east",
+        "round_trip_latency",
+        106,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-central",
+        "hel",
+        "central",
+        "round_trip_latency",
+        129,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-west",
+        "hel",
+        "west",
+        "round_trip_latency",
+        169,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-europe",
+        "hel",
+        "europe",
+        "round_trip_latency",
+        30,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-asia",
+        "hel",
+        "asia",
+        "round_trip_latency",
+        224,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "City-to-city ping proxy from phase-one specification, not a campus service-level measurement.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-rest",
+        "hel",
+        "rest",
+        "round_trip_latency",
+        127,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Method: mean of Europe and Asia-Pacific city-ping proxies.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,demand_region_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),(SELECT id FROM demand_regions WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "latency-hel-china",
+        "hel",
+        "china",
+        "round_trip_latency",
+        null,
+        "ms",
+        "2026",
+        "estimate",
+        "S57",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "No service-market latency established for the excluded China region.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "price-tx",
+        "tx",
+        "industrial_electricity_price",
+        67.2,
+        "USD/MWh",
+        "2026",
+        "estimate",
+        "S5",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "6.72 cents/kWh × 10; EIA Jan–Jul 2026 industrial average, not a delivered site offer.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "price-qc",
+        "qc",
+        "industrial_electricity_price",
+        46.2,
+        "USD/MWh",
+        "2026",
+        "estimate",
+        "S15",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "65.9 CAD/MWh divided by 1.4254 CAD/USD (M-FX-CAD-USD, 2026-10-05); excludes proposed tariff.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "price-hel",
+        "hel",
+        "industrial_electricity_price",
+        73,
+        "USD/MWh",
+        "2026",
+        "estimate",
+        "S27",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "(42.2 + 22.4) EUR/MWh × 1.13 USD/EUR (M-FX-EUR-USD, 2025); combined energy and tax estimate.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,country_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM countries WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "M-FX-CAD-USD",
+        "CA",
+        "fx_rate",
+        0.7015574575557738,
+        "ratio",
+        "2026",
+        "estimate",
+        "S1",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "USD per CAD; reciprocal of 1 USD = 1.4254 CAD on 2026-10-05.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,country_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM countries WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "M-FX-EUR-USD",
+        "FI",
+        "fx_rate",
+        1.13,
+        "ratio",
+        "2025",
+        "estimate",
+        "S30",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "USD per EUR; 2025 average conversion assumption in phase-one specification.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "carbon-tx",
+        "tx",
+        "grid_carbon_intensity",
+        373,
+        "gCO2/kWh",
+        "2024",
+        "estimate",
+        "S7",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "carbon-qc",
+        "qc",
+        "grid_carbon_intensity",
+        7.8,
+        "gCO2/kWh",
+        "2025",
+        "estimate",
+        "S18",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO metrics (seed_key,site_id,metric_name,value,unit,reporting_period,claim_type,source_id,retrieved_at,confidence,notes,verified_by,verified_at) VALUES (?,(SELECT id FROM sites WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "carbon-hel",
+        "hel",
+        "grid_carbon_intensity",
+        66,
+        "gCO2/kWh",
+        "2025",
+        "estimate",
+        "S30",
+        "2026-10-06T00:00:00Z",
+        "medium",
+        "Regional electricity carbon estimate in phase-one comparison; not interchangeable with national live lifecycle intensity.",
+        null,
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO teams (seed_key,name,course_section) VALUES (?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "university-demo-team",
+        "University AI infrastructure team",
+        null
+      ]
+    },
+    {
+      "sql": "INSERT INTO designs (seed_key,team_id,name,selected_country_id,selected_site_id,design_summary,created_at,updated_at) VALUES (?,(SELECT id FROM teams WHERE seed_key=?),?,(SELECT id FROM countries WHERE seed_key=?),(SELECT id FROM sites WHERE seed_key=?),?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "university-design",
+        "university-demo-team",
+        "Shared university AI data center",
+        "US",
+        "tx",
+        "Stage-gated hybrid; Texas reference location, conditional on utility and member commitments.",
+        "2026-10-06T00:00:00Z",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "P-it_load_mw",
+        "university-design",
+        "it_load_mw",
+        20,
+        "assumption",
+        "Baseline defined in the challenge brief and phase-one design specification.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "P-pue",
+        "university-design",
+        "pue",
+        1.25,
+        "assumption",
+        "Baseline defined in the challenge brief and phase-one design specification.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "P-operating_hours",
+        "university-design",
+        "operating_hours",
+        8760,
+        "assumption",
+        "Baseline defined in the challenge brief and phase-one design specification.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_parameters (seed_key,design_id,name,value,claim_type,rationale,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "P-latency_threshold_ms",
+        "university-design",
+        "latency_threshold_ms",
+        50,
+        "assumption",
+        "Baseline defined in the challenge brief and phase-one design specification.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO scenarios (seed_key,design_id,name,kind,description,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "base",
+        "university-design",
+        "Base case",
+        "base",
+        "Small delay assumption: 0.5 months.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO scenarios (seed_key,design_id,name,kind,description,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid-delay",
+        "university-design",
+        "Three-month additional delay",
+        "variant",
+        "Sensitivity requested by the team.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO scenarios (seed_key,design_id,name,kind,description,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid-year-delay",
+        "university-design",
+        "One-year grid delay",
+        "stress",
+        "Required challenge stress: full grid power delayed one year.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO scenarios (seed_key,design_id,name,kind,description,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "half-utilization",
+        "university-design",
+        "Half forecast utilization",
+        "stress",
+        "Required challenge stress: utilization is half the base forecast.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K10",
+        "score",
+        "Proximity to demand: share of addressable AI demand within 50 ms round trip",
+        "Proximity to demand: share of addressable AI demand within 50 ms round trip",
+        "{\"1\":\"< 15%\",\"3\":\"30–45%\",\"5\":\"≥ 60%\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K1",
+        "score",
+        "Time to obtain a grid connection",
+        "Time to obtain a grid connection",
+        "{\"1\":\"Discretionary approval, competing for scarce power\",\"3\":\"Restricted or queued, with a defined process\",\"5\":\"Standard process, no capacity restriction\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K2",
+        "score",
+        "Electricity price, delivered",
+        "Electricity price, delivered",
+        "{\"1\":\"> $95/MWh\",\"3\":\"$65–80/MWh\",\"5\":\"≤ $50/MWh\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K4",
+        "score",
+        "Grid reliability and extreme weather",
+        "Grid reliability and extreme weather",
+        "{\"1\":\"Repeated large-scale failures\",\"3\":\"Notable but mitigable events\",\"5\":\"Very high reliability, low exposure\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K6",
+        "score",
+        "Research ecosystem and likely members",
+        "Research ecosystem and likely members",
+        "{\"1\":\"Thin\",\"3\":\"Moderate\",\"5\":\"Dense, large AI research base\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K3",
+        "score",
+        "Grid carbon intensity",
+        "Grid carbon intensity",
+        "{\"1\":\"> 450 g/kWh\",\"3\":\"100–250 g/kWh\",\"5\":\"< 25 g/kWh\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K5",
+        "score",
+        "Climate and water for cooling",
+        "Climate and water for cooling",
+        "{\"1\":\"Hot, high water stress\",\"3\":\"Moderate\",\"5\":\"Cool, low water stress\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K7",
+        "score",
+        "Existing facilities to lease",
+        "Existing facilities to lease",
+        "{\"1\":\"Little\",\"3\":\"Some\",\"5\":\"Large, accessible capacity\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K8",
+        "score",
+        "Permitting regime",
+        "Permitting regime",
+        "{\"1\":\"Uncertain or hostile\",\"3\":\"Clear but sequential, or under political review\",\"5\":\"Clear, fast, politically stable\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K9",
+        "score",
+        "Waste-heat reuse",
+        "Waste-heat reuse",
+        "{\"1\":\"None\",\"3\":\"Networks exist, few examples\",\"5\":\"Established market for buying data center heat\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "K11",
+        "score",
+        "Data-transfer price per TB to users",
+        "Data-transfer price per TB to users",
+        "{\"1\":\"—\",\"3\":\"—\",\"5\":\"—\"}"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "G1",
+        "gate",
+        "Grid connection legally and practically obtainable",
+        "Grid connection legally and practically obtainable",
+        "Conditional until site-specific due diligence closes."
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "G2",
+        "gate",
+        "No law prohibits the proposed facility",
+        "No law prohibits the proposed facility",
+        "Conditional until site-specific due diligence closes."
+      ]
+    },
+    {
+      "sql": "INSERT INTO criteria (code,kind,name,measure,rubric) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "G3",
+        "gate",
+        "No unmitigable single hazard",
+        "No unmitigable single hazard",
+        "Conditional until site-specific due diligence closes."
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K10",
+        "K10",
+        25,
+        "Users are global and weighted by demand. Distance affects every interactive session and every dataset or saved-progress move.",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K1",
+        "K1",
+        15,
+        "Sets the opening date; drives PS3 stress case A",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K2",
+        "K2",
+        15,
+        "219 GWh/yr makes power the largest running cost",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K4",
+        "K4",
+        10,
+        "Uptime target; PS3's 48-hour outage case",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K6",
+        "K6",
+        10,
+        "Anchor members and demand",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K3",
+        "K3",
+        5,
+        "Reputation and emissions reporting",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K5",
+        "K5",
+        5,
+        "Sets the achievable PUE and the water draw",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K7",
+        "K7",
+        5,
+        "Enables a phased hybrid",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K8",
+        "K8",
+        5,
+        "Schedule risk",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K9",
+        "K9",
+        5,
+        "Operating credit; community benefit",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO criterion_weights (seed_key,criterion_code,weight,rationale,created_at) VALUES (?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "W-K11",
+        "K11",
+        0,
+        "Evaluated, but it does not separate the sites (§7.3)",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "selection",
+        "university-design",
+        "Selected site: Texas, conditional on utility offers and signed member demand.",
+        "design_decision",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "china-excluded",
+        "university-design",
+        "China is excluded from the addressable service market for the consortium.",
+        "design_decision",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "assumption-it_load_mw",
+        "university-design",
+        "it load mw is a chosen baseline, not a facility measurement.",
+        "assumption",
+        20,
+        "MW",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "assumption-pue",
+        "university-design",
+        "pue is a chosen baseline, not a facility measurement.",
+        "assumption",
+        1.25,
+        "ratio",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "assumption-operating_hours",
+        "university-design",
+        "operating hours is a chosen baseline, not a facility measurement.",
+        "assumption",
+        8760,
+        "hours",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "assumption-latency_threshold_ms",
+        "university-design",
+        "latency threshold ms is a chosen baseline, not a facility measurement.",
+        "assumption",
+        50,
+        "ms",
+        null,
+        null,
+        "draft",
+        "medium",
+        "design",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "facility_power_mw",
+        "university-design",
+        "Facility electrical power",
+        "calculation",
+        null,
+        "MW",
+        "facility_power_mw",
+        null,
+        "draft",
+        "medium",
+        "power",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "annual_energy_gwh",
+        "university-design",
+        "Annual facility electricity",
+        "calculation",
+        null,
+        "GWh",
+        "annual_energy_gwh",
+        null,
+        "draft",
+        "medium",
+        "power",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K10",
+        "university-design",
+        "Texas: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K1",
+        "university-design",
+        "Texas: Time to obtain a grid connection. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K2",
+        "university-design",
+        "Texas: Electricity price, delivered. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K4",
+        "university-design",
+        "Texas: Grid reliability and extreme weather. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K6",
+        "university-design",
+        "Texas: Research ecosystem and likely members. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K3",
+        "university-design",
+        "Texas: Grid carbon intensity. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K5",
+        "university-design",
+        "Texas: Climate and water for cooling. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K7",
+        "university-design",
+        "Texas: Existing facilities to lease. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K8",
+        "university-design",
+        "Texas: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K9",
+        "university-design",
+        "Texas: Waste-heat reuse. Judgment score 1 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K11",
+        "university-design",
+        "Texas: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G1",
+        "university-design",
+        "Texas: G1 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G2",
+        "university-design",
+        "Texas: G2 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G3",
+        "university-design",
+        "Texas: G3 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid-tx",
+        "university-design",
+        "Texas: utility connection cost and energization date are not established; obtain a written offer.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "power",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K10",
+        "university-design",
+        "Québec: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K1",
+        "university-design",
+        "Québec: Time to obtain a grid connection. Judgment score 1 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K2",
+        "university-design",
+        "Québec: Electricity price, delivered. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K4",
+        "university-design",
+        "Québec: Grid reliability and extreme weather. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K6",
+        "university-design",
+        "Québec: Research ecosystem and likely members. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K3",
+        "university-design",
+        "Québec: Grid carbon intensity. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K5",
+        "university-design",
+        "Québec: Climate and water for cooling. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K7",
+        "university-design",
+        "Québec: Existing facilities to lease. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K8",
+        "university-design",
+        "Québec: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K9",
+        "university-design",
+        "Québec: Waste-heat reuse. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K11",
+        "university-design",
+        "Québec: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G1",
+        "university-design",
+        "Québec: G1 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G2",
+        "university-design",
+        "Québec: G2 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G3",
+        "university-design",
+        "Québec: G3 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid-qc",
+        "university-design",
+        "Québec: utility connection cost and energization date are not established; obtain a written offer.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "power",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K10",
+        "university-design",
+        "Helsinki: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K1",
+        "university-design",
+        "Helsinki: Time to obtain a grid connection. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K2",
+        "university-design",
+        "Helsinki: Electricity price, delivered. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K4",
+        "university-design",
+        "Helsinki: Grid reliability and extreme weather. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K6",
+        "university-design",
+        "Helsinki: Research ecosystem and likely members. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K3",
+        "university-design",
+        "Helsinki: Grid carbon intensity. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K5",
+        "university-design",
+        "Helsinki: Climate and water for cooling. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K7",
+        "university-design",
+        "Helsinki: Existing facilities to lease. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K8",
+        "university-design",
+        "Helsinki: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K9",
+        "university-design",
+        "Helsinki: Waste-heat reuse. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K11",
+        "university-design",
+        "Helsinki: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G1",
+        "university-design",
+        "Helsinki: G1 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G2",
+        "university-design",
+        "Helsinki: G2 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G3",
+        "university-design",
+        "Helsinki: G3 is conditional on site-specific legal, utility and resilience diligence.",
+        "estimate",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "site_selection",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "grid-hel",
+        "university-design",
+        "Helsinki: utility connection cost and energization date are not established; obtain a written offer.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "power",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "currency-conversion",
+        "university-design",
+        "Converted site prices use the recorded period-specific currency assumptions.",
+        "assumption",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "economics",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "condition-1",
+        "university-design",
+        "Obtain a written utility energization schedule and full connection cost.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "approval",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "condition-2",
+        "university-design",
+        "Confirm the applicable large-load rules and curtailment obligations before procurement.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "approval",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "condition-3",
+        "university-design",
+        "Complete a site-specific resilience and backup-power study.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "approval",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "condition-4",
+        "university-design",
+        "Use a closed-loop cooling design with no routine evaporative water demand.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "approval",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "condition-5",
+        "university-design",
+        "Secure an electricity and carbon procurement plan acceptable to the member institutions.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "approval",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "reversal-1",
+        "university-design",
+        "Québec confirms an earlier connection and a durable, competitive delivered power rate.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "reversal_trigger",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "reversal-2",
+        "university-design",
+        "Member demand shifts materially toward batch training rather than latency-sensitive use.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "reversal_trigger",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "reversal-3",
+        "university-design",
+        "The member survey places substantially more weight on East Coast proximity.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "reversal_trigger",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "reversal-4",
+        "university-design",
+        "Texas interconnection or large-load rules change the economics or operating flexibility.",
+        "unknown",
+        null,
+        null,
+        null,
+        null,
+        "draft",
+        "medium",
+        "reversal_trigger",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO design_claims (seed_key,design_id,claim_text,claim_type,value,unit,calc_key,source_id,status,confidence,topic,created_at) VALUES (?,(SELECT id FROM designs WHERE seed_key=?),?,?,?,?,?,(SELECT id FROM sources WHERE seed_key=?),?,?,?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "member-demand",
+        "university-design",
+        "No institution has signed a long-term computing commitment; productive demand remains to be contracted.",
+        "fact",
+        null,
+        null,
+        null,
+        "S63",
+        "draft",
+        "medium",
+        "governance",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K10",
+        "K10",
+        "tx",
+        5,
+        null,
+        "A-tx-K10",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K1",
+        "K1",
+        "tx",
+        4,
+        null,
+        "A-tx-K1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K2",
+        "K2",
+        "tx",
+        3,
+        null,
+        "A-tx-K2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K4",
+        "K4",
+        "tx",
+        2,
+        null,
+        "A-tx-K4",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K6",
+        "K6",
+        "tx",
+        5,
+        null,
+        "A-tx-K6",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K3",
+        "K3",
+        "tx",
+        2,
+        null,
+        "A-tx-K3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K5",
+        "K5",
+        "tx",
+        2,
+        null,
+        "A-tx-K5",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K7",
+        "K7",
+        "tx",
+        4,
+        null,
+        "A-tx-K7",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K8",
+        "K8",
+        "tx",
+        3,
+        null,
+        "A-tx-K8",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K9",
+        "K9",
+        "tx",
+        1,
+        null,
+        "A-tx-K9",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-K11",
+        "K11",
+        "tx",
+        null,
+        null,
+        "A-tx-K11",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G1",
+        "G1",
+        "tx",
+        null,
+        "conditional",
+        "A-tx-G1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G2",
+        "G2",
+        "tx",
+        null,
+        "conditional",
+        "A-tx-G2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-tx-G3",
+        "G3",
+        "tx",
+        null,
+        "conditional",
+        "A-tx-G3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K10",
+        "K10",
+        "qc",
+        4,
+        null,
+        "A-qc-K10",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K1",
+        "K1",
+        "qc",
+        1,
+        null,
+        "A-qc-K1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K2",
+        "K2",
+        "qc",
+        2,
+        null,
+        "A-qc-K2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K4",
+        "K4",
+        "qc",
+        3,
+        null,
+        "A-qc-K4",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K6",
+        "K6",
+        "qc",
+        4,
+        null,
+        "A-qc-K6",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K3",
+        "K3",
+        "qc",
+        5,
+        null,
+        "A-qc-K3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K5",
+        "K5",
+        "qc",
+        4,
+        null,
+        "A-qc-K5",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K7",
+        "K7",
+        "qc",
+        3,
+        null,
+        "A-qc-K7",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K8",
+        "K8",
+        "qc",
+        3,
+        null,
+        "A-qc-K8",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K9",
+        "K9",
+        "qc",
+        3,
+        null,
+        "A-qc-K9",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-K11",
+        "K11",
+        "qc",
+        null,
+        null,
+        "A-qc-K11",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G1",
+        "G1",
+        "qc",
+        null,
+        "conditional",
+        "A-qc-G1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G2",
+        "G2",
+        "qc",
+        null,
+        "conditional",
+        "A-qc-G2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-qc-G3",
+        "G3",
+        "qc",
+        null,
+        "conditional",
+        "A-qc-G3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K10",
+        "K10",
+        "hel",
+        2,
+        null,
+        "A-hel-K10",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K1",
+        "K1",
+        "hel",
+        2,
+        null,
+        "A-hel-K1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K2",
+        "K2",
+        "hel",
+        3,
+        null,
+        "A-hel-K2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K4",
+        "K4",
+        "hel",
+        4,
+        null,
+        "A-hel-K4",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K6",
+        "K6",
+        "hel",
+        3,
+        null,
+        "A-hel-K6",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K3",
+        "K3",
+        "hel",
+        4,
+        null,
+        "A-hel-K3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K5",
+        "K5",
+        "hel",
+        5,
+        null,
+        "A-hel-K5",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K7",
+        "K7",
+        "hel",
+        5,
+        null,
+        "A-hel-K7",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K8",
+        "K8",
+        "hel",
+        3,
+        null,
+        "A-hel-K8",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K9",
+        "K9",
+        "hel",
+        5,
+        null,
+        "A-hel-K9",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-K11",
+        "K11",
+        "hel",
+        null,
+        null,
+        "A-hel-K11",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G1",
+        "G1",
+        "hel",
+        null,
+        "conditional",
+        "A-hel-G1",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G2",
+        "G2",
+        "hel",
+        null,
+        "conditional",
+        "A-hel-G2",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO site_assessments (seed_key,criterion_code,site_id,score,gate_result,claim_id,created_at) VALUES (?,?,(SELECT id FROM sites WHERE seed_key=?),?,?,(SELECT id FROM design_claims WHERE seed_key=?),?) ON CONFLICT DO NOTHING",
+      "params": [
+        "A-hel-G3",
+        "G3",
+        "hel",
+        null,
+        "conditional",
+        "A-hel-G3",
+        "2026-10-06T00:00:00Z"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-china-excluded-sources-S61",
+        "china-excluded",
+        "evidence",
+        "S61"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-assumption-it_load_mw-parameter_definitions-it_load_mw",
+        "assumption-it_load_mw",
+        "input",
+        "it_load_mw"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-assumption-pue-parameter_definitions-pue",
+        "assumption-pue",
+        "input",
+        "pue"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-assumption-operating_hours-parameter_definitions-operating_hours",
+        "assumption-operating_hours",
+        "input",
+        "operating_hours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-assumption-latency_threshold_ms-parameter_definitions-latency_threshold_ms",
+        "assumption-latency_threshold_ms",
+        "input",
+        "latency_threshold_ms"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-facility_power_mw-parameter_definitions-it_load_mw",
+        "facility_power_mw",
+        "input",
+        "it_load_mw"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-facility_power_mw-parameter_definitions-pue",
+        "facility_power_mw",
+        "input",
+        "pue"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-annual_energy_gwh-parameter_definitions-it_load_mw",
+        "annual_energy_gwh",
+        "input",
+        "it_load_mw"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-annual_energy_gwh-parameter_definitions-pue",
+        "annual_energy_gwh",
+        "input",
+        "pue"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,parameter_name) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,?) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-annual_energy_gwh-parameter_definitions-operating_hours",
+        "annual_energy_gwh",
+        "input",
+        "operating_hours"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K10-sources-S51",
+        "A-tx-K10",
+        "evidence",
+        "S51"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K10-sources-S57",
+        "A-tx-K10",
+        "evidence",
+        "S57"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K10",
+        "selection",
+        "input",
+        "A-tx-K10"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K1-sources-S2",
+        "A-tx-K1",
+        "evidence",
+        "S2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K1-sources-S4",
+        "A-tx-K1",
+        "evidence",
+        "S4"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K1",
+        "selection",
+        "input",
+        "A-tx-K1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K2-sources-S5",
+        "A-tx-K2",
+        "evidence",
+        "S5"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K2-sources-S6",
+        "A-tx-K2",
+        "evidence",
+        "S6"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K2",
+        "selection",
+        "input",
+        "A-tx-K2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K4-sources-S8",
+        "A-tx-K4",
+        "evidence",
+        "S8"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K4-sources-S9",
+        "A-tx-K4",
+        "evidence",
+        "S9"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K4",
+        "selection",
+        "input",
+        "A-tx-K4"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K6-sources-S11",
+        "A-tx-K6",
+        "evidence",
+        "S11"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K6",
+        "selection",
+        "input",
+        "A-tx-K6"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K3-sources-S7",
+        "A-tx-K3",
+        "evidence",
+        "S7"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K3",
+        "selection",
+        "input",
+        "A-tx-K3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K5-sources-S10",
+        "A-tx-K5",
+        "evidence",
+        "S10"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K5-sources-S44",
+        "A-tx-K5",
+        "evidence",
+        "S44"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K5",
+        "selection",
+        "input",
+        "A-tx-K5"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K7-sources-S36",
+        "A-tx-K7",
+        "evidence",
+        "S36"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K7",
+        "selection",
+        "input",
+        "A-tx-K7"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K8-sources-S43",
+        "A-tx-K8",
+        "evidence",
+        "S43"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K8-sources-S44",
+        "A-tx-K8",
+        "evidence",
+        "S44"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K8",
+        "selection",
+        "input",
+        "A-tx-K8"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K9-sources-S49",
+        "A-tx-K9",
+        "evidence",
+        "S49"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K9",
+        "selection",
+        "input",
+        "A-tx-K9"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K11-sources-S58",
+        "A-tx-K11",
+        "evidence",
+        "S58"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-K11-sources-S60",
+        "A-tx-K11",
+        "evidence",
+        "S60"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-K11",
+        "selection",
+        "input",
+        "A-tx-K11"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-G1-sources-S2",
+        "A-tx-G1",
+        "evidence",
+        "S2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-G1",
+        "selection",
+        "input",
+        "A-tx-G1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-G2-sources-S2",
+        "A-tx-G2",
+        "evidence",
+        "S2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-G2",
+        "selection",
+        "input",
+        "A-tx-G2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-tx-G3-sources-S2",
+        "A-tx-G3",
+        "evidence",
+        "S2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-tx-G3",
+        "selection",
+        "input",
+        "A-tx-G3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K10-sources-S51",
+        "A-qc-K10",
+        "evidence",
+        "S51"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K10-sources-S57",
+        "A-qc-K10",
+        "evidence",
+        "S57"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K10",
+        "selection",
+        "input",
+        "A-qc-K10"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K1-sources-S12",
+        "A-qc-K1",
+        "evidence",
+        "S12"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K1-sources-S14",
+        "A-qc-K1",
+        "evidence",
+        "S14"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K1",
+        "selection",
+        "input",
+        "A-qc-K1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K2-sources-S15",
+        "A-qc-K2",
+        "evidence",
+        "S15"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K2-sources-S16",
+        "A-qc-K2",
+        "evidence",
+        "S16"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K2",
+        "selection",
+        "input",
+        "A-qc-K2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K4-sources-S20",
+        "A-qc-K4",
+        "evidence",
+        "S20"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K4-sources-S21",
+        "A-qc-K4",
+        "evidence",
+        "S21"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K4",
+        "selection",
+        "input",
+        "A-qc-K4"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K6-sources-S34",
+        "A-qc-K6",
+        "evidence",
+        "S34"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K6",
+        "selection",
+        "input",
+        "A-qc-K6"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K3-sources-S18",
+        "A-qc-K3",
+        "evidence",
+        "S18"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K3",
+        "selection",
+        "input",
+        "A-qc-K3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K5-sources-S22",
+        "A-qc-K5",
+        "evidence",
+        "S22"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K5-sources-S23",
+        "A-qc-K5",
+        "evidence",
+        "S23"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K5",
+        "selection",
+        "input",
+        "A-qc-K5"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K7-sources-S38",
+        "A-qc-K7",
+        "evidence",
+        "S38"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K7-sources-S39",
+        "A-qc-K7",
+        "evidence",
+        "S39"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K7",
+        "selection",
+        "input",
+        "A-qc-K7"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K8-sources-S45",
+        "A-qc-K8",
+        "evidence",
+        "S45"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K8",
+        "selection",
+        "input",
+        "A-qc-K8"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K9-sources-S48",
+        "A-qc-K9",
+        "evidence",
+        "S48"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K9",
+        "selection",
+        "input",
+        "A-qc-K9"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K11-sources-S58",
+        "A-qc-K11",
+        "evidence",
+        "S58"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-K11-sources-S60",
+        "A-qc-K11",
+        "evidence",
+        "S60"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-K11",
+        "selection",
+        "input",
+        "A-qc-K11"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-G1-sources-S12",
+        "A-qc-G1",
+        "evidence",
+        "S12"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-G1",
+        "selection",
+        "input",
+        "A-qc-G1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-G2-sources-S12",
+        "A-qc-G2",
+        "evidence",
+        "S12"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-G2",
+        "selection",
+        "input",
+        "A-qc-G2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-qc-G3-sources-S12",
+        "A-qc-G3",
+        "evidence",
+        "S12"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-qc-G3",
+        "selection",
+        "input",
+        "A-qc-G3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K10-sources-S51",
+        "A-hel-K10",
+        "evidence",
+        "S51"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K10-sources-S57",
+        "A-hel-K10",
+        "evidence",
+        "S57"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K10",
+        "selection",
+        "input",
+        "A-hel-K10"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K1-sources-S24",
+        "A-hel-K1",
+        "evidence",
+        "S24"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K1-sources-S25",
+        "A-hel-K1",
+        "evidence",
+        "S25"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K1",
+        "selection",
+        "input",
+        "A-hel-K1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K2-sources-S27",
+        "A-hel-K2",
+        "evidence",
+        "S27"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K2-sources-S28",
+        "A-hel-K2",
+        "evidence",
+        "S28"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K2",
+        "selection",
+        "input",
+        "A-hel-K2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K4-sources-S26",
+        "A-hel-K4",
+        "evidence",
+        "S26"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K4-sources-S31",
+        "A-hel-K4",
+        "evidence",
+        "S31"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K4",
+        "selection",
+        "input",
+        "A-hel-K4"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K6-sources-S35",
+        "A-hel-K6",
+        "evidence",
+        "S35"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K6",
+        "selection",
+        "input",
+        "A-hel-K6"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K3-sources-S30",
+        "A-hel-K3",
+        "evidence",
+        "S30"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K3",
+        "selection",
+        "input",
+        "A-hel-K3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K5-sources-S32",
+        "A-hel-K5",
+        "evidence",
+        "S32"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K5-sources-S33",
+        "A-hel-K5",
+        "evidence",
+        "S33"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K5",
+        "selection",
+        "input",
+        "A-hel-K5"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K7-sources-S40",
+        "A-hel-K7",
+        "evidence",
+        "S40"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K7-sources-S41",
+        "A-hel-K7",
+        "evidence",
+        "S41"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K7",
+        "selection",
+        "input",
+        "A-hel-K7"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K8-sources-S46",
+        "A-hel-K8",
+        "evidence",
+        "S46"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K8-sources-S47",
+        "A-hel-K8",
+        "evidence",
+        "S47"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K8",
+        "selection",
+        "input",
+        "A-hel-K8"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K9-sources-S49",
+        "A-hel-K9",
+        "evidence",
+        "S49"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K9-sources-S50",
+        "A-hel-K9",
+        "evidence",
+        "S50"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K9",
+        "selection",
+        "input",
+        "A-hel-K9"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K11-sources-S58",
+        "A-hel-K11",
+        "evidence",
+        "S58"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-K11-sources-S60",
+        "A-hel-K11",
+        "evidence",
+        "S60"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-K11",
+        "selection",
+        "input",
+        "A-hel-K11"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-G1-sources-S24",
+        "A-hel-G1",
+        "evidence",
+        "S24"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-G1",
+        "selection",
+        "input",
+        "A-hel-G1"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-G2-sources-S24",
+        "A-hel-G2",
+        "evidence",
+        "S24"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-G2",
+        "selection",
+        "input",
+        "A-hel-G2"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-A-hel-G3-sources-S24",
+        "A-hel-G3",
+        "evidence",
+        "S24"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,input_claim_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM design_claims WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-selection-design_claims-A-hel-G3",
+        "selection",
+        "input",
+        "A-hel-G3"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,metric_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM metrics WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-currency-conversion-metrics-M-FX-CAD-USD",
+        "currency-conversion",
+        "input",
+        "M-FX-CAD-USD"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,metric_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM metrics WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-currency-conversion-metrics-M-FX-EUR-USD",
+        "currency-conversion",
+        "input",
+        "M-FX-EUR-USD"
+      ]
+    },
+    {
+      "sql": "INSERT INTO claim_links (seed_key,claim_id,link_role,source_id) VALUES (?,(SELECT id FROM design_claims WHERE seed_key=?),?,(SELECT id FROM sources WHERE seed_key=?)) ON CONFLICT DO NOTHING",
+      "params": [
+        "L-member-demand-sources-S63",
+        "member-demand",
+        "evidence",
+        "S63"
+      ]
+    },
+    {
+      "sql": "INSERT OR IGNORE INTO seed_runs (seed_version,applied_at) VALUES (?,?)",
+      "params": [
+        "seed-2026-10-06-v1",
+        "2026-10-06T00:00:00Z"
+      ]
+    }
+  ]
+}

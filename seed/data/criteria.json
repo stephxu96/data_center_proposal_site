@@ -1,0 +1,182 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "criteria": [
+    {
+      "code": "K10",
+      "kind": "score",
+      "name": "Proximity to demand: share of addressable AI demand within 50 ms round trip",
+      "measure": "Proximity to demand: share of addressable AI demand within 50 ms round trip",
+      "rubric": "{\"1\":\"< 15%\",\"3\":\"30–45%\",\"5\":\"≥ 60%\"}"
+    },
+    {
+      "code": "K1",
+      "kind": "score",
+      "name": "Time to obtain a grid connection",
+      "measure": "Time to obtain a grid connection",
+      "rubric": "{\"1\":\"Discretionary approval, competing for scarce power\",\"3\":\"Restricted or queued, with a defined process\",\"5\":\"Standard process, no capacity restriction\"}"
+    },
+    {
+      "code": "K2",
+      "kind": "score",
+      "name": "Electricity price, delivered",
+      "measure": "Electricity price, delivered",
+      "rubric": "{\"1\":\"> $95/MWh\",\"3\":\"$65–80/MWh\",\"5\":\"≤ $50/MWh\"}"
+    },
+    {
+      "code": "K4",
+      "kind": "score",
+      "name": "Grid reliability and extreme weather",
+      "measure": "Grid reliability and extreme weather",
+      "rubric": "{\"1\":\"Repeated large-scale failures\",\"3\":\"Notable but mitigable events\",\"5\":\"Very high reliability, low exposure\"}"
+    },
+    {
+      "code": "K6",
+      "kind": "score",
+      "name": "Research ecosystem and likely members",
+      "measure": "Research ecosystem and likely members",
+      "rubric": "{\"1\":\"Thin\",\"3\":\"Moderate\",\"5\":\"Dense, large AI research base\"}"
+    },
+    {
+      "code": "K3",
+      "kind": "score",
+      "name": "Grid carbon intensity",
+      "measure": "Grid carbon intensity",
+      "rubric": "{\"1\":\"> 450 g/kWh\",\"3\":\"100–250 g/kWh\",\"5\":\"< 25 g/kWh\"}"
+    },
+    {
+      "code": "K5",
+      "kind": "score",
+      "name": "Climate and water for cooling",
+      "measure": "Climate and water for cooling",
+      "rubric": "{\"1\":\"Hot, high water stress\",\"3\":\"Moderate\",\"5\":\"Cool, low water stress\"}"
+    },
+    {
+      "code": "K7",
+      "kind": "score",
+      "name": "Existing facilities to lease",
+      "measure": "Existing facilities to lease",
+      "rubric": "{\"1\":\"Little\",\"3\":\"Some\",\"5\":\"Large, accessible capacity\"}"
+    },
+    {
+      "code": "K8",
+      "kind": "score",
+      "name": "Permitting regime",
+      "measure": "Permitting regime",
+      "rubric": "{\"1\":\"Uncertain or hostile\",\"3\":\"Clear but sequential, or under political review\",\"5\":\"Clear, fast, politically stable\"}"
+    },
+    {
+      "code": "K9",
+      "kind": "score",
+      "name": "Waste-heat reuse",
+      "measure": "Waste-heat reuse",
+      "rubric": "{\"1\":\"None\",\"3\":\"Networks exist, few examples\",\"5\":\"Established market for buying data center heat\"}"
+    },
+    {
+      "code": "K11",
+      "kind": "score",
+      "name": "Data-transfer price per TB to users",
+      "measure": "Data-transfer price per TB to users",
+      "rubric": "{\"1\":\"—\",\"3\":\"—\",\"5\":\"—\"}"
+    },
+    {
+      "code": "G1",
+      "kind": "gate",
+      "name": "Grid connection legally and practically obtainable",
+      "measure": "Grid connection legally and practically obtainable",
+      "rubric": "Conditional until site-specific due diligence closes."
+    },
+    {
+      "code": "G2",
+      "kind": "gate",
+      "name": "No law prohibits the proposed facility",
+      "measure": "No law prohibits the proposed facility",
+      "rubric": "Conditional until site-specific due diligence closes."
+    },
+    {
+      "code": "G3",
+      "kind": "gate",
+      "name": "No unmitigable single hazard",
+      "measure": "No unmitigable single hazard",
+      "rubric": "Conditional until site-specific due diligence closes."
+    }
+  ],
+  "criterion_weights": [
+    {
+      "seed_key": "W-K10",
+      "criterion_code": "K10",
+      "weight": 25,
+      "rationale": "Users are global and weighted by demand. Distance affects every interactive session and every dataset or saved-progress move.",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K1",
+      "criterion_code": "K1",
+      "weight": 15,
+      "rationale": "Sets the opening date; drives PS3 stress case A",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K2",
+      "criterion_code": "K2",
+      "weight": 15,
+      "rationale": "219 GWh/yr makes power the largest running cost",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K4",
+      "criterion_code": "K4",
+      "weight": 10,
+      "rationale": "Uptime target; PS3's 48-hour outage case",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K6",
+      "criterion_code": "K6",
+      "weight": 10,
+      "rationale": "Anchor members and demand",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K3",
+      "criterion_code": "K3",
+      "weight": 5,
+      "rationale": "Reputation and emissions reporting",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K5",
+      "criterion_code": "K5",
+      "weight": 5,
+      "rationale": "Sets the achievable PUE and the water draw",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K7",
+      "criterion_code": "K7",
+      "weight": 5,
+      "rationale": "Enables a phased hybrid",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K8",
+      "criterion_code": "K8",
+      "weight": 5,
+      "rationale": "Schedule risk",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K9",
+      "criterion_code": "K9",
+      "weight": 5,
+      "rationale": "Operating credit; community benefit",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "W-K11",
+      "criterion_code": "K11",
+      "weight": 0,
+      "rationale": "Evaluated, but it does not separate the sites (§7.3)",
+      "created_at": "2026-10-06T00:00:00Z"
+    }
+  ]
+}

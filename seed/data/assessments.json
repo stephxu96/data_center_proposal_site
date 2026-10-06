@@ -1,0 +1,635 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "site_assessments": [
+    {
+      "seed_key": "A-tx-K10",
+      "criterion_code": "K10",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K10"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K1",
+      "criterion_code": "K1",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K2",
+      "criterion_code": "K2",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K4",
+      "criterion_code": "K4",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K4"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K6",
+      "criterion_code": "K6",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K6"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K3",
+      "criterion_code": "K3",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K5",
+      "criterion_code": "K5",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K5"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K7",
+      "criterion_code": "K7",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K7"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K8",
+      "criterion_code": "K8",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K8"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K9",
+      "criterion_code": "K9",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": 1,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K9"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K11",
+      "criterion_code": "K11",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": null,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K11"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G1",
+      "criterion_code": "G1",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G2",
+      "criterion_code": "G2",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G3",
+      "criterion_code": "G3",
+      "site_id": {
+        "ref": "sites",
+        "key": "tx"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K10",
+      "criterion_code": "K10",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K10"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K1",
+      "criterion_code": "K1",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 1,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K2",
+      "criterion_code": "K2",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K4",
+      "criterion_code": "K4",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K4"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K6",
+      "criterion_code": "K6",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K6"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K3",
+      "criterion_code": "K3",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K5",
+      "criterion_code": "K5",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K5"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K7",
+      "criterion_code": "K7",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K7"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K8",
+      "criterion_code": "K8",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K8"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K9",
+      "criterion_code": "K9",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K9"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K11",
+      "criterion_code": "K11",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": null,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K11"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G1",
+      "criterion_code": "G1",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G2",
+      "criterion_code": "G2",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G3",
+      "criterion_code": "G3",
+      "site_id": {
+        "ref": "sites",
+        "key": "qc"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K10",
+      "criterion_code": "K10",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K10"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K1",
+      "criterion_code": "K1",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 2,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K2",
+      "criterion_code": "K2",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K4",
+      "criterion_code": "K4",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K4"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K6",
+      "criterion_code": "K6",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K6"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K3",
+      "criterion_code": "K3",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 4,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K5",
+      "criterion_code": "K5",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K5"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K7",
+      "criterion_code": "K7",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K7"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K8",
+      "criterion_code": "K8",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 3,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K8"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K9",
+      "criterion_code": "K9",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": 5,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K9"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K11",
+      "criterion_code": "K11",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": null,
+      "gate_result": null,
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K11"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G1",
+      "criterion_code": "G1",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G1"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G2",
+      "criterion_code": "G2",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G2"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G3",
+      "criterion_code": "G3",
+      "site_id": {
+        "ref": "sites",
+        "key": "hel"
+      },
+      "score": null,
+      "gate_result": "conditional",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G3"
+      },
+      "created_at": "2026-10-06T00:00:00Z"
+    }
+  ]
+}

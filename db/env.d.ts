@@ -4,5 +4,6 @@ declare namespace Cloudflare {
     DEMO_PUBLIC_REFRESH?: string;
     AUTH_ENABLED?: string;
     INITIAL_ADMIN_USER_ID?: string;
+    SEED_DEPLOY_TOKEN?: string;
   }
 }

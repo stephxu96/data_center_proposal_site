@@ -7,12 +7,20 @@ import {
 } from '../../lib/db/proposal';
 import { getLiveCountries } from '../../lib/db/live';
 import { LiveEvidenceTable } from '../../components/live-evidence-table';
+import { ClaimLedger } from '../../components/claim-ledger';
+import { getPublicDesign,getDesignClaims,getSources,getClaimSourceMap } from '../../lib/db/evidence';
+import { getPublishedDesignInputs } from '../../lib/db/published-design';
 
 export const dynamic = 'force-dynamic';
 
 export default async function Evidence() {
-  const d = proposalData.design;
+  const d = await getPublishedDesignInputs();
+  const facilityPowerMw=()=>d.itLoadMw*d.pue;
+  const annualEnergyGwh=()=>facilityPowerMw()*d.operatingHours/1000;
+  const outageEnergyMwh=()=>facilityPowerMw()*d.gridOutageHours;
   const live = await getLiveCountries();
+  const storedDesign=await getPublicDesign();
+  const [claims,sources,links]=await Promise.all([storedDesign?getDesignClaims(storedDesign.id):Promise.resolve([]),getSources(),storedDesign?getClaimSourceMap(storedDesign.id):Promise.resolve({})]);
   return (
     <>
       <section className="page-head">
@@ -26,6 +34,7 @@ export default async function Evidence() {
           <div className="button-row" style={{marginTop:24}}><a className="button secondary" href="/workspace?role=editor#add-evidence">Contribute evidence ↗</a></div>
         </div>
       </section>
+      <section className="section" id="claim-ledger"><div className="shell"><div className="section-head"><div><span className="eyebrow">Database evidence</span><h2>Claims and their sources.</h2></div></div><ClaimLedger claims={claims} sources={sources} links={links}/></div></section>
       <section className="section">
         <div className="shell">
           <div className="section-head">

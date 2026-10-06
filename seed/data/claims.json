@@ -1,0 +1,2511 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "design_claims": [
+    {
+      "seed_key": "selection",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Selected site: Texas, conditional on utility offers and signed member demand.",
+      "claim_type": "design_decision",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "china-excluded",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "China is excluded from the addressable service market for the consortium.",
+      "claim_type": "design_decision",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "assumption-it_load_mw",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "it load mw is a chosen baseline, not a facility measurement.",
+      "claim_type": "assumption",
+      "value": 20,
+      "unit": "MW",
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "design",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "assumption-pue",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "pue is a chosen baseline, not a facility measurement.",
+      "claim_type": "assumption",
+      "value": 1.25,
+      "unit": "ratio",
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "design",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "assumption-operating_hours",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "operating hours is a chosen baseline, not a facility measurement.",
+      "claim_type": "assumption",
+      "value": 8760,
+      "unit": "hours",
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "design",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "assumption-latency_threshold_ms",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "latency threshold ms is a chosen baseline, not a facility measurement.",
+      "claim_type": "assumption",
+      "value": 50,
+      "unit": "ms",
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "design",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "facility_power_mw",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Facility electrical power",
+      "claim_type": "calculation",
+      "value": null,
+      "unit": "MW",
+      "calc_key": "facility_power_mw",
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "power",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "annual_energy_gwh",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Annual facility electricity",
+      "claim_type": "calculation",
+      "value": null,
+      "unit": "GWh",
+      "calc_key": "annual_energy_gwh",
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "power",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K10",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Time to obtain a grid connection. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Electricity price, delivered. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K4",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Grid reliability and extreme weather. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K6",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Research ecosystem and likely members. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Grid carbon intensity. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K5",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Climate and water for cooling. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K7",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Existing facilities to lease. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K8",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K9",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Waste-heat reuse. Judgment score 1 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-K11",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: G1 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: G2 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-tx-G3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: G3 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "grid-tx",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas: utility connection cost and energization date are not established; obtain a written offer.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "power",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K10",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Time to obtain a grid connection. Judgment score 1 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Electricity price, delivered. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K4",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Grid reliability and extreme weather. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K6",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Research ecosystem and likely members. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Grid carbon intensity. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K5",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Climate and water for cooling. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K7",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Existing facilities to lease. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K8",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K9",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Waste-heat reuse. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-K11",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: G1 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: G2 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-qc-G3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: G3 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "grid-qc",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec: utility connection cost and energization date are not established; obtain a written offer.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "power",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K10",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Proximity to demand: share of addressable AI demand within 50 ms round trip. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Time to obtain a grid connection. Judgment score 2 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Electricity price, delivered. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K4",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Grid reliability and extreme weather. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K6",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Research ecosystem and likely members. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Grid carbon intensity. Judgment score 4 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K5",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Climate and water for cooling. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K7",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Existing facilities to lease. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K8",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Permitting regime. Judgment score 3 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K9",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Waste-heat reuse. Judgment score 5 on the phase-one rubric; subject to the cited conditions.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-K11",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: Data-transfer price per TB to users. No differentiating score; weight is zero.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: G1 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: G2 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "A-hel-G3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: G3 is conditional on site-specific legal, utility and resilience diligence.",
+      "claim_type": "estimate",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "site_selection",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "grid-hel",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Helsinki: utility connection cost and energization date are not established; obtain a written offer.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "power",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "currency-conversion",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Converted site prices use the recorded period-specific currency assumptions.",
+      "claim_type": "assumption",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "economics",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "condition-1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Obtain a written utility energization schedule and full connection cost.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "approval",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "condition-2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Confirm the applicable large-load rules and curtailment obligations before procurement.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "approval",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "condition-3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Complete a site-specific resilience and backup-power study.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "approval",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "condition-4",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Use a closed-loop cooling design with no routine evaporative water demand.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "approval",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "condition-5",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Secure an electricity and carbon procurement plan acceptable to the member institutions.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "approval",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "reversal-1",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Québec confirms an earlier connection and a durable, competitive delivered power rate.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "reversal_trigger",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "reversal-2",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Member demand shifts materially toward batch training rather than latency-sensitive use.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "reversal_trigger",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "reversal-3",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "The member survey places substantially more weight on East Coast proximity.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "reversal_trigger",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "reversal-4",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "Texas interconnection or large-load rules change the economics or operating flexibility.",
+      "claim_type": "unknown",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": null,
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "reversal_trigger",
+      "created_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "seed_key": "member-demand",
+      "design_id": {
+        "ref": "designs",
+        "key": "university-design"
+      },
+      "claim_text": "No institution has signed a long-term computing commitment; productive demand remains to be contracted.",
+      "claim_type": "fact",
+      "value": null,
+      "unit": null,
+      "calc_key": null,
+      "source_id": {
+        "ref": "sources",
+        "key": "S63"
+      },
+      "status": "draft",
+      "confidence": "medium",
+      "topic": "governance",
+      "created_at": "2026-10-06T00:00:00Z"
+    }
+  ],
+  "claim_links": [
+    {
+      "seed_key": "L-china-excluded-sources-S61",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "china-excluded"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S61"
+      }
+    },
+    {
+      "seed_key": "L-assumption-it_load_mw-parameter_definitions-it_load_mw",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "assumption-it_load_mw"
+      },
+      "link_role": "input",
+      "parameter_name": "it_load_mw"
+    },
+    {
+      "seed_key": "L-assumption-pue-parameter_definitions-pue",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "assumption-pue"
+      },
+      "link_role": "input",
+      "parameter_name": "pue"
+    },
+    {
+      "seed_key": "L-assumption-operating_hours-parameter_definitions-operating_hours",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "assumption-operating_hours"
+      },
+      "link_role": "input",
+      "parameter_name": "operating_hours"
+    },
+    {
+      "seed_key": "L-assumption-latency_threshold_ms-parameter_definitions-latency_threshold_ms",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "assumption-latency_threshold_ms"
+      },
+      "link_role": "input",
+      "parameter_name": "latency_threshold_ms"
+    },
+    {
+      "seed_key": "L-facility_power_mw-parameter_definitions-it_load_mw",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "facility_power_mw"
+      },
+      "link_role": "input",
+      "parameter_name": "it_load_mw"
+    },
+    {
+      "seed_key": "L-facility_power_mw-parameter_definitions-pue",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "facility_power_mw"
+      },
+      "link_role": "input",
+      "parameter_name": "pue"
+    },
+    {
+      "seed_key": "L-annual_energy_gwh-parameter_definitions-it_load_mw",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "annual_energy_gwh"
+      },
+      "link_role": "input",
+      "parameter_name": "it_load_mw"
+    },
+    {
+      "seed_key": "L-annual_energy_gwh-parameter_definitions-pue",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "annual_energy_gwh"
+      },
+      "link_role": "input",
+      "parameter_name": "pue"
+    },
+    {
+      "seed_key": "L-annual_energy_gwh-parameter_definitions-operating_hours",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "annual_energy_gwh"
+      },
+      "link_role": "input",
+      "parameter_name": "operating_hours"
+    },
+    {
+      "seed_key": "L-A-tx-K10-sources-S51",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K10-sources-S57",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K10",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K10"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K1-sources-S2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S2"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K1-sources-S4",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S4"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K1"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K2-sources-S5",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S5"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K2-sources-S6",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S6"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K2"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K4-sources-S8",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S8"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K4-sources-S9",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S9"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K4",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K4"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K6-sources-S11",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K6"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S11"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K6",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K6"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K3-sources-S7",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S7"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K3"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K5-sources-S10",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S10"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K5-sources-S44",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S44"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K5",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K5"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K7-sources-S36",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K7"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S36"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K7",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K7"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K8-sources-S43",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K8"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S43"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K8-sources-S44",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K8"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S44"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K8",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K8"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K9-sources-S49",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K9"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S49"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K9",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K9"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K11-sources-S58",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S58"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-K11-sources-S60",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S60"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-K11",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-K11"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-G1-sources-S2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S2"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-G1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G1"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-G2-sources-S2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S2"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-G2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G2"
+      }
+    },
+    {
+      "seed_key": "L-A-tx-G3-sources-S2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S2"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-tx-G3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-tx-G3"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K10-sources-S51",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K10-sources-S57",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K10",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K10"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K1-sources-S12",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S12"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K1-sources-S14",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S14"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K1"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K2-sources-S15",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S15"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K2-sources-S16",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S16"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K2"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K4-sources-S20",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S20"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K4-sources-S21",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S21"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K4",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K4"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K6-sources-S34",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K6"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S34"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K6",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K6"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K3-sources-S18",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S18"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K3"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K5-sources-S22",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S22"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K5-sources-S23",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S23"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K5",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K5"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K7-sources-S38",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K7"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S38"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K7-sources-S39",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K7"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S39"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K7",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K7"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K8-sources-S45",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K8"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S45"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K8",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K8"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K9-sources-S48",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K9"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S48"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K9",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K9"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K11-sources-S58",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S58"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-K11-sources-S60",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S60"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-K11",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-K11"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-G1-sources-S12",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S12"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-G1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G1"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-G2-sources-S12",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S12"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-G2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G2"
+      }
+    },
+    {
+      "seed_key": "L-A-qc-G3-sources-S12",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S12"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-qc-G3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-qc-G3"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K10-sources-S51",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S51"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K10-sources-S57",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K10"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S57"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K10",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K10"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K1-sources-S24",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S24"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K1-sources-S25",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S25"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K1"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K2-sources-S27",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S27"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K2-sources-S28",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S28"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K2"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K4-sources-S26",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S26"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K4-sources-S31",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K4"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S31"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K4",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K4"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K6-sources-S35",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K6"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S35"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K6",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K6"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K3-sources-S30",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S30"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K3"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K5-sources-S32",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S32"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K5-sources-S33",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K5"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S33"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K5",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K5"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K7-sources-S40",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K7"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S40"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K7-sources-S41",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K7"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S41"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K7",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K7"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K8-sources-S46",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K8"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S46"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K8-sources-S47",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K8"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S47"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K8",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K8"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K9-sources-S49",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K9"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S49"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K9-sources-S50",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K9"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S50"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K9",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K9"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K11-sources-S58",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S58"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-K11-sources-S60",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K11"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S60"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-K11",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-K11"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-G1-sources-S24",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G1"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S24"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-G1",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G1"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-G2-sources-S24",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G2"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S24"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-G2",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G2"
+      }
+    },
+    {
+      "seed_key": "L-A-hel-G3-sources-S24",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G3"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S24"
+      }
+    },
+    {
+      "seed_key": "L-selection-design_claims-A-hel-G3",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "selection"
+      },
+      "link_role": "input",
+      "input_claim_id": {
+        "ref": "design_claims",
+        "key": "A-hel-G3"
+      }
+    },
+    {
+      "seed_key": "L-currency-conversion-metrics-M-FX-CAD-USD",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "currency-conversion"
+      },
+      "link_role": "input",
+      "metric_id": {
+        "ref": "metrics",
+        "key": "M-FX-CAD-USD"
+      }
+    },
+    {
+      "seed_key": "L-currency-conversion-metrics-M-FX-EUR-USD",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "currency-conversion"
+      },
+      "link_role": "input",
+      "metric_id": {
+        "ref": "metrics",
+        "key": "M-FX-EUR-USD"
+      }
+    },
+    {
+      "seed_key": "L-member-demand-sources-S63",
+      "claim_id": {
+        "ref": "design_claims",
+        "key": "member-demand"
+      },
+      "link_role": "evidence",
+      "source_id": {
+        "ref": "sources",
+        "key": "S63"
+      }
+    }
+  ]
+}

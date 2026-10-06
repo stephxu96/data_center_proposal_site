@@ -1,0 +1,273 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "units": [
+    {
+      "code": "MW",
+      "description": "MW"
+    },
+    {
+      "code": "GW",
+      "description": "GW"
+    },
+    {
+      "code": "GWh",
+      "description": "GWh"
+    },
+    {
+      "code": "TWh",
+      "description": "TWh"
+    },
+    {
+      "code": "%",
+      "description": "%"
+    },
+    {
+      "code": "gCO2/kWh",
+      "description": "gCO2/kWh"
+    },
+    {
+      "code": "count",
+      "description": "count"
+    },
+    {
+      "code": "USD/MWh",
+      "description": "USD/MWh"
+    },
+    {
+      "code": "USD/TB",
+      "description": "USD/TB"
+    },
+    {
+      "code": "ms",
+      "description": "ms"
+    },
+    {
+      "code": "score",
+      "description": "score"
+    },
+    {
+      "code": "months",
+      "description": "months"
+    },
+    {
+      "code": "hours",
+      "description": "hours"
+    },
+    {
+      "code": "ratio",
+      "description": "ratio"
+    },
+    {
+      "code": "CDD",
+      "description": "CDD"
+    },
+    {
+      "code": "minutes",
+      "description": "minutes"
+    },
+    {
+      "code": "USD/CAD",
+      "description": "USD/CAD"
+    },
+    {
+      "code": "EUR/USD",
+      "description": "EUR/USD"
+    }
+  ],
+  "metric_definitions": [
+    {
+      "name": "dc_electricity_use",
+      "description": "dc electricity use",
+      "unit": "TWh",
+      "subject": "demand_region",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "dc_capacity_in_service",
+      "description": "dc capacity in service",
+      "unit": "MW",
+      "subject": "country",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "datacenter_count",
+      "description": "datacenter count",
+      "unit": "count",
+      "subject": "country",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "industrial_electricity_price",
+      "description": "industrial electricity price",
+      "unit": "USD/MWh",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "wholesale_electricity_price",
+      "description": "wholesale electricity price",
+      "unit": "USD/MWh",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "electricity_tax",
+      "description": "electricity tax",
+      "unit": "USD/MWh",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "grid_carbon_intensity",
+      "description": "grid carbon intensity",
+      "unit": "gCO2/kWh",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "cooling_degree_days",
+      "description": "cooling degree days",
+      "unit": "CDD",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "share_hours_below_18c",
+      "description": "share hours below 18c",
+      "unit": "%",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "water_stress_score",
+      "description": "water stress score",
+      "unit": "score",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "avg_outage_minutes_per_customer",
+      "description": "avg outage minutes per customer",
+      "unit": "minutes",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "r1_university_count",
+      "description": "r1 university count",
+      "unit": "count",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "ai_research_faculty",
+      "description": "ai research faculty",
+      "unit": "count",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "leasable_gpu_count",
+      "description": "leasable gpu count",
+      "unit": "count",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "large_load_threshold_mw",
+      "description": "large load threshold mw",
+      "unit": "MW",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "grid_connection_months",
+      "description": "grid connection months",
+      "unit": "months",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "round_trip_latency",
+      "description": "round trip latency",
+      "unit": "ms",
+      "subject": "site_to_region",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "data_transfer_price",
+      "description": "data transfer price",
+      "unit": "USD/TB",
+      "subject": "site",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "fx_rate",
+      "description": "fx rate",
+      "unit": "ratio",
+      "subject": "country",
+      "min_value": 0,
+      "max_value": null
+    },
+    {
+      "name": "demand_share",
+      "description": "demand share",
+      "unit": "%",
+      "subject": "demand_region",
+      "min_value": 0,
+      "max_value": null
+    }
+  ],
+  "parameter_definitions": [
+    {
+      "name": "it_load_mw",
+      "description": "it load mw",
+      "unit": "MW",
+      "min_value": 0.1,
+      "max_value": 2000,
+      "user_adjustable": 1
+    },
+    {
+      "name": "pue",
+      "description": "pue",
+      "unit": "ratio",
+      "min_value": 1,
+      "max_value": 3,
+      "user_adjustable": 1
+    },
+    {
+      "name": "operating_hours",
+      "description": "operating hours",
+      "unit": "hours",
+      "min_value": 1,
+      "max_value": 8760,
+      "user_adjustable": 1
+    },
+    {
+      "name": "latency_threshold_ms",
+      "description": "latency threshold ms",
+      "unit": "ms",
+      "min_value": 0,
+      "max_value": 1000,
+      "user_adjustable": 1
+    }
+  ]
+}

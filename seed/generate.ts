@@ -1,0 +1,15 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { validateSeed } from './validate.mjs';
+import { tableOrder, seedStatement, printableStatement, markerStatement } from '../lib/db/seed-sql.mjs';
+const names=['vocabulary','places','sources','metrics','design','criteria','assessments','claims'];
+const data=Object.assign({},...names.map(n=>JSON.parse(readFileSync(new URL(`./data/${n}.json`,import.meta.url),'utf8'))));
+const counts=validateSeed(data);
+const groups=[['units','metric_definitions','parameter_definitions'],['countries','sites','demand_regions'],['sources'],['metrics'],['teams','designs','design_parameters','scenarios'],['criteria','criterion_weights'],['design_claims','site_assessments','claim_links'],[]];
+const outputs=['vocabulary','places','sources','metrics','design','selection','claims_and_links','seed_marker'];
+type SeedRow=Record<string, string|number|null|{ref:string;key:string}>;
+const join=(statements: ReturnType<typeof seedStatement>[])=>statements.map(printableStatement).join('\n--> statement-breakpoint\n')+'\n';
+const statements=tableOrder.flatMap(table=>(data[table]??[]).map((row:SeedRow)=>seedStatement(table,row)));
+mkdirSync(new URL('./sql/',import.meta.url),{recursive:true});
+groups.forEach((tables,i)=>writeFileSync(new URL(`./sql/000${i+1}_${outputs[i]}.sql`,import.meta.url),join(i===7?[markerStatement(data.seed_version)]:tables.flatMap(t=>(data[t]??[]).map((row:SeedRow)=>seedStatement(t,row))))));
+writeFileSync(new URL('./statements.json',import.meta.url),JSON.stringify({version:data.seed_version,statements:[...statements,markerStatement(data.seed_version)]},null,2)+'\n');
+console.log(JSON.stringify(counts,null,2));

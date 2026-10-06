@@ -1,7 +1,9 @@
 import { annualEnergyGwh, facilityPowerMw, proposalData, weightedScore } from '../lib/db/proposal';
+import { getPublishedDesignInputs } from '../lib/db/published-design';
 
-export default function Overview() {
-  const d = proposalData.design;
+export const dynamic='force-dynamic';
+export default async function Overview() {
+  const d = await getPublishedDesignInputs();
   const tx = proposalData.candidates[0];
   return <>
     <section className="hero"><div className="shell hero-content">
@@ -13,8 +15,8 @@ export default function Overview() {
     <div className="shell"><div className="stats">
       <a className="stat" href="/evidence#design-inputs"><strong>{d.itLoadMw} MW</strong><span>IT load · assumption ↗</span></a>
       <a className="stat" href="/evidence#design-inputs"><strong>{d.pue.toFixed(2)}</strong><span>Power usage effectiveness · assumption ↗</span></a>
-      <a className="stat" href="/evidence#facility-load"><strong>{facilityPowerMw()} MW</strong><span>Facility demand · calculation ↗</span></a>
-      <a className="stat" href="/evidence#annual-energy"><strong>{annualEnergyGwh()} GWh</strong><span>Annual facility energy · calculation ↗</span></a>
+      <a className="stat" href="/evidence#facility-load"><strong>{facilityPowerMw(d.itLoadMw,d.pue)} MW</strong><span>Facility demand · calculation ↗</span></a>
+      <a className="stat" href="/evidence#annual-energy"><strong>{annualEnergyGwh(d.itLoadMw,d.pue,d.operatingHours)} GWh</strong><span>Annual facility energy · calculation ↗</span></a>
     </div></div>
     <section className="section"><div className="shell"><div className="section-head"><div><span className="eyebrow">The decision</span><h2>Texas leads the comparison,<br/>with conditions.</h2></div><a className="text-link" href="/countries">See the full comparison ↗</a></div>
       <div className="grid-3">

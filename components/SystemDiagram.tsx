@@ -1,8 +1,8 @@
 import { facilityPowerMw, proposalData } from '../lib/db/proposal';
 
-export default function SystemDiagram() {
-  const facilityPower = facilityPowerMw();
-  const itPower = proposalData.design.itLoadMw;
+export default function SystemDiagram({itLoadMw=proposalData.design.itLoadMw,pue=proposalData.design.pue}:{itLoadMw?:number;pue?:number}) {
+  const facilityPower = facilityPowerMw(itLoadMw,pue);
+  const itPower = itLoadMw;
   const cooling = proposalData.design.cooling;
 
   return <div className="system-layout">

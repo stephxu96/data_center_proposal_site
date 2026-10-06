@@ -187,7 +187,7 @@ export default async function Countries() {
                     {candidates.map((c) => (
                       <td key={c.id}>
                         {criterion.weight === 0
-                          ? 'Not established'
+                          ? 'No differentiation'
                           : c.scores[index] + ' / 5'}
                       </td>
                     ))}
@@ -208,9 +208,9 @@ export default async function Countries() {
             </table>
           </div>
           <p className="subtle">
-            Connection timing remains open for every candidate and carries no
-            weight in this comparison until a utility provides a site-specific
-            schedule.
+            Data-transfer price carries zero weight because the assessed prices
+            do not differentiate the candidates. Grid connection carries its
+            stated weight; site-specific energization dates remain open.
           </p>
         </div>
       </section>

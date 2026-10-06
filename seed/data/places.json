@@ -1,0 +1,103 @@
+{
+  "seed_version": "seed-2026-10-06-v1",
+  "countries": [
+    {
+      "seed_key": "US",
+      "name": "United States",
+      "region": "North America"
+    },
+    {
+      "seed_key": "CA",
+      "name": "Canada",
+      "region": "North America"
+    },
+    {
+      "seed_key": "FI",
+      "name": "Finland",
+      "region": "Europe"
+    }
+  ],
+  "sites": [
+    {
+      "seed_key": "tx",
+      "country_id": {
+        "ref": "countries",
+        "key": "US"
+      },
+      "name": "Texas",
+      "proxy_city": "Dallas",
+      "notes": "Candidate metro; final parcel and utility connection require a site-specific offer."
+    },
+    {
+      "seed_key": "qc",
+      "country_id": {
+        "ref": "countries",
+        "key": "CA"
+      },
+      "name": "Québec",
+      "proxy_city": "Montréal",
+      "notes": "Candidate metro; final parcel and utility connection require a site-specific offer."
+    },
+    {
+      "seed_key": "hel",
+      "country_id": {
+        "ref": "countries",
+        "key": "FI"
+      },
+      "name": "Helsinki",
+      "proxy_city": "Helsinki",
+      "notes": "Candidate metro; final parcel and utility connection require a site-specific offer."
+    }
+  ],
+  "demand_regions": [
+    {
+      "seed_key": "east",
+      "name": "US East",
+      "proxy_cities": "New York / Washington / Boston",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "central",
+      "name": "US Central + Canada/Mexico",
+      "proxy_cities": "Chicago",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "west",
+      "name": "US West",
+      "proxy_cities": "San Francisco",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "europe",
+      "name": "Europe",
+      "proxy_cities": "Frankfurt / London",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "asia",
+      "name": "Asia-Pacific excluding China",
+      "proxy_cities": "Tokyo / Singapore",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "rest",
+      "name": "Rest of world",
+      "proxy_cities": "Europe / Asia proxy",
+      "addressable": 1,
+      "notes": "Demand proxy, not signed member demand."
+    },
+    {
+      "seed_key": "china",
+      "name": "China",
+      "proxy_cities": "Not addressable",
+      "addressable": 0,
+      "notes": "Excluded by consortium service-market design decision."
+    }
+  ]
+}
