@@ -47,7 +47,7 @@ export function investmentModel(input: ModelInputs) {
 }
 
 export function applyScenario(input: ModelInputs, scenario: string): ModelInputs {
-  if (scenario === 'grid-delay') return { ...input, gridDelayMonths: input.gridDelayMonths + 12 };
+  if (scenario === 'grid-delay') return { ...input, gridDelayMonths: input.gridDelayMonths + 0.5 };
   if (scenario === 'half-utilization') return { ...input, utilizationPct: input.utilizationPct / 2 };
   return input;
 }

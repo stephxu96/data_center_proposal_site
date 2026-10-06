@@ -20,7 +20,7 @@
     "hybridLeaseMillions": 48,
     "annualNonPowerOpsMillions": 38,
     "delayCarryingMillionsPerMonth": 2,
-    "gridDelayMonths": 6
+    "gridDelayMonths": 0.5
   },
   "candidates": [
     { "id": "tx", "country": "United States", "site": "Texas", "score": 3.6, "demandShare": 62.3, "scores": [5,4,3,2,5,2,2,4,3,1,0] },

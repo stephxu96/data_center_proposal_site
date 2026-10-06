@@ -111,7 +111,7 @@ investment_heading = doc.add_heading("3. Investment: stage capital against evide
 investment_heading.paragraph_format.page_break_before = True
 doc.add_paragraph(
     "Build-and-own, lease and phased hybrid structures are available for comparison in the decision explorer. "
-    "The editable example assumes six months to grid energization; its delay stress adds a further year. It shows "
+    "The editable example assumes 0.5 months (about two weeks) to grid energization; its delay stress adds another two weeks. It shows "
     "how power price, utilization, PUE and delay affect pre-opening cash, operating cost, cost per productive "
     "GPU-hour and capital at risk. This is a sensitivity tool, not a capital approval case: vendor prices, "
     "financing terms, replacement schedules and contracted workloads must replace scenario inputs."
